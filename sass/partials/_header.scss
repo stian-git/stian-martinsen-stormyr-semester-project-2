@@ -1,0 +1,68 @@
+.header {
+    // margin-bottom: 3em;
+    background-color: white;
+    &__top {
+        background-image: url("../../images/stud.svg");
+        background-size: 20px;
+        // padding-bottom: 1em;
+        margin: 0;
+        &_logo {
+            display: inline-flex;
+            background-color: white;
+            box-shadow: 1px 1px 17px black;
+        }
+    }
+    &__bottom_line {
+        background-color: #ffcf00;
+        height: 20px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.logo {
+    height: 75px;
+    margin: 0.2em;
+}
+
+@font-face {
+    font-family: "Legothick";
+    // src: url("../../styles/fonts/Legothick.ttf");
+    src: url("../../styles/fonts/ClickyBricks2Regular-nRGD4.ttf");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Antonio&family=Poppins:wght@400;700&family=Roboto+Slab&family=Sanchez&family=Source+Code+Pro:wght@800&display=swap");
+// lightslategray // #778899
+// complementaries: #CAD8E5 , #34404D
+
+// orange   #FFA500
+
+//thistle - lilla   #D8BFD8
+// dark shade of thistle: #695C69
+
+// lego yellow: #FFCF00
+
+h1 {
+    font-family: "Poppins";
+    font-weight: bolder;
+}
+
+h1::first-letter {
+    font-family: "Legothick";
+    // color: darkblue;
+}
+
+p {
+    font-family: "Roboto Slab";
+}
+
+h2,
+h3 {
+    font-family: "Poppins";
+}
+
+.product {
+    width: 60%;
+    margin: auto;
+}
