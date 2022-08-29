@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "Legothick";
+    // src: url("../../styles/fonts/Legothick.ttf");
+    src: url("../../styles/fonts/ClickyBricks2Regular-nRGD4.ttf");
+}
+@import url("https://fonts.googleapis.com/css2?family=Antonio&family=Orbitron:wght@400;700&family=Poppins:wght@400;700&family=Roboto+Slab&family=Sanchez&family=Source+Code+Pro:wght@800&display=swap");
+
+h1 {
+    // font-family: "Poppins";
+    font-family: "Orbitron";
+    font-weight: bolder;
+}
+
+h1::first-letter {
+    font-family: "Legothick";
+    // color: darkblue;
+}
+
+p {
+    font-family: "Roboto Slab";
+}
+
+h2,
+h3 {
+    // font-family: "Poppins";
+    font-family: "Orbitron";
+    // font-weight: bold;
+}
+
+h2 {
+    // color: saddlebrown;
+    color: #9700ff;
+    font-weight: bold;
+}
+
+h3 {
+    text-decoration: underline;
+}

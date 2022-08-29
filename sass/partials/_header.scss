@@ -1,15 +1,23 @@
+nav,
+header {
+    // background-color: white !important;
+}
+
 .header {
     // margin-bottom: 3em;
-    background-color: white;
+    // background-color: white !important;
     &__top {
-        background-image: url("../../images/stud.svg");
-        background-size: 20px;
+        // background-image: url("../../images/stud.svg");
+        // background-size: 20px;
+
         // padding-bottom: 1em;
         margin: 0;
+
         &_logo {
             display: inline-flex;
-            background-color: white;
+            // background-color: white;
             box-shadow: 1px 1px 17px black;
+            padding-bottom: 10px;
         }
     }
     &__bottom_line {
@@ -22,17 +30,16 @@
 }
 
 .logo {
-    height: 75px;
-    margin: 0.2em;
+    // height: 75px;
+    display: block;
+    width: 100%;
+    min-width: 240px;
+    // margin: 0.2em;
 }
 
-@font-face {
-    font-family: "Legothick";
-    // src: url("../../styles/fonts/Legothick.ttf");
-    src: url("../../styles/fonts/ClickyBricks2Regular-nRGD4.ttf");
+.navbar-brand {
+    max-width: 20%;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Antonio&family=Poppins:wght@400;700&family=Roboto+Slab&family=Sanchez&family=Source+Code+Pro:wght@800&display=swap");
 // lightslategray // #778899
 // complementaries: #CAD8E5 , #34404D
 
@@ -43,26 +50,28 @@
 
 // lego yellow: #FFCF00
 
-h1 {
-    font-family: "Poppins";
-    font-weight: bolder;
-}
-
-h1::first-letter {
-    font-family: "Legothick";
-    // color: darkblue;
-}
-
-p {
-    font-family: "Roboto Slab";
-}
-
-h2,
-h3 {
-    font-family: "Poppins";
-}
-
 .product {
-    width: 60%;
+    max-width: 60%;
     margin: auto;
+    background-color: white;
+    padding: 1em 10em;
+    // box-shadow: 3px 3px 5px black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+// main {
+//     // background-color: white;
+//     background-image: url("../../images/stud.svg");
+//     background-size: 20px;
+// }
+
+.hero {
+    background-image: url("../../images/hero_31120_alt16_cropped.jpg");
+    height: 250px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid black;
+    // border-bottom: 1px solid black;
 }
