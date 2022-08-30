@@ -1,0 +1,63 @@
+.product {
+    background-color: blanchedalmond;
+    // border-radius: 10px;
+    box-shadow: 1px 1px 3px black;
+    padding: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    width: 260px;
+    height: 460px;
+    // 460 above is intended to be in admin mode.
+    margin-bottom: 1em;
+    margin-right: 1em;
+    justify-content: space-between;
+    position: relative;
+}
+.productlink {
+    text-decoration: none;
+    color: black;
+}
+.productlink:hover {
+    color: black;
+}
+
+.product__header_photo {
+    // height: 200px;
+    // width: 250px;
+}
+
+.product__details-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product__header_title {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.product__header {
+    display: flex;
+    flex-direction: column;
+}
+
+// .product:hover {
+//     box-shadow: none;
+//     border: 1px solid black;
+// }
+
+.product:hover {
+    box-shadow: none;
+    border: 1px solid black;
+    // .buymebanner {
+    //     display: flex;
+    // }
+}
+
+.buymebanner {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: absolute;
+    // display: none;
+    display: flex;
+}

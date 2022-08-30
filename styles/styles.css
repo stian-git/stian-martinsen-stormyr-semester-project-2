@@ -10804,6 +10804,19 @@ main {
   border-right: 2px solid black;
 }
 
+.navbar {
+  box-shadow: 1px 0px 10px black;
+}
+
+header:first-of-type + * {
+  margin-top: 63px;
+}
+
+@media (min-width: 992px) {
+  header:first-of-type + * {
+    margin-top: 80px;
+  }
+}
 .header__top {
   margin: 0;
 }
@@ -10830,15 +10843,11 @@ main {
   max-width: 20%;
 }
 
-.product {
-  max-width: 60%;
-  margin: auto;
-  background-color: white;
-  padding: 1em 10em;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+@media (min-width: 992px) {
+  .navbar {
+    min-height: 80px !important;
+  }
 }
-
 .hero {
   background-image: url("../../images/hero_31120_alt16_cropped.jpg");
   height: 250px;
@@ -10848,7 +10857,61 @@ main {
   border-top: 1px solid black;
 }
 
+ul.navbar-nav {
+  margin: auto;
+}
+
 footer {
   background-color: #ffcf00;
   padding: 1em 2em;
+}
+
+.product {
+  background-color: blanchedalmond;
+  box-shadow: 1px 1px 3px black;
+  padding: 10px;
+  display: inline-flex;
+  flex-direction: column;
+  width: 260px;
+  height: 460px;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  justify-content: space-between;
+  position: relative;
+}
+
+.productlink {
+  text-decoration: none;
+  color: black;
+}
+
+.productlink:hover {
+  color: black;
+}
+
+.product__details-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product__header_title {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.product__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.product:hover {
+  box-shadow: none;
+  border: 1px solid black;
+}
+
+.buymebanner {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  position: absolute;
+  display: flex;
 }

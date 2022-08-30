@@ -16,3 +16,18 @@ main {
     border-left: 2px solid black;
     border-right: 2px solid black;
 }
+
+.navbar {
+    box-shadow: 1px 0px 10px black;
+}
+
+// below makes the content align just below the header on every page, no matter what the first element is.
+header:first-of-type + * {
+    margin-top: 63px;
+}
+
+@include media-breakpoint-up(lg) {
+    header:first-of-type + * {
+        margin-top: 80px;
+    }
+}
