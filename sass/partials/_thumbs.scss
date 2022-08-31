@@ -1,0 +1,21 @@
+.thumbs {
+    display: flex;
+    flex-direction: column;
+    &__image {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+    }
+}
+
+.details {
+    margin-top: 2em;
+    display: flex;
+}
+
+.current_image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 2em;
+}

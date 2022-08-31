@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="Home of Brickastle, the home of Lego Castles - Products page" />
+        <meta name="description" content="Home of Brickastle, the home of Lego Castles - Product Details page" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles/styles.css" />
-        <title>Brickastle | Products</title>
+        <title>Brickastle | Product Details</title>
     </head>
     <body>
         <header>
@@ -49,32 +49,53 @@
         </header>
         <div class="header__bottom_line"></div>
         <main>
-            <h1>Products</h1>
-            <a href="productdetails.html?id=10305" class="productlink">
-                <div class="product">
-                    <div class="product__header">
-                        <div class="product__header_imagecontainer">
-                            <img src="images/product/10305_alt1.png" alt="" class="product__header_imagecontainer_image" />
-                            <div class="product__header_imagecontainer_buymebanner">Add to cart.</div>
+            <h1>Product Details</h1>
+            <div class="details">
+                <div class="thumbs">
+                    <img src="images/product/10305.png" alt="" class="thumbs__image" />
+                    <img src="images/product/10305_alt1.png" alt="" class="thumbs__image" />
+                    <img src="" alt="" class="thumb" />
+                </div>
+                <div>
+                    <!-- <img src="images/product/10305_alt1.png" alt="" class="current_image" /> -->
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
-                        <p class="product__header_title">Lion Knights Castle with a lot of more info stretching atleast two rows</p>
-                    </div>
-                    <div class="product__details">
-                        <div class="product__details-row">
-                            <p class="product__details_price">350 EUR</p>
-                            <p class="product__details_stock">In stock: 3</p>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/product/10305.png" class="d-block w-100" alt="..." />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/product/10305_alt1.png" class="d-block w-100" alt="..." />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/product/10305.png" class="d-block w-100" alt="..." />
+                            </div>
                         </div>
-                    </div>
-                    <div class="product_admin">
-                        <hr />
-                        <button type="button" class="btn btn-primary">Edit</button>
-                        <button type="button" class="btn btn-primary">Delete</button>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
-            </a>
+                <!-- <div>
+                    <p>Lion Knights' Castle</p>
+                    <p>Model: 10305</p>
+                    <p>500 EUR</p>
+                </div> -->
+            </div>
+            <div>Use Tabs / Accordion here to show product details, minifugures ++</div>
+            <div>Featured products</div>
         </main>
         <footer>This is my footer</footer>
         <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/components/api/getProducts.js"></script>
+        <!-- <script src="js/components/api/getProducts.js"></script> -->
     </body>
 </html>
