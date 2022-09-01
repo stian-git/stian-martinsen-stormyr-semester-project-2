@@ -10935,6 +10935,7 @@ footer {
 .thumbs {
   display: flex;
   flex-direction: column;
+  margin-right: 3em;
 }
 .thumbs__image {
   width: 70px;
@@ -10952,4 +10953,40 @@ footer {
   height: 300px;
   object-fit: cover;
   margin: 0 2em;
+}
+
+.carousel-item {
+  width: 300px;
+  height: 300px;
+}
+
+.tab-content {
+  border: 1px solid rgb(222, 226, 230);
+  border-top: none;
+  padding: 2em;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.carouselExampleIndicators {
+  width: min-content;
+}
+
+main > div {
+  margin-top: 4em;
+}
+
+.minifig {
+  width: 100px;
+  border: 1px solid black;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+.minifig p {
+  font-size: 0.6em;
 }
