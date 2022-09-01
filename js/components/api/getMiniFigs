@@ -1,0 +1,34 @@
+// API from rebrickable.com
+
+// const modelId = "10305-1";
+const apikey = "ca2870058d849c35e623b673de5478db";
+const baseurl = "https://rebrickable.com/api/v3/lego/sets/";
+const minifigsUrl = baseurl + modelId + "/minifigs/?key=" + apikey;
+console.log(minifigsUrl);
+
+async function getMinifigs(id) {
+    try {
+        const data = await fetch(minifigsUrl);
+        result = await data.json();
+        console.log(result);
+        displayMiniFigs(result);
+        // return result;
+    } catch (error) {
+        console.log("An error occured fetching minifigs:" + error);
+    }
+}
+
+getMinifigs(modelId);
+
+function displayMiniFigs(arr) {
+    const allFigs = arr.results;
+    const numberOfFigs = allFigs.length;
+    allFigs.forEach((figure) => {
+        console.log(figure.id);
+    });
+}
+// id: 26897,
+// set_num: 'fig-012978',
+// set_name: 'Castle Man, Reddish Brown Apron, Dark Brown Hair',
+// quantity: 1,
+// set_img_url: 'https://cdn.rebrickable.com/media/sets/fig-012978/107751.jpg'
