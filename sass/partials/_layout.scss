@@ -12,9 +12,15 @@ main {
     background-color: white;
     width: 80vw;
     margin: auto;
-    padding: 1em 10em;
+    padding: 1em 4em;
     border-left: 2px solid black;
     border-right: 2px solid black;
+}
+
+@include media-breakpoint-up(lg) {
+    main {
+        padding: 1em 10em;
+    }
 }
 
 .navbar {

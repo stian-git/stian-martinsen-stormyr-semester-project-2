@@ -10799,11 +10799,16 @@ main {
   background-color: white;
   width: 80vw;
   margin: auto;
-  padding: 1em 10em;
+  padding: 1em 4em;
   border-left: 2px solid black;
   border-right: 2px solid black;
 }
 
+@media (min-width: 992px) {
+  main {
+    padding: 1em 10em;
+  }
+}
 .navbar {
   box-shadow: 1px 0px 10px black;
 }
@@ -10989,4 +10994,23 @@ main > div {
 
 .minifig p {
   font-size: 0.6em;
+}
+
+.topcontainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.topcontainer > div:nth-child(2) {
+  margin: auto;
+}
+
+@media (min-width: 992px) {
+  .topcontainer {
+    flex-direction: row;
+  }
+}
+tr > td:nth-child(1) {
+  width: 120px;
 }
