@@ -24,3 +24,21 @@ switch (currentPage) {
     default:
         break;
 }
+
+// popup test:
+
+// const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+// const popoverList = [...popoverTriggerList].map((popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl));
+
+const loginButton = document.querySelector(".loginbutton");
+// loginButton.onclick((e) => {
+//     console.log(e);
+// });
+
+loginButton.addEventListener("click", doLogin);
+const usernameField = document.querySelector("#username");
+const passwordField = document.querySelector("#password");
+
+function doLogin() {
+    console.log("Logging in " + usernameField.value + " with password: " + passwordField.value);
+}

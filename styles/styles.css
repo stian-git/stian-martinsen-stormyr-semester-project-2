@@ -11014,3 +11014,26 @@ main > div {
 tr > td:nth-child(1) {
   width: 120px;
 }
+
+.featured .carousel-item {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+
+.featured p {
+  font-size: 0.7em;
+}
+
+.featured .product {
+  width: 160px;
+  height: 300px;
+}
+
+.featured .product p:nth-child(3) {
+  align-self: center;
+  font-size: 1em;
+}
