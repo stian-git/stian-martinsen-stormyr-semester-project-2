@@ -10854,12 +10854,24 @@ header:first-of-type + * {
   }
 }
 .hero {
-  background-image: url("../../images/hero_31120_alt16_cropped.jpg");
   height: 250px;
   width: 100%;
   background-size: cover;
   background-position: center;
   border-top: 1px solid black;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.herotext {
+  display: absolute;
+  background-color: #ffcf00;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid black;
+  border-left: none;
 }
 
 ul.navbar-nav {

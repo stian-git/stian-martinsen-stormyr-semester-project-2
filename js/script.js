@@ -17,6 +17,7 @@ logoutButton.addEventListener("click", doLogOut);
 //import getUserInfo from "./components/api/getUserInfo.js";
 import toggleUserFeatues from "./components/ui/toggleUserFeatures.js";
 import doLogOut from "./components/api/doLogout.js";
+import getHero from "./components/api/getHero.js";
 let currentPage = document.location.pathname.replace("/", "");
 
 // getUserInfo("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyMzYzNTEzLCJleHAiOjE2NjQ5NTU1MTN9.xYWiYhoG9kzmawsh4bCqWghf7GEHBs6fSQGxpvecqqs").then((result) => {
@@ -27,7 +28,7 @@ if (currentPage == "") {
     currentPage = "index.html";
 }
 
-console.log(currentPage);
+//console.log(currentPage);
 
 switch (currentPage) {
     case "productdetails.html":
@@ -38,6 +39,7 @@ switch (currentPage) {
         break;
     case "index.html":
         // getMinifigs(modelId);
+        getHero();
         // doLogin("test", "Pass1234");
         break;
     default:

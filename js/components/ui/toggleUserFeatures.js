@@ -8,8 +8,8 @@ export default function toggleUserFeatues() {
     const loginMenuHeader = document.querySelector("nav .login-menu .dropdown-toggle");
     const loginLink = document.querySelector(".login-link");
     if (userIsLoggedIn === "true") {
-        console.log(userIsLoggedIn);
-        console.log(typeof userIsLoggedIn);
+        //console.log(userIsLoggedIn);
+        //console.log(typeof userIsLoggedIn);
         loginMenu.style.display = "block";
         loginMenuHeader.innerHTML = "User";
         loginLink.style.display = "none";
@@ -19,7 +19,7 @@ export default function toggleUserFeatues() {
                 element.style.display = "block";
             });
             // enable admintools.
-            console.log("Adding admin menu items");
+            //console.log("Adding admin menu items");
         }
     } else {
         loginMenu.style.display = "none";
