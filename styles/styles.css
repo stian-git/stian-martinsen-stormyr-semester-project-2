@@ -10866,6 +10866,22 @@ ul.navbar-nav {
   margin: auto;
 }
 
+.navbar .login-menu {
+  display: none;
+}
+
+.navbar .adminitem {
+  display: none;
+}
+
+.modal-error {
+  background-color: red;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  display: none;
+}
+
 footer {
   background-color: #ffcf00;
   padding: 1em 2em;

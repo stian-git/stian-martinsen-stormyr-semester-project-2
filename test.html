@@ -31,7 +31,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">User Profile</a></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Logout</a></li>
                                 </ul>
                             </li>
                             <!-- <li class="nav-item">
@@ -57,13 +57,13 @@
                     nulla dolore sequi sit reiciendis.
                 </p>
             </div>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login</button>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
             <!-- <div class="modal-dialog modal-dialog-centered" id="staticBackdrop">...test modal</div> -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">User Login</h5>
+                            <h5 class="modal-title" id="loginModalLabel">User Login</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
