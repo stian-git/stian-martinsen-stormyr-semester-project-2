@@ -10965,6 +10965,12 @@ footer {
   flex-direction: column;
 }
 
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .thumbs {
   display: flex;
   flex-direction: column;

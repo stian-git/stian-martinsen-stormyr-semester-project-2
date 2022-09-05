@@ -18,6 +18,7 @@ logoutButton.addEventListener("click", doLogOut);
 import toggleUserFeatues from "./components/ui/toggleUserFeatures.js";
 import doLogOut from "./components/api/doLogout.js";
 import getHero from "./components/api/getHero.js";
+import getProducts from "./components/api/getProducts.js";
 let currentPage = document.location.pathname.replace("/", "");
 
 // getUserInfo("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyMzYzNTEzLCJleHAiOjE2NjQ5NTU1MTN9.xYWiYhoG9kzmawsh4bCqWghf7GEHBs6fSQGxpvecqqs").then((result) => {
@@ -36,6 +37,7 @@ switch (currentPage) {
         break;
     case "products.html":
         // if this is products.html
+        getProducts(false);
         break;
     case "index.html":
         // getMinifigs(modelId);

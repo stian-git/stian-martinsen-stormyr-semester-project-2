@@ -75,3 +75,13 @@
     display: inline-flex;
     flex-direction: column;
 }
+
+/// Bootstrap cards
+///
+///
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
