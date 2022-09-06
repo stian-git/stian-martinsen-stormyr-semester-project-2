@@ -10899,50 +10899,43 @@ footer {
   padding: 1em 2em;
 }
 
-.product {
-  background-color: blanchedalmond;
-  box-shadow: 1px 1px 3px black;
-  padding: 10px;
-  display: inline-flex;
+.card-body {
+  display: flex;
   flex-direction: column;
-  width: 260px;
-  height: 460px;
-  margin-bottom: 1em;
-  margin-right: 1em;
   justify-content: space-between;
-  border: 1px solid black;
 }
 
-.productlink {
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#productlist a {
   text-decoration: none;
   color: black;
 }
 
-.productlink:hover {
-  color: black;
+#productlist .product__header_imagecontainer {
+  height: inherit;
+  justify-content: center;
+  padding: 10px;
 }
 
-.product__details-row {
-  display: flex;
-  justify-content: space-between;
+#productlist .card {
+  box-shadow: 1px 1px 3px black;
 }
 
-.product__header_title {
-  font-weight: bold;
-  margin-top: 5px;
-}
-
-.product__header {
-  display: flex;
-  flex-direction: column;
-}
-
-.product:hover {
+#productlist .card:hover {
   box-shadow: none;
-  border: 1px solid black;
+  border: 2px solid black;
 }
-.product:hover .product__header_imagecontainer_buymebanner {
+#productlist .card:hover .product__header_imagecontainer_buymebanner {
   display: flex;
+}
+
+#productlist .card-body {
+  padding: 0 10px;
 }
 
 .product__header_imagecontainer_buymebanner {
@@ -10950,13 +10943,14 @@ footer {
   color: white;
   position: absolute;
   display: none;
-  width: 50%;
-  height: 50%;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
   align-self: center;
-  bottom: 0;
+  top: 5px;
+  padding: 10px;
 }
 
 .product__header_imagecontainer {
@@ -10965,10 +10959,19 @@ footer {
   flex-direction: column;
 }
 
-.card-body {
+#productlist .product__details_price {
+  font-size: 1.2em;
+  color: red;
+}
+
+#productlist .product__details_stock {
+  font-size: 0.7em;
+}
+
+.product__details-row {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .thumbs {
