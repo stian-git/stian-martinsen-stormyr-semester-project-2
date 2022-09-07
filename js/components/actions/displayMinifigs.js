@@ -3,8 +3,10 @@ export default function displayMiniFigs(figdata) {
     // const numberOfFigs = allFigs.length;
     allFigs.forEach((figure) => {
         console.log(figure.id);
-        const thumbImage = figure.set_img_url.replace("media/", "media/thumbs/") + "/140x140p.jpg";
-        console.log(thumbImage);
+        const figurethumbImage = figure.set_img_url.replace("media/", "media/thumbs/") + "/140x140p.jpg";
+        const figureImage = figure.set_img_url;
+        const figureTitle = figure.set_name;
+        console.log(figurethumbImage);
         // gather the variables and display them.
     });
 }

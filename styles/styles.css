@@ -11052,6 +11052,16 @@ tr > td:nth-child(1) {
   width: 120px;
 }
 
+#minifigures-tab-pane .card {
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+#minifigures-tab-pane .card img {
+  width: 150px;
+}
+
 .featured .row {
   margin: 5px;
 }

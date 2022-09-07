@@ -21,6 +21,8 @@ import getHero from "./components/api/getHero.js";
 import getProducts from "./components/api/getProducts.js";
 import displayProducts from "./components/actions/displayProducts.js";
 import displayFeaturedProducts from "./components/actions/displayFeaturedProducts.js";
+import getProductDetails from "./components/api/getProductDetails.js";
+import displayProductDetails from "./components/actions/displayProductDetails.js";
 let currentPage = document.location.pathname.replace("/", "");
 
 // getUserInfo("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyMzYzNTEzLCJleHAiOjE2NjQ5NTU1MTN9.xYWiYhoG9kzmawsh4bCqWghf7GEHBs6fSQGxpvecqqs").then((result) => {
@@ -35,7 +37,10 @@ if (currentPage == "") {
 
 switch (currentPage) {
     case "productdetails.html":
-        getMinifigs(modelId);
+        // getMinifigs(modelId);
+        getProductDetails().then((arr) => {
+            displayProductDetails(arr);
+        });
         break;
     case "products.html":
         // if this is products.html

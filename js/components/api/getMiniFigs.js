@@ -7,15 +7,17 @@ import { rebrickableBaseUrl } from "../variables.js";
 //const rebrickableBaseUrl = "https://rebrickable.com/api/v3/lego/sets/";
 
 export default async function getMinifigs(id) {
-    const minifigsUrl = rebrickableBaseUrl + modelId + "/minifigs/?key=" + rebrickableApiKey;
-    console.log(minifigsUrl);
+    const minifigsUrl = rebrickableBaseUrl + id + "-1/minifigs/?key=" + rebrickableApiKey;
+    //console.log(minifigsUrl);
     try {
         const data = await fetch(minifigsUrl);
         const result = await data.json();
-        console.log(result);
-        displayMiniFigs(result);
+        //console.log(result);
+        return result;
+        //displayMiniFigs(result);
         // return result;
     } catch (error) {
         console.log("An error occured fetching minifigs:" + error);
+        return [];
     }
 }
