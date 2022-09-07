@@ -1,31 +1,53 @@
+// .featured .carousel-item {
+//     display: flex;
+//     // height: 50px;
+//     flex-direction: row;
+//     width: auto;
+//     width: 100%;
+//     height: auto;
+//     background-color: white;
+// }
+
+// .featured .carousel-item.active {
+//     // z-index: 1;
+// }
+// .featured .product img {
+//     // height: 100px;
+// }
+
+// .featured p {
+//     font-size: 0.7em;
+// }
+
+// .featured .product {
+//     width: 160px;
+//     height: 300px;
+// }
+
+// .featured .product p:nth-child(3) {
+//     // color: red;
+//     align-self: center;
+//     font-size: 1em;
+// }
+
+// Carousel w/Cards:
+
+// .featured .card {
+//     // box-shadow: 1px 1px 3px black;
+//     // padding: 5px;
+// }
+
+// .featured img {
+//     // margin: 5px;
+//     // padding: 5px;
+// }
+
 .featured .carousel-item {
-    display: flex;
-    // height: 50px;
-    flex-direction: row;
-    width: auto;
     width: 100%;
     height: auto;
+}
+
+.featured .row {
+    justify-content: center;
     background-color: white;
-}
-
-.featured .carousel-item.active {
-    // z-index: 1;
-}
-.featured .product img {
-    // height: 100px;
-}
-
-.featured p {
-    font-size: 0.7em;
-}
-
-.featured .product {
-    width: 160px;
-    height: 300px;
-}
-
-.featured .product p:nth-child(3) {
-    // color: red;
-    align-self: center;
-    font-size: 1em;
 }

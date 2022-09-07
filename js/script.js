@@ -20,6 +20,7 @@ import doLogOut from "./components/api/doLogout.js";
 import getHero from "./components/api/getHero.js";
 import getProducts from "./components/api/getProducts.js";
 import displayProducts from "./components/actions/displayProducts.js";
+import displayFeaturedProducts from "./components/actions/displayFeaturedProducts.js";
 let currentPage = document.location.pathname.replace("/", "");
 
 // getUserInfo("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyMzYzNTEzLCJleHAiOjE2NjQ5NTU1MTN9.xYWiYhoG9kzmawsh4bCqWghf7GEHBs6fSQGxpvecqqs").then((result) => {
@@ -47,6 +48,11 @@ switch (currentPage) {
     case "index.html":
         // getMinifigs(modelId);
         getHero();
+        getProducts(true).then((arr) => {
+            //console.log(arr);
+            displayFeaturedProducts(arr);
+            //display products
+        });
         // doLogin("test", "Pass1234");
         break;
     default:
