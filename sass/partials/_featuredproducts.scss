@@ -32,11 +32,20 @@
 
 // Carousel w/Cards:
 
-// .featured .card {
-//     // box-shadow: 1px 1px 3px black;
-//     // padding: 5px;
-// }
+.featured .row {
+    margin: 5px;
+}
+.featured .card {
+    box-shadow: 1px 1px 3px black;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+}
 
+.featured .card:hover {
+    box-shadow: none;
+    border: 1px solid black;
+}
 // .featured img {
 //     // margin: 5px;
 //     // padding: 5px;
@@ -50,4 +59,8 @@
 .featured .row {
     justify-content: center;
     background-color: white;
+}
+
+.featured .card-img {
+    height: 190px;
 }

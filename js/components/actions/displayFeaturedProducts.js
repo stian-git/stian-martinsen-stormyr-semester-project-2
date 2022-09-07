@@ -1,51 +1,48 @@
 // Use width to calculate the number of featured products to show in each
 // carousel-item
 export default function displayFeaturedProducts(arr) {
+    console.log(arr[0]);
+    // variables used to calculate number of rows.
     const moreColsOnOffsetWidth = 328;
     const colWidth = 153;
     //console.log(arr);
     //console.log(window.innerWidth);
     const carouselContainer = document.querySelector(".carousel-inner");
-    //console.log("Carousel width: " + carouselContainer.offsetWidth);
-    //carouselContainer = "";
+    //empty current carousel:
+    carouselContainer.innerHTML = "";
     const cardsInRow = 1 + Math.ceil((carouselContainer.offsetWidth - moreColsOnOffsetWidth) / colWidth);
-
-    console.log("Cards in row: " + cardsInRow);
     const rowsToBuild = Math.ceil(arr.length / cardsInRow);
-    console.log("Rows to build: " + rowsToBuild);
-
-    for (let j = 1; j <= rowsToBuild; j++) {
+    // Build the carousel "rows":
+    for (let j = 0; j < rowsToBuild; j++) {
         console.log("Building row: " + j);
         carouselContainer.innerHTML += `
-        <div class="carousel-item carousel-item-row${j}" data-bs-interval="4000">
+        <div class="carousel-item carousel-item-row${j}" data-bs-interval="40000">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-2">
+            </div>
         </div>
         `;
     }
-
-    for (let i = 1; i < arr.length + 1; i++) {
-        console.log(i);
-        //console.log(i % cardsInRow);
-        const rowToGoTo = Math.ceil(0 + i / cardsInRow);
-        //console.log(rowToGoTo);
-        //const carouselRowClass = ".carousel-item-row" + rowToGoTo;
-        //console.log(carouselRowClass);
-        const carouselRowElement = document.querySelector(".carousel-item-row" + rowToGoTo);
-        //console.log(carouselRowElement);
-        //console.log(Math.ceil(0 + i / cardsInRow));
-
+    // Then add each featured product in the correct row.
+    for (let i = 0; i < arr.length; i++) {
+        const prodTitle = arr[i].attributes.title;
+        console.log(prodTitle);
+        // Calculates the correct row:
+        const rowToGoTo = Math.floor(i / cardsInRow);
+        // Use the rownumber to identify the row-element to put it into
+        const carouselRowElement = document.querySelector(".carousel-item-row" + rowToGoTo + " .row");
         carouselRowElement.innerHTML += `
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
                 <div class="col">
                     <div class="card h-100">
-                        <img src="images/product/10305_alt1.png" class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Lion Knights Castle</h5>
-                            <p class="card-text">350 EUR</p>
+                        <div class="card-img">
+                            <img src="${arr[i].attributes.image_url}" class="card-img-top" alt="..." />
                         </div>
-                        <div class="card-footer">Some Info</div>
+                        <div class="card-body">
+                            <h5 class="card-title">${arr[i].attributes.title}</h5>
+                            <p class="card-text">${arr[i].attributes.price} EUR</p>
+                        </div>
+                        <div class="card-footer">Model: ${arr[i].attributes.productnumber}</div>
                     </div>
                 </div>
-            </div>
         `;
     }
 

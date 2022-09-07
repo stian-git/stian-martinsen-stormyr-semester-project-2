@@ -11052,6 +11052,22 @@ tr > td:nth-child(1) {
   width: 120px;
 }
 
+.featured .row {
+  margin: 5px;
+}
+
+.featured .card {
+  box-shadow: 1px 1px 3px black;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.featured .card:hover {
+  box-shadow: none;
+  border: 1px solid black;
+}
+
 .featured .carousel-item {
   width: 100%;
   height: auto;
@@ -11060,4 +11076,8 @@ tr > td:nth-child(1) {
 .featured .row {
   justify-content: center;
   background-color: white;
+}
+
+.featured .card-img {
+  height: 190px;
 }
