@@ -11033,25 +11033,6 @@ main > div {
   font-size: 0.6em;
 }
 
-.topcontainer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.topcontainer > div:nth-child(2) {
-  margin: auto;
-}
-
-@media (min-width: 992px) {
-  .topcontainer {
-    flex-direction: row;
-  }
-}
-tr > td:nth-child(1) {
-  width: 120px;
-}
-
 #minifigures-tab-pane .card-group {
   flex-flow: wrap-reverse;
   justify-content: center;
@@ -11067,6 +11048,21 @@ tr > td:nth-child(1) {
   box-shadow: 1px 1px 6px black;
 }
 
+.topcontainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.topcontainer > div:nth-child(2) {
+  margin: auto;
+}
+
+@media (min-width: 992px) {
+  .topcontainer {
+    flex-direction: row;
+  }
+}
 .featured .row {
   margin: 5px;
 }
@@ -11095,4 +11091,31 @@ tr > td:nth-child(1) {
 
 .featured .card-img {
   height: 190px;
+}
+
+.cart {
+  width: 100%;
+}
+
+.cart img {
+  height: 40px;
+}
+
+.cart a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cart a:hover {
+  text-decoration: underline;
+}
+
+.cartsummary {
+  display: flex;
+  justify-content: right;
+}
+
+.cartsummary p:nth-child(1) {
+  margin-right: 1em;
 }

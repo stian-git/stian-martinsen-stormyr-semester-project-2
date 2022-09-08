@@ -24,13 +24,11 @@ export default function displayProductDetails(arr) {
     if (arr.isProductionStopped) {
         detailsTab.innerText += "\nProductionstatus: Stopped.";
     }
+    const linkTab = document.querySelector("#links-tab-pane");
     // make Lego-link:
     const legoProductLink = legoProductBaseUrl + arr.productnumber;
-    //console.log(legoProductLink);
     const isLegoLinkOk = isLinkOk(legoProductLink);
-    const linkTab = document.querySelector("#links-tab-pane");
     if (isLegoLinkOk) {
-        //console.log("Link should be displayed.");
         linkTab.innerHTML += `<p>Lego Official (Product): <a href="${legoProductLink}" target="blank">${legoProductLink}</a></p>`;
     }
 
@@ -40,14 +38,11 @@ export default function displayProductDetails(arr) {
     if (isReBrickableLinkOk) {
         linkTab.innerHTML += `<p>Rebrickable: <a href="${rebrickableLink}" target="blank">${rebrickableLink}</a></p>`;
     }
-
+    // Retrieve minifigs:
     getMinifigs(arr.productnumber).then((arr) => {
-        console.log(arr);
-        //console.log(arr.count);
         if (arr.count > 0) {
             console.log("Attempt to display minifigs...");
             displayMiniFigs(arr);
-            //incomplete!
         }
     });
 }
