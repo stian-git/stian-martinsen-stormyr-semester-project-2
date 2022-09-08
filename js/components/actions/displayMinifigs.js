@@ -1,5 +1,6 @@
 export default function displayMiniFigs(figdata) {
     const allFigs = figdata.results;
+    const minifigsContainer = document.querySelector("#minifigures-tab-pane .card-group");
     // const numberOfFigs = allFigs.length;
     allFigs.forEach((figure) => {
         console.log(figure.id);
@@ -8,6 +9,13 @@ export default function displayMiniFigs(figdata) {
         const figureTitle = figure.set_name;
         console.log(figurethumbImage);
         // gather the variables and display them.
+        minifigsContainer.innerHTML += `
+            <div class="card">
+                <img src="${figurethumbImage}" class="card-img-top" alt="${figureTitle}" />
+                <div class="card-body">
+                    <h5 class="card-title">${figureTitle}</h5>
+                </div>
+            </div>`;
     });
 }
 

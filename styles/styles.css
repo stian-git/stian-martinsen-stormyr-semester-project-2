@@ -11052,14 +11052,19 @@ tr > td:nth-child(1) {
   width: 120px;
 }
 
+#minifigures-tab-pane .card-group {
+  flex-flow: wrap-reverse;
+  justify-content: center;
+}
+
 #minifigures-tab-pane .card {
+  min-width: 150px;
+  max-width: 300px;
   padding: 5px;
   margin: 10px;
   border: 1px solid black;
-}
-
-#minifigures-tab-pane .card img {
-  width: 150px;
+  border-radius: 0px;
+  box-shadow: 1px 1px 6px black;
 }
 
 .featured .row {
