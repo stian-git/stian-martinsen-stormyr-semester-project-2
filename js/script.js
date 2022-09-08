@@ -4,10 +4,29 @@ const logoutButton = document.querySelector(".logoutbutton");
 
 // const usernameField = document.querySelector("#loginModal #username");
 // const passwordField = document.querySelector("#loginModal #password");
+const searchButton = document.querySelector(".searchform-button");
 
-const modelId = "10305-1";
+const searchField = document.querySelector(".searchform-field");
 
-import getMinifigs from "./components/api/getMiniFigs.js";
+searchButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    searchProducts(searchField.value).then((arr) => {
+        console.log(arr);
+        if (arr.length > 0) {
+            saveSearchResult(arr);
+            window.location.href = "products.html?search=true";
+        } else {
+            if (currentPage === "products.html") {
+                const productListContainer = document.querySelector("#productlist");
+                productListContainer.innerHTML = "No products matches your search string";
+            }
+            // if there are no results to display...indicate it without forwarding the user?
+        }
+    });
+});
+//const modelId = "10305-1";
+
+//import getMinifigs from "./components/api/getMiniFigs.js";
 import doLogin from "./components/api/doLogin.js";
 
 loginButton.addEventListener("click", doLogin);
@@ -23,6 +42,10 @@ import displayProducts from "./components/actions/displayProducts.js";
 import displayFeaturedProducts from "./components/actions/displayFeaturedProducts.js";
 import getProductDetails from "./components/api/getProductDetails.js";
 import displayProductDetails from "./components/actions/displayProductDetails.js";
+import searchProducts from "./components/api/searchProducts.js";
+import getSearchParam from "./components/actions/getSearchParams.js";
+import getSearchResult from "./components/actions/getSearchResult.js";
+import saveSearchResult from "./components/actions/saveSearchResult.js";
 let currentPage = document.location.pathname.replace("/", "");
 
 // getUserInfo("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyMzYzNTEzLCJleHAiOjE2NjQ5NTU1MTN9.xYWiYhoG9kzmawsh4bCqWghf7GEHBs6fSQGxpvecqqs").then((result) => {
@@ -43,12 +66,26 @@ switch (currentPage) {
         });
         break;
     case "products.html":
-        // if this is products.html
-        getProducts(false).then((arr) => {
-            //console.log(arr);
-            displayProducts(arr);
-            //display products
-        });
+        const isSearchMode = getSearchParam("search");
+        if (isSearchMode) {
+            const searchResult = getSearchResult();
+            console.log(searchResult);
+            if (searchResult.length > 0) {
+                displayProducts(searchResult);
+                // indicate this is a search-result
+            } else {
+                console.log("There are no search results to display.");
+                // const productListContainer = document.querySelector("#productlist");
+                // productListContainer.innerHTML = "No products matches your search string";
+                // Show error + load default after a while.?
+            }
+        } else {
+            getProducts(false).then((arr) => {
+                displayProducts(arr);
+                //display products
+            });
+        }
+
         break;
     case "index.html":
         // getMinifigs(modelId);

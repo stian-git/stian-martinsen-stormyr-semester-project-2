@@ -1,11 +1,13 @@
-import getProductId from "../actions/getProductId.js";
+//import getProductId from "../actions/getProductId.js";
+import getSearchParam from "../actions/getSearchParams.js";
 import { baseUrl } from "../variables.js";
 
 export default async function getProductDetails(id) {
-    console.log(id);
+    //console.log(id);
     if (!id) {
         //console.log("Id is not defined...");
-        id = getProductId();
+        //id = getProductId();
+        id = getSearchParam("id");
         if (!id) {
             console.log("There are no id in querystring either");
             // forward user to products or "go back";
