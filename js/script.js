@@ -46,6 +46,7 @@ import searchProducts from "./components/api/searchProducts.js";
 import getSearchParam from "./components/actions/getSearchParams.js";
 import getSearchResult from "./components/actions/getSearchResult.js";
 import saveSearchResult from "./components/actions/saveSearchResult.js";
+// import saveProductsToStorage from "./components/actions/saveProductsToStorage.js";
 let currentPage = document.location.pathname.replace("/", "");
 
 // getUserInfo("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyMzYzNTEzLCJleHAiOjE2NjQ5NTU1MTN9.xYWiYhoG9kzmawsh4bCqWghf7GEHBs6fSQGxpvecqqs").then((result) => {
@@ -82,6 +83,7 @@ switch (currentPage) {
         } else {
             getProducts(false).then((arr) => {
                 displayProducts(arr);
+                // saveProductsToStorage(arr);
                 //display products
             });
         }

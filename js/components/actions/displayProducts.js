@@ -1,3 +1,5 @@
+import addListenersToProductsPage from "../ui/addListenersToProductsPage.js";
+
 export default function displayProducts(arr) {
     const productlist = document.querySelector("#productlist");
     productlist.innerHTML = "";
@@ -11,7 +13,7 @@ export default function displayProducts(arr) {
                   <div class="card h-100">
                     <div class="product__header_imagecontainer">
                         <img src="${product.attributes.image_url}" class="card-img-top product__header_imagecontainer_image" alt="...">
-                        <div class="product__header_imagecontainer_buymebanner">Add to cart.</div>
+                        <div class="product__header_imagecontainer_buymebanner" data-id="${product.id}" data-model="${product.attributes.productnumber}" data-img="${product.attributes.image_url}" data-price="${product.attributes.price}" >Add to cart.</div>
                     </div>
                     <div class="card-body">
                       <h6 class="card-title">${product.attributes.title}</h6>
@@ -30,4 +32,6 @@ export default function displayProducts(arr) {
             </a>
         </div>`;
     });
+    // adding eventlisteners
+    addListenersToProductsPage();
 }
