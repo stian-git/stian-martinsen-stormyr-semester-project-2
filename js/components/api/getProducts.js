@@ -16,7 +16,6 @@ export default async function getProducts(getFeaturedOnly = false) {
     if (getFeaturedOnly === true) {
         getProductsUrl += "&filters[featured][$eq]=true";
     }
-    console.log(getProductsUrl);
     // make the call with the generated url below:
     try {
         const data = await fetch(getProductsUrl);

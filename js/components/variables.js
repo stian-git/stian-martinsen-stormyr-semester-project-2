@@ -19,7 +19,8 @@ export const storeUserEmail = "storeUserEmail";
 export const storeUserIsLoggedIn = "storeUserIsLoggedIn";
 export const storeUserToken = "storeUserToken";
 export const storeSearchResult = "storeSearchResult";
-export const storeProductsArray = "storeProductsArray";
+// export const storeProductsArray = "storeProductsArray";
+export const storeCartContent = "storeCartContent";
 
 export const noCorsUrl = "https://noroffcors.herokuapp.com/";
 export const legoProductBaseUrl = "https://www.lego.com/en-gb/product/";

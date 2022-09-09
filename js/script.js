@@ -46,6 +46,8 @@ import searchProducts from "./components/api/searchProducts.js";
 import getSearchParam from "./components/actions/getSearchParams.js";
 import getSearchResult from "./components/actions/getSearchResult.js";
 import saveSearchResult from "./components/actions/saveSearchResult.js";
+import displayCart from "./components/actions/displayCart.js";
+import getTotalCartPrice from "./components/ui/getTotalCartPrice.js";
 // import saveProductsToStorage from "./components/actions/saveProductsToStorage.js";
 let currentPage = document.location.pathname.replace("/", "");
 
@@ -65,6 +67,10 @@ switch (currentPage) {
         getProductDetails().then((arr) => {
             displayProductDetails(arr);
         });
+        break;
+    case "cart.html":
+        displayCart();
+        getTotalCartPrice();
         break;
     case "products.html":
         const isSearchMode = getSearchParam("search");
