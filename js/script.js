@@ -24,6 +24,13 @@ searchButton.addEventListener("click", (e) => {
         }
     });
 });
+
+const updateProductButton = document.querySelector(".productform button");
+updateProductButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    //console.log("click!");
+    updateProduct();
+});
 //const modelId = "10305-1";
 
 //import getMinifigs from "./components/api/getMiniFigs.js";
@@ -48,6 +55,7 @@ import getSearchResult from "./components/actions/getSearchResult.js";
 import saveSearchResult from "./components/actions/saveSearchResult.js";
 import displayCart from "./components/actions/displayCart.js";
 import getTotalCartPrice from "./components/ui/getTotalCartPrice.js";
+import updateProduct from "./components/actions/updateProduct.js";
 // import saveProductsToStorage from "./components/actions/saveProductsToStorage.js";
 let currentPage = document.location.pathname.replace("/", "");
 
@@ -71,6 +79,16 @@ switch (currentPage) {
     case "cart.html":
         displayCart();
         getTotalCartPrice();
+        break;
+    case "edit.html":
+        const isEditMode = getSearchParam("id");
+        if (isEditMode) {
+            console.log("We will edit product id: " + isEditMode);
+            // change header
+        } else {
+            // We will add a new product.
+        }
+
         break;
     case "products.html":
         const isSearchMode = getSearchParam("search");
@@ -110,22 +128,3 @@ switch (currentPage) {
 }
 
 toggleUserFeatues();
-// popup test:
-
-// const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-// const popoverList = [...popoverTriggerList].map((popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl));
-
-// const loginButton = document.querySelector(".loginbutton");
-// loginButton.onclick((e) => {
-//     console.log(e);
-// });
-
-// loginButton.addEventListener("click", doLogin);
-// const usernameField = document.querySelector("#username");
-// const passwordField = document.querySelector("#password");
-
-// function doLogin() {
-//     console.log("Logging in " + usernameField.value + " with password: " + passwordField.value);
-// }
-
-// toggleUserFeatues();
