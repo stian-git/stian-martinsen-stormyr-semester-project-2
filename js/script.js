@@ -54,6 +54,7 @@ import getTotalCartPrice from "./components/ui/getTotalCartPrice.js";
 import updateProduct from "./components/actions/updateProduct.js";
 import editProduct from "./components/actions/editProduct.js";
 import markDefaultImage from "./components/actions/markDefaultImage.js";
+import addImages from "./components/ui/addImages.js";
 // import saveProductsToStorage from "./components/actions/saveProductsToStorage.js";
 let currentPage = document.location.pathname.replace("/", "");
 
@@ -80,12 +81,22 @@ switch (currentPage) {
         break;
     case "admin/edit.html":
         const idToEdit = getSearchParam("id");
-        console.log(idToEdit);
+        //console.log(idToEdit);
+        const updateProductButton = document.querySelector("main .sendbutton");
         updateProductButton.addEventListener("click", (e) => {
             e.preventDefault();
             //console.log("click!");
             updateProduct(idToEdit);
         });
+
+        const imagesToAddButton = document.querySelector("#imagesToAdd");
+        // imagesToAddButton.addEventListener("change", (e) => {
+        //     //console.log(e);
+        //     //console.log();
+        //     console.log(imagesToAddButton.files[0].path);
+        // });
+        imagesToAddButton.addEventListener("change", addImages, false);
+
         if (idToEdit) {
             console.log("We will edit product id: " + idToEdit);
             getProductDetails(idToEdit).then((product) => {
@@ -93,6 +104,7 @@ switch (currentPage) {
                 markDefaultImage(product.image_url);
             });
             // change header
+            document.querySelector("main h1").innerHTML = "Edit Product";
         } else {
             // We will add a new product.
             console.log("We will add a product");
