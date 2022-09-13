@@ -17,9 +17,10 @@ export default async function addProduct(prodObj) {
     //     },
     // });
 
+    // Below was changed 13.9 to perform JSON.stringify here instead of in updateProduct.js
     const options = {
         method: "POST",
-        body: prodObj,
+        body: JSON.stringify(prodObj),
         headers: {
             Authorization: `Bearer ${apiToken}`,
             "Content-Type": "application/json",

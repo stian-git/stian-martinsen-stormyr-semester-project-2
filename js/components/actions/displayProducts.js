@@ -24,9 +24,9 @@ export default function displayProducts(arr) {
                         </div>
                     <!-- </p> -->
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Edit</small>
-                        <small class="text-muted">Delete</small>
+                    <div class="card-footer" data-prodid="${product.id}">
+                        <small class="text-muted editproductbutton">Edit</small>
+                        <small class="text-muted deleteproductbutton">Delete</small>
                       </div>
                   </div>
             </a>

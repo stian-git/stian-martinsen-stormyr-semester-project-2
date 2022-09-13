@@ -35,8 +35,8 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">User</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">User Profile</a></li>
-                                    <li><a class="dropdown-item adminitem" href="/admin/product.html?action=add">Add Product</a></li>
-                                    <li><a class="dropdown-item adminitem" href="#">Edit Product</a></li>
+                                    <li><a class="dropdown-item adminitem" href="/admin/edit.html">Add Product</a></li>
+                                    <li><a class="dropdown-item adminitem" href="/admin/edit.html?id=">Edit Product</a></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><a class="dropdown-item logoutbutton" href="#">Logout</a></li>
                                 </ul>
@@ -61,6 +61,7 @@
         <main>
             <h1>Add Product</h1>
             <form class="productform">
+                <input type="text" id="productid" value="" hidden>
                 <div class="mb-3">
                     <label for="productnumber" class="form-label">Product Number</label>
                     <input type="text" class="form-control" id="productnumber" aria-describedby="productnumber" />
@@ -102,7 +103,30 @@
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchProductionStopped" />
                     <label class="form-check-label" for="flexSwitchProductionStopped">Production has stopped.</label>
                 </div>
-                <div class="images"></div>
+                <div class="editimages">
+                    <label for="defaultImage">Images</label>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Set as default</td>
+                                <th>Img</td>
+                                <th>Delete</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="radio" name="defaultImage" id="defaultImage"></td>
+                                <td>img</td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="defaultImage" id="defaultImage2"></td>
+                                <td>img2</td>
+                                <td>X</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="main_image"></div>
                 <button type="submit" class="btn btn-primary sendbutton">Add</button>
             </form>

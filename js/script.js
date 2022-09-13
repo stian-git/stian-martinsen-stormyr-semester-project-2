@@ -26,11 +26,7 @@ searchButton.addEventListener("click", (e) => {
 });
 
 const updateProductButton = document.querySelector(".productform button");
-updateProductButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    //console.log("click!");
-    updateProduct();
-});
+
 //const modelId = "10305-1";
 
 //import getMinifigs from "./components/api/getMiniFigs.js";
@@ -56,6 +52,8 @@ import saveSearchResult from "./components/actions/saveSearchResult.js";
 import displayCart from "./components/actions/displayCart.js";
 import getTotalCartPrice from "./components/ui/getTotalCartPrice.js";
 import updateProduct from "./components/actions/updateProduct.js";
+import editProduct from "./components/actions/editProduct.js";
+import markDefaultImage from "./components/actions/markDefaultImage.js";
 // import saveProductsToStorage from "./components/actions/saveProductsToStorage.js";
 let currentPage = document.location.pathname.replace("/", "");
 
@@ -80,13 +78,24 @@ switch (currentPage) {
         displayCart();
         getTotalCartPrice();
         break;
-    case "edit.html":
-        const isEditMode = getSearchParam("id");
-        if (isEditMode) {
-            console.log("We will edit product id: " + isEditMode);
+    case "admin/edit.html":
+        const idToEdit = getSearchParam("id");
+        console.log(idToEdit);
+        updateProductButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            //console.log("click!");
+            updateProduct(idToEdit);
+        });
+        if (idToEdit) {
+            console.log("We will edit product id: " + idToEdit);
+            getProductDetails(idToEdit).then((product) => {
+                editProduct(product);
+                markDefaultImage(product.image_url);
+            });
             // change header
         } else {
             // We will add a new product.
+            console.log("We will add a product");
         }
 
         break;
