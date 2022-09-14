@@ -11132,3 +11132,11 @@ main > div {
 .editimages label {
   margin-bottom: 1em;
 }
+
+.editimages table {
+  display: none;
+}
+
+.editimages input[type=file] {
+  display: none;
+}

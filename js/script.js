@@ -55,9 +55,10 @@ import updateProduct from "./components/actions/updateProduct.js";
 import editProduct from "./components/actions/editProduct.js";
 import markDefaultImage from "./components/actions/markDefaultImage.js";
 import addImages from "./components/ui/addImages.js";
-import { saveProductButton, continueButton, header, imageFormContainer, imagesToAddButton } from "./components/variables.js";
+import { saveProductButton, continueButton, header, imageFormContainer, imagesToAddButton, deleteProductButton, prodIdField } from "./components/variables.js";
 import createProductObject from "./components/actions/createProductObject.js";
 import addProduct from "./components/api/addProduct.js";
+import deleteProduct from "./components/api/deleteProduct.js";
 // import saveProductsToStorage from "./components/actions/saveProductsToStorage.js";
 let currentPage = document.location.pathname.replace("/", "");
 
@@ -93,9 +94,14 @@ switch (currentPage) {
             e.preventDefault();
             console.log("Update product!");
             //console.log("click!");
-            updateProduct(idToEdit);
+            // updateProduct(idToEdit);
+            updateProduct();
         });
 
+        deleteProductButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            deleteProduct(prodIdField.value);
+        });
         //const imagesToAddButton = document.querySelector("#imagesToAdd");
 
         imagesToAddButton.addEventListener("change", addImages, false);

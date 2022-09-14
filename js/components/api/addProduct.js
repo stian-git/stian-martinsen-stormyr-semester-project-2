@@ -1,4 +1,4 @@
-import { baseUrl, continueButton, header, imageFormContainer, prodIdField } from "../variables.js";
+import { baseUrl, continueButton, header, imageFormContainer, prodIdField, saveProductButton } from "../variables.js";
 
 export default async function addProduct(prodObj) {
     const addProductUrl = baseUrl + "api/products";
@@ -30,16 +30,14 @@ export default async function addProduct(prodObj) {
     try {
         const data = await fetch(addProductUrl, options);
         const json = await data.json();
-        console.log(json);
+        //console.log(json);
 
-        // add ID to id-field;
-        console.log("Product got ID: " + json.data.id);
         prodIdField.value = json.data.id;
         // inform user.
-        // display imagecontainer.
+
         imageFormContainer.style.display = "block";
-        //continueButton.style.display = "none";
-        // Change h1 to 2/2.
+        continueButton.style.display = "none";
+        saveProductButton.style.display = "inline-block";
         header.innerHTML = "Add Product (2/2)";
     } catch (error) {
         console.log("Error occured adding product: " + error);

@@ -105,7 +105,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary continuebutton">Continue</button>
                 <div class="editimages">
-                    <label for="defaultImage">Images</label>
+                    <!-- <label for="defaultImage">Images</label> -->
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -115,7 +115,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <!-- <tr>
                                 <td><input type="radio" name="defaultImage" id="defaultImage"></td>
                                 <td>img</td>
                                 <td>X</td>
@@ -124,7 +124,7 @@
                                 <td><input type="radio" name="defaultImage" id="defaultImage2"></td>
                                 <td>img2</td>
                                 <td>X</td>
-                            </tr>
+                            </tr> -->
                             <!-- <tr>
                                 <th>Add image(s)</td>
                             </tr> -->
@@ -132,13 +132,14 @@
                     </table>
                     <form action="">
                         <div class="mb-3">
-                            <label for="imagesToAdd" class="form-label">Add images</label>
+                            <label for="imagesToAdd" class="form-label btn btn-primary">Add images</label>
                             <input class="form-control" type="file" id="imagesToAdd" multiple>
                           </div>
                     </form>
                     <!-- <button type="button" class="btn btn-secondary addimagebutton">Add images</button> -->
                 </div>
                 <div class="main_image"></div>
+                <button type="submit" class="btn btn-danger deleteproductbutton">Delete</button>
                 <button type="submit" class="btn btn-primary saveproductbutton">Save</button>
             </form>
         </main>
