@@ -19,8 +19,16 @@ export default async function deleteProduct(id, deletebutton) {
         const data = await fetch(url, options);
         const result = await data.json();
         console.log(result);
-        // Hide the deleted product instead of reloading the page:
-        deletebutton.parentElement.parentElement.parentElement.parentElement.style.display = "none";
+
+        if (window.location.pathname === "/products.html") {
+            // Hide the deleted product instead of reloading the page:
+            deletebutton.parentElement.parentElement.parentElement.parentElement.style.display = "none";
+        } else {
+            // We have deleted the image from the edit page.
+            // Inform user.
+            // Forward user away from the deleted products page:
+            window.location.href = "/admin/edit.html";
+        }
     } catch (error) {
         console.log("Error occured deleting product id: " + id);
     }
