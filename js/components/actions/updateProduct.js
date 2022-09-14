@@ -1,6 +1,7 @@
 import addProduct from "../api/addProduct.js";
 import saveChangedProduct from "../api/saveChangedProduct.js";
-import { prodDescField, prodIsFeaturedField, prodIsStoppedField, prodNumberField, prodPriceField, prodStockField, prodTitleField } from "../variables.js";
+//import { prodDescField, prodIsFeaturedField, prodIsStoppedField, prodNumberField, prodPriceField, prodStockField, prodTitleField } from "../variables.js";
+import createProductObject from "./createProductObject.js";
 import getSearchParam from "./getSearchParams.js";
 
 export default function updateProduct() {
@@ -27,18 +28,19 @@ export default function updateProduct() {
     //     },
     // });
 
-    let prodObj = {
-        data: {
-            title: prodTitleField.value,
-            description: prodDescField.value,
-            price: prodPriceField.value,
-            stock: prodStockField.value,
-            productnumber: prodNumberField.value,
-            image_url: "https://www.dagbladet.com",
-            isProductionStopped: prodIsStoppedField.checked,
-            featured: prodIsFeaturedField.checked,
-        },
-    };
+    // let prodObj = {
+    //     data: {
+    //         title: prodTitleField.value,
+    //         description: prodDescField.value,
+    //         price: prodPriceField.value,
+    //         stock: prodStockField.value,
+    //         productnumber: prodNumberField.value,
+    //         image_url: "https://www.dagbladet.com",
+    //         isProductionStopped: prodIsStoppedField.checked,
+    //         featured: prodIsFeaturedField.checked,
+    //     },
+    // };
+    let prodObj = createProductObject();
 
     const editId = getSearchParam("id");
     console.log(editId);

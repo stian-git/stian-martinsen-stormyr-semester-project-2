@@ -11125,6 +11125,7 @@ main > div {
 }
 
 .editimages {
+  display: none;
   margin-top: 2em;
 }
 

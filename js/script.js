@@ -25,7 +25,7 @@ searchButton.addEventListener("click", (e) => {
     });
 });
 
-const updateProductButton = document.querySelector(".productform button");
+//const updateProductButton = document.querySelector(".productform button");
 
 //const modelId = "10305-1";
 
@@ -55,6 +55,9 @@ import updateProduct from "./components/actions/updateProduct.js";
 import editProduct from "./components/actions/editProduct.js";
 import markDefaultImage from "./components/actions/markDefaultImage.js";
 import addImages from "./components/ui/addImages.js";
+import { saveProductButton, continueButton, header, imageFormContainer, imagesToAddButton } from "./components/variables.js";
+import createProductObject from "./components/actions/createProductObject.js";
+import addProduct from "./components/api/addProduct.js";
 // import saveProductsToStorage from "./components/actions/saveProductsToStorage.js";
 let currentPage = document.location.pathname.replace("/", "");
 
@@ -82,19 +85,19 @@ switch (currentPage) {
     case "admin/edit.html":
         const idToEdit = getSearchParam("id");
         //console.log(idToEdit);
-        const updateProductButton = document.querySelector("main .sendbutton");
-        updateProductButton.addEventListener("click", (e) => {
+        //const updateProductButton = document.querySelector("main .saveproductbutton");
+
+        //const continueButton = document.querySelector("main .continuebutton");
+
+        saveProductButton.addEventListener("click", (e) => {
             e.preventDefault();
+            console.log("Update product!");
             //console.log("click!");
             updateProduct(idToEdit);
         });
 
-        const imagesToAddButton = document.querySelector("#imagesToAdd");
-        // imagesToAddButton.addEventListener("change", (e) => {
-        //     //console.log(e);
-        //     //console.log();
-        //     console.log(imagesToAddButton.files[0].path);
-        // });
+        //const imagesToAddButton = document.querySelector("#imagesToAdd");
+
         imagesToAddButton.addEventListener("change", addImages, false);
 
         if (idToEdit) {
@@ -103,11 +106,25 @@ switch (currentPage) {
                 editProduct(product);
                 markDefaultImage(product.image_url);
             });
+            //const imageFormContainer = document.querySelector(".editimages");
+            imageFormContainer.style.display = "block";
             // change header
-            document.querySelector("main h1").innerHTML = "Edit Product";
+            //document.querySelector("main h1").innerHTML = "Edit Product";
+            header.innerHTML = "Edit Product";
+            continueButton.style.display = "none";
         } else {
             // We will add a new product.
             console.log("We will add a product");
+            //continueButton.style.display = "block";
+            saveProductButton.style.display = "none";
+            continueButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                //console.log("Continue now...");
+                let prodObj = createProductObject();
+                //console.log(prodObj);
+                addProduct(prodObj);
+            });
+            //continueButton.addEventListener("click", )
         }
 
         break;
