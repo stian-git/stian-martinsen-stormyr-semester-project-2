@@ -3,8 +3,8 @@ import { apiFormDataField, apiFormDataRef, baseUrl, prodIdField, storeUserToken 
 
 export default async function addImages() {
     const fileList = this.files;
-    console.log(fileList[0]);
-    console.log(fileList[0].name);
+    //console.log(fileList[0]);
+    //console.log(fileList[0].name);
 
     const apiToken = localStorage.getItem(storeUserToken);
     const url = baseUrl + "api/upload";

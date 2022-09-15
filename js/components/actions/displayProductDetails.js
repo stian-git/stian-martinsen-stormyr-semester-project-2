@@ -27,17 +27,22 @@ export default function displayProductDetails(arr) {
     const linkTab = document.querySelector("#links-tab-pane");
     // make Lego-link:
     const legoProductLink = legoProductBaseUrl + arr.productnumber;
-    const isLegoLinkOk = isLinkOk(legoProductLink);
-    if (isLegoLinkOk) {
-        linkTab.innerHTML += `<p>Lego Official (Product): <a href="${legoProductLink}" target="blank">${legoProductLink}</a></p>`;
-    }
+    isLinkOk(legoProductLink).then((isLegoLinkOk) => {
+        if (isLegoLinkOk) {
+            linkTab.innerHTML += `<p>Lego Official (Product): <a href="${legoProductLink}" target="blank">${legoProductLink}</a></p>`;
+        }
+    });
+    //console.log(isLegoLinkOk);
 
     // make Rebrickable-link:
     const rebrickableLink = rebrickableSetUrl + arr.productnumber + "-1/";
-    const isReBrickableLinkOk = isLinkOk(rebrickableLink);
-    if (isReBrickableLinkOk) {
-        linkTab.innerHTML += `<p>Rebrickable: <a href="${rebrickableLink}" target="blank">${rebrickableLink}</a></p>`;
-    }
+    //const isReBrickableLinkOk = isLinkOk(rebrickableLink);
+    isLinkOk(rebrickableLink).then((isReBrickableLinkOk) => {
+        if (isReBrickableLinkOk) {
+            linkTab.innerHTML += `<p>Rebrickable: <a href="${rebrickableLink}" target="blank">${rebrickableLink}</a></p>`;
+        }
+    });
+
     // Retrieve minifigs:
     getMinifigs(arr.productnumber).then((arr) => {
         if (arr.count > 0) {
