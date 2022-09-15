@@ -14,7 +14,7 @@ searchButton.addEventListener("click", (e) => {
         console.log(arr);
         if (arr.length > 0) {
             saveSearchResult(arr);
-            window.location.href = "products.html?search=true";
+            window.location.href = "/products.html?search=true";
         } else {
             if (currentPage === "products.html") {
                 const productListContainer = document.querySelector("#productlist");
