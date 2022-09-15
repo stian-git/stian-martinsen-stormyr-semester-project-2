@@ -68,7 +68,6 @@
     text-align: center;
 }
 
-.producttable tr:nth-child(even):hover {
-    //background-color: var(--bs-table-striped-bg);
-    //background-color: rgba(0, 0, 0, 0.05);
+.deleteproductbutton {
+    display: none;
 }

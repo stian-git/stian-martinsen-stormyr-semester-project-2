@@ -114,6 +114,7 @@ switch (currentPage) {
                             markDefaultImage(product.image_url);
                         });
                         imageFormContainer.style.display = "block";
+                        deleteProductButton.style.display = "inline-block";
                     } else {
                         console.log("No product-id is provided...");
                         // getAllProducts.
@@ -138,6 +139,7 @@ switch (currentPage) {
                         let prodObj = createProductObject();
                         //console.log(prodObj);
                         addProduct(prodObj);
+                        deleteProductButton.style.display = "inline-block";
                     });
                     //continueButton.addEventListener("click", )
                 }
