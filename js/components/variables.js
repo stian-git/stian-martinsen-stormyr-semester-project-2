@@ -47,3 +47,6 @@ export const deleteProductButton = document.querySelector(".deleteproductbutton"
 
 //export const allImageDeleteButtons = document.querySelectorAll("button.deleteimagebutton");
 //export const imageEditThumbs = document.querySelectorAll(".editimages img");
+
+export const placeHolderImage = "https://res.cloudinary.com/devokuww7/image/upload/v1663252624/logo_brickastle_purple_transparent_1c1aae1509.png";
+export const placeHolderThumb = "https://res.cloudinary.com/devokuww7/image/upload/v1663252624/thumbnail_logo_brickastle_purple_transparent_1c1aae1509.png";

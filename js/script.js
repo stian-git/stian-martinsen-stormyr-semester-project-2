@@ -90,12 +90,12 @@ switch (currentPage) {
     case "admin/edit.html":
         getUserInfo().then((isLoggedIn) => {
             if (isLoggedIn) {
-                console.log("User is logged in");
+                //console.log("User is logged in");
                 const idToEdit = getSearchParam("id");
 
                 saveProductButton.addEventListener("click", (e) => {
                     e.preventDefault();
-                    console.log("Update product!");
+                    //console.log("Update product!");
                     updateProduct();
                 });
 

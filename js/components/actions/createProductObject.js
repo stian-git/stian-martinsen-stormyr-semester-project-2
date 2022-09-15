@@ -9,7 +9,7 @@ export default function createProductObject() {
             price: prodPriceField.value,
             stock: prodStockField.value,
             productnumber: prodNumberField.value,
-            image_url: "https://www.dagbladet.com",
+            image_url: "",
             isProductionStopped: prodIsStoppedField.checked,
             featured: prodIsFeaturedField.checked,
         },

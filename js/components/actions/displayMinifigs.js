@@ -1,13 +1,21 @@
+import { placeHolderImage, placeHolderThumb } from "../variables.js";
+
 export default function displayMiniFigs(figdata) {
     const allFigs = figdata.results;
+    //console.log(allFigs);
     const minifigsContainer = document.querySelector("#minifigures-tab-pane .card-group");
     // const numberOfFigs = allFigs.length;
     allFigs.forEach((figure) => {
-        console.log(figure.id);
-        const figurethumbImage = figure.set_img_url.replace("media/", "media/thumbs/") + "/140x140p.jpg";
-        const figureImage = figure.set_img_url;
+        //console.log(figure.id);
+        let figurethumbImage = placeHolderThumb;
+        let figureImage = placeHolderImage;
+        if (figure.set_img_url) {
+            figurethumbImage = figure.set_img_url.replace("media/", "media/thumbs/") + "/140x140p.jpg";
+            figureImage = figure.set_img_url;
+        }
+
         const figureTitle = figure.set_name;
-        console.log(figurethumbImage);
+        //console.log(figurethumbImage);
         // gather the variables and display them.
         minifigsContainer.innerHTML += `
             <div class="card">
