@@ -55,6 +55,7 @@ import createProductObject from "./components/actions/createProductObject.js";
 import addProduct from "./components/api/addProduct.js";
 import deleteProduct from "./components/api/deleteProduct.js";
 import getUserInfo from "./components/api/getUserInfo.js";
+import requestProductToEdit from "./components/actions/requestProductToEdit.js";
 // import saveProductsToStorage from "./components/actions/saveProductsToStorage.js";
 let currentPage = document.location.pathname.replace("/", "");
 
@@ -106,12 +107,22 @@ switch (currentPage) {
                 imagesToAddButton.addEventListener("change", addImages, false);
 
                 if (idToEdit) {
-                    console.log("We will edit product id: " + idToEdit);
-                    getProductDetails(idToEdit).then((product) => {
-                        editProduct(product);
-                        markDefaultImage(product.image_url);
-                    });
-                    imageFormContainer.style.display = "block";
+                    if (idToEdit !== "search") {
+                        console.log("We will edit product id: " + idToEdit);
+                        getProductDetails(idToEdit).then((product) => {
+                            editProduct(product);
+                            markDefaultImage(product.image_url);
+                        });
+                        imageFormContainer.style.display = "block";
+                    } else {
+                        console.log("No product-id is provided...");
+                        // getAllProducts.
+                        // saveToStorage
+                        // live-filter Products
+                        // displayProducts
+                        requestProductToEdit();
+                    }
+
                     // change header
                     //document.querySelector("main h1").innerHTML = "Edit Product";
                     header.innerHTML = "Edit Product";

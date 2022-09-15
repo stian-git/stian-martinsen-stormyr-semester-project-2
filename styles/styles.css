@@ -11157,6 +11157,32 @@ main > div {
   padding: 0px;
 }
 
+.producttable {
+  display: none;
+  table-layout: fixed;
+}
+
+.producttable img.thumbnail {
+  height: 60px;
+  padding: 5px;
+}
+
+.producttable td {
+  margin: 5px;
+  padding: 5px;
+}
+
+.producttable tr:nth-child(even) {
+  display: none;
+}
+.producttable tr:nth-child(even) td:nth-child(1) {
+  justify-content: center;
+}
+
+.producttable .proddescription {
+  text-align: center;
+}
+
 table.userprofile {
   margin-top: 2em;
 }

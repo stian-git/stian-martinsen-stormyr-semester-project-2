@@ -42,3 +42,33 @@
 //     Some tooltip text!
 //   </div>
 // </div>
+
+.producttable {
+    display: none;
+    table-layout: fixed;
+}
+.producttable img.thumbnail {
+    height: 60px;
+    padding: 5px;
+}
+
+.producttable td {
+    margin: 5px;
+    padding: 5px;
+}
+.producttable tr:nth-child(even) {
+    display: none;
+    //background-color: var(--bs-table-hover-bg);
+    td:nth-child(1) {
+        justify-content: center;
+    }
+}
+
+.producttable .proddescription {
+    text-align: center;
+}
+
+.producttable tr:nth-child(even):hover {
+    //background-color: var(--bs-table-striped-bg);
+    //background-color: rgba(0, 0, 0, 0.05);
+}

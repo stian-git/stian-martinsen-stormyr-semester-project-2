@@ -19,7 +19,7 @@ export const storeUserEmail = "storeUserEmail";
 export const storeUserIsLoggedIn = "storeUserIsLoggedIn";
 export const storeUserToken = "storeUserToken";
 export const storeSearchResult = "storeSearchResult";
-// export const storeProductsArray = "storeProductsArray";
+export const storeAllProductsArray = "storeAllProductsArray";
 export const storeCartContent = "storeCartContent";
 
 export const noCorsUrl = "https://noroffcors.herokuapp.com/";
@@ -44,5 +44,6 @@ export const apiFormDataField = "image";
 export const imageEditContainer = document.querySelector(".editimages tbody");
 export const imageEditContainerTable = document.querySelector(".editimages table");
 export const deleteProductButton = document.querySelector(".deleteproductbutton");
+
 //export const allImageDeleteButtons = document.querySelectorAll("button.deleteimagebutton");
 //export const imageEditThumbs = document.querySelectorAll(".editimages img");
