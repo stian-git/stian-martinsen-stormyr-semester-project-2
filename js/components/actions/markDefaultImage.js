@@ -4,7 +4,8 @@ export default function markDefaultImage(img) {
     for (let i = 0; i < allThumbs.length; i++) {
         //console.log(allThumbs[i].src);
         if (allThumbs[i].src === img) {
-            allThumbs[i].parentElement.previousElementSibling.firstChild.checked = true;
+            // allThumbs[i].parentElement.previousElementSibling.firstChild.checked = true;
+            allThumbs[i].parentElement.parentElement.previousElementSibling.firstChild.checked = true;
             return;
         }
     }

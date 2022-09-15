@@ -11140,3 +11140,19 @@ main > div {
 .editimages input[type=file] {
   display: none;
 }
+
+.editimages img {
+  height: 60px;
+  box-shadow: 1px 1px 3px black;
+  cursor: pointer;
+}
+
+.tooltip .enlargedthumb {
+  height: 20vw;
+  padding: 5px;
+}
+
+.tooltip-inner {
+  min-width: fit-content;
+  padding: 0px;
+}

@@ -44,3 +44,5 @@ export const apiFormDataField = "image";
 export const imageEditContainer = document.querySelector(".editimages tbody");
 export const imageEditContainerTable = document.querySelector(".editimages table");
 export const deleteProductButton = document.querySelector(".deleteproductbutton");
+//export const allImageDeleteButtons = document.querySelectorAll("button.deleteimagebutton");
+//export const imageEditThumbs = document.querySelectorAll(".editimages img");
