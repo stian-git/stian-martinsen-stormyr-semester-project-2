@@ -71,3 +71,14 @@
 .deleteproductbutton {
     display: none;
 }
+
+input.textfilter {
+    margin-bottom: 5px;
+    // margin: 0;
+}
+
+// search features
+
+.producttable .sorting-enabled {
+    color: green;
+}

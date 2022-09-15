@@ -143,13 +143,38 @@
                 <button type="submit" class="btn btn-primary saveproductbutton">Save</button>
             </form>
             <h2></h2>
+            <!-- <form action="filter">
+                <label for="textsearch">Filter products:</label>
+                <input type="text" name="textsearch" id="textsearch">
+            </form> -->
+            <form class="d-flex" role="search" id="filtersearch">
+                <div class="row g-3">
+                    <div class="col-sd-6">
+                    <input class="form-control me-2 textfilter" type="search" placeholder="Filter" aria-label="Filter Search" />
+                </div>
+            </div>
+            
+                <!-- <button class="btn btn-outline-success text-button" type="submit">Filter</button> -->
+            </form>
+
             <table class="producttable align-middle table table-striped table-hover table-bordered">
                 <thead>
                     <tr>
-                        <th>Image</th>
-                        <th>Model</th>
-                        <th>Title</th>
-                        <th>Price</th>
+                        <th>
+                            <!-- <p>Image</p>
+                            <p>Button</p></th> -->
+                        <th data-sortby="productnumber" data-sortdirection="ascending">
+                            <p>Model</p>
+                            <p>Up</p>
+                        </th>
+                        <th class="sorting-enabled" data-sortdirection="ascending" data-sortby="title">
+                            <p>Title</p>
+                            <p>Up</p>
+                        </th>
+                        <th data-sortby="price" data-sortdirection="ascending">
+                            <p>Price</p>
+                            <p>Up</p>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>

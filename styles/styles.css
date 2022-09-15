@@ -11187,6 +11187,14 @@ main > div {
   display: none;
 }
 
+input.textfilter {
+  margin-bottom: 5px;
+}
+
+.producttable .sorting-enabled {
+  color: green;
+}
+
 table.userprofile {
   margin-top: 2em;
 }
