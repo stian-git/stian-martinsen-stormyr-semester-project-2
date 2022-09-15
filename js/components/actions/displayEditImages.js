@@ -1,6 +1,5 @@
 import { imageEditContainer, imageEditContainerTable } from "../variables.js";
 import deleteImage from "./deleteImage.js";
-import displayLargerThumb from "./displayLargerThumb.js";
 
 export default function displayEditImages(id, thumb, img) {
     imageEditContainerTable.style.display = "table";
@@ -14,12 +13,6 @@ export default function displayEditImages(id, thumb, img) {
     allImageDeleteButtons.forEach((element) => {
         element.addEventListener("click", deleteImage);
     });
-    //const imageEditThumbs = document.querySelectorAll(".editimages img");
-    // imageEditThumbs.forEach((thumb) => {
-    //     thumb.onmouseover = () => {
-    //         displayLargerThumb(thumb.dataset.largeimg);
-    //     };
-    // });
     const tooltipContainers = document.querySelectorAll(`[data-bs-toggle="tooltip"]`);
     tooltipContainers.forEach((item) => {
         new bootstrap.Tooltip(item);

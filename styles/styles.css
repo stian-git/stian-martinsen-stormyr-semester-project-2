@@ -11156,3 +11156,10 @@ main > div {
   min-width: fit-content;
   padding: 0px;
 }
+
+table.userprofile {
+  margin-top: 2em;
+}
+table.userprofile td {
+  padding: 0.2em 2em;
+}

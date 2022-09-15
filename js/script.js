@@ -25,11 +25,6 @@ searchButton.addEventListener("click", (e) => {
     });
 });
 
-//const updateProductButton = document.querySelector(".productform button");
-
-//const modelId = "10305-1";
-
-//import getMinifigs from "./components/api/getMiniFigs.js";
 import doLogin from "./components/api/doLogin.js";
 
 loginButton.addEventListener("click", doLogin);
@@ -59,6 +54,7 @@ import { saveProductButton, continueButton, header, imageFormContainer, imagesTo
 import createProductObject from "./components/actions/createProductObject.js";
 import addProduct from "./components/api/addProduct.js";
 import deleteProduct from "./components/api/deleteProduct.js";
+import getUserInfo from "./components/api/getUserInfo.js";
 // import saveProductsToStorage from "./components/actions/saveProductsToStorage.js";
 let currentPage = document.location.pathname.replace("/", "");
 
@@ -83,55 +79,62 @@ switch (currentPage) {
         displayCart();
         getTotalCartPrice();
         break;
+    case "admin/user.html":
+        getUserInfo().then((isLoggedIn) => {
+            if (!isLoggedIn) {
+                history.back();
+            }
+        });
+        break;
     case "admin/edit.html":
-        const idToEdit = getSearchParam("id");
-        //console.log(idToEdit);
-        //const updateProductButton = document.querySelector("main .saveproductbutton");
+        getUserInfo().then((isLoggedIn) => {
+            if (isLoggedIn) {
+                console.log("User is logged in");
+                const idToEdit = getSearchParam("id");
 
-        //const continueButton = document.querySelector("main .continuebutton");
+                saveProductButton.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    console.log("Update product!");
+                    updateProduct();
+                });
 
-        saveProductButton.addEventListener("click", (e) => {
-            e.preventDefault();
-            console.log("Update product!");
-            //console.log("click!");
-            // updateProduct(idToEdit);
-            updateProduct();
+                deleteProductButton.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    deleteProduct(prodIdField.value);
+                });
+
+                imagesToAddButton.addEventListener("change", addImages, false);
+
+                if (idToEdit) {
+                    console.log("We will edit product id: " + idToEdit);
+                    getProductDetails(idToEdit).then((product) => {
+                        editProduct(product);
+                        markDefaultImage(product.image_url);
+                    });
+                    imageFormContainer.style.display = "block";
+                    // change header
+                    //document.querySelector("main h1").innerHTML = "Edit Product";
+                    header.innerHTML = "Edit Product";
+                    continueButton.style.display = "none";
+                } else {
+                    // We will add a new product.
+                    console.log("We will add a product");
+                    //continueButton.style.display = "block";
+                    saveProductButton.style.display = "none";
+                    continueButton.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        //console.log("Continue now...");
+                        let prodObj = createProductObject();
+                        //console.log(prodObj);
+                        addProduct(prodObj);
+                    });
+                    //continueButton.addEventListener("click", )
+                }
+            } else {
+                console.log("User is not logged in...");
+                history.back();
+            }
         });
-
-        deleteProductButton.addEventListener("click", (e) => {
-            e.preventDefault();
-            deleteProduct(prodIdField.value);
-        });
-        //const imagesToAddButton = document.querySelector("#imagesToAdd");
-
-        imagesToAddButton.addEventListener("change", addImages, false);
-
-        if (idToEdit) {
-            console.log("We will edit product id: " + idToEdit);
-            getProductDetails(idToEdit).then((product) => {
-                editProduct(product);
-                markDefaultImage(product.image_url);
-            });
-            //const imageFormContainer = document.querySelector(".editimages");
-            imageFormContainer.style.display = "block";
-            // change header
-            //document.querySelector("main h1").innerHTML = "Edit Product";
-            header.innerHTML = "Edit Product";
-            continueButton.style.display = "none";
-        } else {
-            // We will add a new product.
-            console.log("We will add a product");
-            //continueButton.style.display = "block";
-            saveProductButton.style.display = "none";
-            continueButton.addEventListener("click", (e) => {
-                e.preventDefault();
-                //console.log("Continue now...");
-                let prodObj = createProductObject();
-                //console.log(prodObj);
-                addProduct(prodObj);
-            });
-            //continueButton.addEventListener("click", )
-        }
 
         break;
     case "products.html":

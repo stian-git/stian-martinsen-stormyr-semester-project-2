@@ -5,14 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="Home of Brickastle, the home of Lego Castles" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles/styles.css" />
+        <link rel="stylesheet" href="../styles/styles.css" />
         <title>Brickastle | Home</title>
     </head>
     <body>
         <header>
             <nav class="navbar fixed-top navbar-expand-lg bg-white">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/"><img src="images/logo_brickastle_purple_transparent.png" class="logo" alt="" /></a>
+                    <a class="navbar-brand" href="/"><img src="../images/logo_brickastle_purple_transparent.png" class="logo" alt="" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -22,10 +22,10 @@
                                 <a class="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="products.html">Products</a>
+                                <a class="nav-link" href="/products.html">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="cart.html">Cart</a>
+                                <a class="nav-link" href="/cart.html">Cart</a>
                             </li>
                             <li class="nav-item login-link">
                                 <!-- <button type="button" class="btn nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button> -->
@@ -59,49 +59,23 @@
         </div> -->
         <div class="header__bottom_line"></div>
         <main>
-            <h1>Cart</h1>
-            <table class="cart table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <td>Image</td>
-                        <td>Productname</td>
-                        <td>Price (EUR)</td>
-                        <td>Quantity</td>
-                        <td>Total Price</td>
-                        <td>Delete</td>
-                    </tr>
-                </thead>
+            <h1>User Profile</h1>
+            <table class="userprofile">
                 <tbody>
-                    <!-- <tr>
-                        <td><img src="https://res.cloudinary.com/devokuww7/image/upload/v1662461850/thumbnail_21325_82628af260.jpg" /></td>
-                        <td><a href="productdetails.html?id=3">Medieval Blacksmith (21325)</a></td>
-                        <td>320</td>
-                        <td>2</td>
-                        <td>640</td>
-                        <td>X</td>
+                    <tr>
+                        <th>Username</th>
+                        <td>user@user.com</td>
                     </tr>
                     <tr>
-                        <td><img src="https://res.cloudinary.com/devokuww7/image/upload/v1662461850/thumbnail_21325_82628af260.jpg" /></td>
-                        <td><a href="productdetails.html?id=3">Medieval Blacksmith (21325)</a></td>
-                        <td>320</td>
-                        <td>2</td>
-                        <td>640</td>
-                        <td>X</td>
+                        <th>Email</th>
+                        <td>user@user.com</td>
                     </tr>
                     <tr>
-                        <td><img src="https://res.cloudinary.com/devokuww7/image/upload/v1662461850/thumbnail_21325_82628af260.jpg" /></td>
-                        <td><a href="productdetails.html?id=3">Medieval Blacksmith (21325)</a></td>
-                        <td>320</td>
-                        <td>2</td>
-                        <td>640</td>
-                        <td>X</td>
-                    </tr> -->
+                        <th>Role</th>
+                        <td>Authenticated User</td>
+                    </tr>
                 </tbody>
             </table>
-            <div class="cartsummary">
-                <p>Order total (EUR):</p>
-                <p class="cartsummary-price">640,00</p>
-            </div>
         </main>
         <footer>This is my footer</footer>
         <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -134,7 +108,7 @@
                 </div>
             </div>
         </div>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/script.js" type="module"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/script.js" type="module"></script>
     </body>
 </html>
