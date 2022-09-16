@@ -147,33 +147,43 @@
                 <label for="textsearch">Filter products:</label>
                 <input type="text" name="textsearch" id="textsearch">
             </form> -->
-            <form class="d-flex" role="search" id="filtersearch">
+            <!-- <form class="d-flex" role="search" id="filtersearch">
                 <div class="row g-3">
                     <div class="col-sd-6">
                     <input class="form-control me-2 textfilter" type="search" placeholder="Filter" aria-label="Filter Search" />
                 </div>
             </div>
-            
-                <!-- <button class="btn btn-outline-success text-button" type="submit">Filter</button> -->
-            </form>
+            </form> -->
 
             <table class="producttable align-middle table table-striped table-hover table-bordered">
                 <thead>
                     <tr>
                         <th>
-                            <!-- <p>Image</p>
-                            <p>Button</p></th> -->
-                        <th data-sortby="productnumber" data-sortdirection="ascending">
-                            <p>Model</p>
-                            <p>Up</p>
+                            <form class="d-flex" role="search" id="filtersearch">
+                                <div class="row g-3">
+                                    <div class="col-sd-6">
+                                    <input class="form-control me-2 textfilter" type="search" placeholder="Filter" aria-label="Filter Search" />
+                                </div>
+                            </div>
+                            </form>
+                        <th data-sortby="productnumber" class="flex ascending">
+                            <div>
+                                <p>Model</p>
+                                <p>Up</p>
+                            </div>
+                            
                         </th>
-                        <th class="sorting-enabled" data-sortdirection="ascending" data-sortby="title">
-                            <p>Title</p>
-                            <p>Up</p>
+                        <th class="flex sorting-enabled ascending" data-sortby="title">
+                            <div>
+                                <p>Title</p>
+                                <p>Up</p>
+                            </div>
                         </th>
-                        <th data-sortby="price" data-sortdirection="ascending">
-                            <p>Price</p>
-                            <p>Up</p>
+                        <th data-sortby="price" class="flex ascending">
+                            <div>
+                                <p>Price</p>
+                                <p>Up</p>
+                            </div>
                         </th>
                     </tr>
                 </thead>

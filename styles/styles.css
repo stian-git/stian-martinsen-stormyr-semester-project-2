@@ -11195,6 +11195,11 @@ input.textfilter {
   color: green;
 }
 
+.producttable thead th div {
+  display: flex;
+  justify-content: space-between;
+}
+
 table.userprofile {
   margin-top: 2em;
 }

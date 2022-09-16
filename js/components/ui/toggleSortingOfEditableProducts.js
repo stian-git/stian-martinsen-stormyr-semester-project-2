@@ -1,26 +1,23 @@
-export default function toggleSortingOfEditableProducts() {
-    //console.log(this);
+import filterEditableProducts from "../actions/filterEditableProducts.js";
 
-    //console.log("Click");
-    // console.log(modelFilter.classList.contains("sorting-enabled"));
-    //console.log(this.dataset.sortby);
-    const sortByField = this.dataset.sortby;
+export default function toggleSortingOfEditableProducts() {
     const isActive = this.classList.contains("sorting-enabled");
+    console.log(this);
     if (isActive) {
         //toggle ascending or descending.
-        document.querySelector("th.sorting-enabled").dataset;
-        if (this.dataset.sortdirection === "ascending") {
-            this.dataset.sortdirection = "descending";
-            this.lastElementChild.innerHTML = "Down";
+        if (this.classList.contains("ascending")) {
+            this.classList.add("descending");
+            this.classList.remove("ascending");
+            this.firstElementChild.lastElementChild.innerHTML = "Down";
         } else {
-            this.dataset.sortdirection = "ascending";
-            this.lastElementChild.innerHTML = "Up";
+            this.classList.remove("descending");
+            this.classList.add("ascending");
+            this.firstElementChild.lastElementChild.innerHTML = "Up";
         }
-        //console.log(this.);
     } else {
-        // remove previous active field.
+        // when column was not already the sort field we remove the previous one and use this instead
         document.querySelector("th.sorting-enabled").classList.remove("sorting-enabled");
-        // add classlist to this field.
         this.classList.add("sorting-enabled");
     }
+    filterEditableProducts();
 }

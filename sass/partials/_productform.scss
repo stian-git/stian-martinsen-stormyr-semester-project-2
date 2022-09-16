@@ -82,3 +82,11 @@ input.textfilter {
 .producttable .sorting-enabled {
     color: green;
 }
+
+.producttable thead th div {
+    display: flex;
+    justify-content: space-between;
+}
+// .producttable thead th p {
+//     display: flex;
+// }

@@ -14,7 +14,6 @@ export default function displaySearchEditResults(arr) {
         const prodIsFeatured = product.attributes.featured;
         const prodDescription = product.attributes.description;
         const prodDescriptionHTML = prodDescription.replace(/(\r\n|\n|\r)/gm, "<br>");
-        //console.log(prodDescriptionHTML);
         rowContainer.innerHTML += `
             <tr data-productid="${prodId}">
                 <td><img src="${prodThumb}" class="thumbnail"></td>
@@ -36,21 +35,17 @@ export default function displaySearchEditResults(arr) {
     const allProductLines = document.querySelectorAll(".producttable tbody tr");
     allProductLines.forEach((line) => {
         line.addEventListener("click", (e) => {
-            //console.log("Click");
-            //console.log(e);
             let currentProdId = e.target.parentElement.dataset.productid;
-            //console.log(currentProdId);
             if (!currentProdId) {
-                // Fix a bug when clicking the thumbnail.
+                // Avoids a bug when clicking the thumbnail.
                 currentProdId = e.target.parentElement.parentElement.dataset.productid;
-                //console.log("Corrected ID to: " + currentProdId);
             }
             window.location.href = "/admin/edit.html?id=" + currentProdId;
         });
         line.addEventListener("mouseover", (e) => {
             let currentProdId = e.target.parentElement.dataset.productid;
             if (!currentProdId) {
-                // Fix a bug caused by hovering the image.
+                // Avoids a bug caused by hovering the image.
                 currentProdId = e.target.parentElement.parentElement.dataset.productid;
             }
 
@@ -59,7 +54,7 @@ export default function displaySearchEditResults(arr) {
         line.addEventListener("mouseout", (e) => {
             let currentProdId = e.target.parentElement.dataset.productid;
             if (!currentProdId) {
-                //Fix a bug when the current element is the thumbnail.
+                //Avoids a bug when the current element is the thumbnail.
                 currentProdId = e.fromElement.parentElement.parentElement.dataset.productid;
             }
             document.querySelector(`.additionalinfo[data-productid="${currentProdId}"]`).style.display = "none";

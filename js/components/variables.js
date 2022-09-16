@@ -21,11 +21,9 @@ export const storeUserToken = "storeUserToken";
 export const storeSearchResult = "storeSearchResult";
 export const storeAllProductsArray = "storeAllProductsArray";
 export const storeCartContent = "storeCartContent";
-export const storeEditProductsArray = "storeEditProductsArray";
 
 export const noCorsUrl = "https://noroffcors.herokuapp.com/";
 export const legoProductBaseUrl = "https://www.lego.com/en-gb/product/";
-// export const rebrickableProductBaseUrl = "https://rebrickable.com/api/v3/lego/sets/";
 
 export const prodNumberField = document.querySelector(".productform #productnumber");
 export const prodTitleField = document.querySelector(".productform #producttitle");
@@ -45,9 +43,11 @@ export const apiFormDataField = "image";
 export const imageEditContainer = document.querySelector(".editimages tbody");
 export const imageEditContainerTable = document.querySelector(".editimages table");
 export const deleteProductButton = document.querySelector(".deleteproductbutton");
-
-//export const allImageDeleteButtons = document.querySelectorAll("button.deleteimagebutton");
-//export const imageEditThumbs = document.querySelectorAll(".editimages img");
+export const searchFilterField = document.querySelector("input.textfilter");
 
 export const placeHolderImage = "https://res.cloudinary.com/devokuww7/image/upload/v1663252624/logo_brickastle_purple_transparent_1c1aae1509.png";
 export const placeHolderThumb = "https://res.cloudinary.com/devokuww7/image/upload/v1663252624/thumbnail_logo_brickastle_purple_transparent_1c1aae1509.png";
+
+export const modelFilter = document.querySelector("th[data-sortby=productnumber]");
+export const titleFilter = document.querySelector("th[data-sortby=title]");
+export const priceFilter = document.querySelector("th[data-sortby=price]");
