@@ -11062,11 +11062,22 @@ main > div {
   width: 400px;
 }
 
+.carouselcontainer img.d-block.w-100 {
+  max-height: 300px;
+}
+
 @media (min-width: 992px) {
   .topcontainer {
     flex-direction: row;
   }
 }
+#imageModal {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#imageModal .modal-content {
+  padding: 5em;
+}
+
 .featured .row {
   margin: 5px;
 }

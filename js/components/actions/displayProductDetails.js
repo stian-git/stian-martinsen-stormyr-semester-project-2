@@ -1,5 +1,5 @@
 import getMinifigs from "../api/getMiniFigs.js";
-import { legoProductBaseUrl, rebrickableSetUrl } from "../variables.js";
+import { carouselContainer, legoProductBaseUrl, rebrickableSetUrl } from "../variables.js";
 import displayMiniFigs from "./displayMinifigs.js";
 import isLinkOk from "./isLinkOk.js";
 
@@ -58,7 +58,7 @@ export default function displayProductDetails(arr) {
         const fullSizeImageUrl = img.attributes.url;
         //console.log(smallImageUrl);
         //console.log(fullSizeImageUrl);
-        // add indicators:
+        // add indicators and images:
         if (index === 0) {
             console.log("This is the first image");
             carouselIndicatorContainer.innerHTML += `<button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>`;
@@ -73,6 +73,11 @@ export default function displayProductDetails(arr) {
                     <img src="${smallImageUrl}" data-fullsizeimg="${fullSizeImageUrl}" class="d-block w-100" alt="${arr.title}" />
                 </div>`;
         }
-        // add imgs`s
+    });
+    // add eventlistener for carousel.
+
+    carouselContainer.addEventListener("click", () => {
+        console.log("Show modal!");
+        const myModal = new bootstrap.Modal(document.querySelector("#imageModal"));
     });
 }

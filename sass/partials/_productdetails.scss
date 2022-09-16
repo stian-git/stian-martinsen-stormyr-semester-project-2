@@ -12,29 +12,23 @@
     width: 400px;
 }
 
+.carouselcontainer img.d-block.w-100 {
+    max-height: 300px;
+}
+
 @include media-breakpoint-up(lg) {
     .topcontainer {
         flex-direction: row;
     }
 }
 
-// tr > td:nth-child(1) {
-//     width: 120px;
-// }
+// Image Modal....
 
-// #minifigures-tab-pane .card-group {
-//     flex-flow: wrap-reverse;
-//     justify-content: center;
-// }
-
-// #minifigures-tab-pane .card {
-//     min-width: 150px;
-//     max-width: 300px;
-//     padding: 5px;
-//     margin: 10px;
-//     border: 1px solid black;
-//     border-radius: 0px;
-//     box-shadow: 1px 1px 6px black;
-// }
-
-// How is this in responsive?
+#imageModal {
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    .modal-content {
+        padding: 5em;
+        // background-color: black;
+        // background-color: rgba($color: #000000, $alpha: 0.8);
+    }
+}

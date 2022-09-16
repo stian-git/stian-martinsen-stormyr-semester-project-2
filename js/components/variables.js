@@ -51,3 +51,4 @@ export const placeHolderThumb = "https://res.cloudinary.com/devokuww7/image/uplo
 export const modelFilter = document.querySelector("th[data-sortby=productnumber]");
 export const titleFilter = document.querySelector("th[data-sortby=title]");
 export const priceFilter = document.querySelector("th[data-sortby=price]");
+export const carouselContainer = document.querySelector("#imagecarousel");
