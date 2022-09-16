@@ -21,6 +21,7 @@ export const storeUserToken = "storeUserToken";
 export const storeSearchResult = "storeSearchResult";
 export const storeAllProductsArray = "storeAllProductsArray";
 export const storeCartContent = "storeCartContent";
+export const storeEditProductsArray = "storeEditProductsArray";
 
 export const noCorsUrl = "https://noroffcors.herokuapp.com/";
 export const legoProductBaseUrl = "https://www.lego.com/en-gb/product/";

@@ -1,5 +1,6 @@
 import displaySearchEditResults from "./displaySearchEditResults.js";
 import getAllProductsFromStorage from "./getAllProductsFromStorage.js";
+import sortEditableProducts from "./sortEditableProducts.js";
 
 export default function filterEditableProducts() {
     console.log("Filtering now...");
@@ -24,31 +25,32 @@ export default function filterEditableProducts() {
 
         console.log(filteredProducts);
 
-        // Sort by Title as default:
-        const sortedProducts = filteredProducts.sort((a, b) => {
-            // text filters: description, productnumber, title
+        // // Sort by Title as default:
+        // const sortedProducts = filteredProducts.sort((a, b) => {
+        //     // text filters: description, productnumber, title
 
-            const sortbyFieldname = "price";
-            if (sortbyFieldname === "price") {
-                const valueA = parseFloat(a.attributes[sortbyFieldname]).toFixed(2);
-                const valueB = parseFloat(b.attributes[sortbyFieldname]).toFixed(2);
-                //console.log(valueA);
-                return valueA - valueB;
-            } else {
-                const valueA = a.attributes[sortbyFieldname].toLowerCase();
-                const valueB = b.attributes[sortbyFieldname].toLowerCase();
+        //     const sortbyFieldname = "price";
+        //     if (sortbyFieldname === "price") {
+        //         const valueA = parseFloat(a.attributes[sortbyFieldname]).toFixed(2);
+        //         const valueB = parseFloat(b.attributes[sortbyFieldname]).toFixed(2);
+        //         //console.log(valueA);
+        //         return valueA - valueB;
+        //     } else {
+        //         const valueA = a.attributes[sortbyFieldname].toLowerCase();
+        //         const valueB = b.attributes[sortbyFieldname].toLowerCase();
 
-                if (valueA < valueB) {
-                    return 1;
-                }
-                if (valueA > valueB) {
-                    return -1;
-                }
-                // If values are identical:
-                return 0;
-            }
-        });
+        //         if (valueA < valueB) {
+        //             return 1;
+        //         }
+        //         if (valueA > valueB) {
+        //             return -1;
+        //         }
+        //         // If values are identical:
+        //         return 0;
+        //     }
+        // });
         console.log(sortedProducts);
+        sortEditableProducts();
         //displaySearchEditResults(filteredProducts);
         displaySearchEditResults(sortedProducts);
     }

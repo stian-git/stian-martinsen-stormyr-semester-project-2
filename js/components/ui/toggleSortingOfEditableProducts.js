@@ -1,5 +1,5 @@
 export default function toggleSortingOfEditableProducts() {
-    console.log(this);
+    //console.log(this);
 
     //console.log("Click");
     // console.log(modelFilter.classList.contains("sorting-enabled"));
