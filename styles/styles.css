@@ -11058,6 +11058,10 @@ main > div {
   margin: auto;
 }
 
+.carouselcontainer {
+  width: 400px;
+}
+
 @media (min-width: 992px) {
   .topcontainer {
     flex-direction: row;

@@ -90,12 +90,9 @@ switch (currentPage) {
     case "admin/edit.html":
         getUserInfo().then((isLoggedIn) => {
             if (isLoggedIn) {
-                //console.log("User is logged in");
                 const idToEdit = getSearchParam("id");
-
                 saveProductButton.addEventListener("click", (e) => {
                     e.preventDefault();
-                    //console.log("Update product!");
                     updateProduct();
                 });
 
@@ -117,31 +114,20 @@ switch (currentPage) {
                         deleteProductButton.style.display = "inline-block";
                     } else {
                         console.log("No product-id is provided...");
-                        // getAllProducts.
-                        // saveToStorage
-                        // live-filter Products
-                        // displayProducts
                         requestProductToEdit();
                     }
-
-                    // change header
-                    //document.querySelector("main h1").innerHTML = "Edit Product";
                     header.innerHTML = "Edit Product";
                     continueButton.style.display = "none";
                 } else {
                     // We will add a new product.
                     console.log("We will add a product");
-                    //continueButton.style.display = "block";
                     saveProductButton.style.display = "none";
                     continueButton.addEventListener("click", (e) => {
                         e.preventDefault();
-                        //console.log("Continue now...");
                         let prodObj = createProductObject();
-                        //console.log(prodObj);
                         addProduct(prodObj);
                         deleteProductButton.style.display = "inline-block";
                     });
-                    //continueButton.addEventListener("click", )
                 }
             } else {
                 console.log("User is not logged in...");

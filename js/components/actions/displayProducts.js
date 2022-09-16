@@ -9,7 +9,7 @@ export default function displayProducts(arr) {
 
         productlist.innerHTML += `
         <div class="col">
-            <a href="productdetails.html?id=${product.id}&model=${product.attributes.productnumber}">
+            <a href="productdetails.html?id=${product.id}">
                   <div class="card h-100">
                     <div class="product__header_imagecontainer">
                         <img src="${product.attributes.image_url}" class="card-img-top product__header_imagecontainer_image" alt="...">

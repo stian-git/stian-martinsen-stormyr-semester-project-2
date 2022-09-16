@@ -28,7 +28,6 @@
                                 <a class="nav-link" href="cart.html">Cart</a>
                             </li>
                             <li class="nav-item login-link">
-                                <!-- <button type="button" class="btn nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button> -->
                                 <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                             </li>
                             <li class="nav-item dropdown login-menu">
@@ -41,9 +40,6 @@
                                     <li><a class="dropdown-item logoutbutton" href="#">Logout</a></li>
                                 </ul>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link disabled">Disabled</a>
-                            </li> -->
                         </ul>
                         <form class="d-flex" role="search" id="searchform">
                             <input class="form-control me-2 searchform-field" type="search" placeholder="Search" aria-label="Search" />
@@ -57,16 +53,16 @@
         <main>
             <h1>Lion Knights' Castle</h1>
             <div class="topcontainer">
-                <div>
+                <div class="carouselcontainer">
                     <!-- <img src="images/product/10305_alt1.png" alt="" class="current_image" /> -->
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                    <div id="imagecarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <!-- <button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                            <!-- <div class="carousel-item active">
                                 <img src="images/product/10305.png" class="d-block w-100" alt="..." />
                             </div>
                             <div class="carousel-item">
@@ -74,13 +70,13 @@
                             </div>
                             <div class="carousel-item">
                                 <img src="images/product/10305.png" class="d-block w-100" alt="..." />
-                            </div>
+                            </div> -->
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#imagecarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#imagecarousel" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
