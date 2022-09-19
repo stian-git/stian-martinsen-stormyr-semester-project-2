@@ -56,6 +56,7 @@ import addProduct from "./components/api/addProduct.js";
 import deleteProduct from "./components/api/deleteProduct.js";
 import getUserInfo from "./components/api/getUserInfo.js";
 import requestProductToEdit from "./components/actions/requestProductToEdit.js";
+import addFooter from "./components/ui/addFooter.js";
 // import saveProductsToStorage from "./components/actions/saveProductsToStorage.js";
 let currentPage = document.location.pathname.replace("/", "");
 
@@ -173,4 +174,5 @@ switch (currentPage) {
         break;
 }
 
+addFooter();
 toggleUserFeatues();

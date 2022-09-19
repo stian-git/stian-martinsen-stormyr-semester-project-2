@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="Home of Brickastle, the home of Lego Castles - Products page" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://kit.fontawesome.com/c42e915e6a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles/styles.css" />
         <title>Brickastle | Products</title>
     </head>
@@ -28,7 +29,6 @@
                                 <a class="nav-link" href="cart.html">Cart</a>
                             </li>
                             <li class="nav-item login-link">
-                                <!-- <button type="button" class="btn nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button> -->
                                 <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                             </li>
                             <li class="nav-item dropdown login-menu">
@@ -41,12 +41,9 @@
                                     <li><a class="dropdown-item logoutbutton" href="#">Logout</a></li>
                                 </ul>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link disabled">Disabled</a>
-                            </li> -->
                         </ul>
                         <form class="d-flex" role="search" id="searchform">
-                            <input class="form-control me-2 searchform-field" type="search" placeholder="Search" aria-label="Search"/>
+                            <input class="form-control me-2 searchform-field" type="search" placeholder="Search" aria-label="Search" />
                             <button class="btn btn-outline-success searchform-button" type="submit">Search</button>
                         </form>
                     </div>
@@ -56,31 +53,8 @@
         <div class="header__bottom_line"></div>
         <main>
             <h1>Products</h1>
-            <!-- <a href="productdetails.html?id=10305" class="productlink">
-                <div class="product">
-                    <div class="product__header">
-                        <div class="product__header_imagecontainer">
-                            <img src="images/product/10305_alt1.png" alt="" class="product__header_imagecontainer_image" />
-                            <div class="product__header_imagecontainer_buymebanner">Add to cart.</div>
-                        </div>
-                        <p class="product__header_title">Lion Knights Castle with a lot of more info stretching atleast two rows</p>
-                    </div>
-                    <div class="product__details">
-                        <div class="product__details-row">
-                            <p class="product__details_price">350 EUR</p>
-                            <p class="product__details_stock">In stock: 3</p>
-                        </div>
-                    </div>
-                    <div class="product_admin">
-                        <hr />
-                        <button type="button" class="btn btn-primary">Edit</button>
-                        <button type="button" class="btn btn-primary">Delete</button>
-                    </div>
-                </div>
-            </a>
-            <h2>More products</h2> -->
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-2" id="productlist">
-                <div class="col">
+                <!-- <div class="col">
                   <div class="card h-100">
                     <div class="product__header_imagecontainer">
                         <img src="images/product/10305_alt1.png" class="card-img-top product__header_imagecontainer_image" alt="...">
@@ -88,12 +62,12 @@
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">Lion Knights Castle with a lot of more info stretching atleast two rows</h5>
-                      <!-- <p class="card-text"> -->
+                      
                         <div class="product__details-row card-text">
                             <p class="product__details_price">350 EUR</p>
                             <p class="product__details_stock">In stock: 3</p>
                         </div>
-                    <!-- </p> -->
+                    
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Edit</small>
@@ -159,10 +133,10 @@
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
                       </div>
-                  </div>
-                </div>
+                  </div> -->
+            </div>
         </main>
-        <footer>This is my footer</footer>
+        <footer></footer>
         <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -190,7 +164,6 @@
             </div>
         </div>
         <script src="js/bootstrap.bundle.min.js"></script>
-        <!-- <script src="js/components/api/getProducts.js"></script> -->
         <script src="js/script.js" type="module"></script>
     </body>
 </html>
