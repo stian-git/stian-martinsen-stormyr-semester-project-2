@@ -11075,7 +11075,28 @@ main > div {
   background-color: rgba(0, 0, 0, 0.8);
 }
 #imageModal .modal-content {
-  padding: 5em;
+  padding: 0em;
+  justify-content: center;
+}
+
+#imageModal #modalimagecarousel {
+  place-self: center;
+  width: min-content;
+}
+
+#imageModal .carousel-inner {
+  text-align: center;
+  padding: 1em;
+  height: inherit;
+}
+
+#imageModal .carousel-item {
+  height: unset;
+  width: unset;
+}
+
+#imageModal .carousel-item img {
+  height: 60vh;
 }
 
 .featured .row {
