@@ -11074,12 +11074,12 @@ main > div {
 #imageModal {
   background-color: rgba(0, 0, 0, 0.8);
 }
-#imageModal .modal-content {
-  padding: 0em;
-  justify-content: center;
+#imageModal .modal-body {
+  align-self: center;
 }
 
-#imageModal #modalimagecarousel {
+#imageModal #modalimagecarousel,
+#imagecarousel.carousel {
   place-self: center;
   width: min-content;
 }
@@ -11097,6 +11097,10 @@ main > div {
 
 #imageModal .carousel-item img {
   height: 60vh;
+}
+
+button[data-bs-target="#imageModal"] {
+  display: none;
 }
 
 .featured .row {

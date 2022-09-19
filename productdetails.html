@@ -54,8 +54,7 @@
             <h1>Lion Knights' Castle</h1>
             <div class="topcontainer">
                 <div class="carouselcontainer">
-                    <!-- <img src="images/product/10305_alt1.png" alt="" class="current_image" /> -->
-                    <div id="imagecarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div id="imagecarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <!-- <button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -109,7 +108,7 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="details-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                         <table>
-                            <tr>
+                            <!-- <tr>
                                 <td>Title:</td>
                                 <td>Lion Knights' Castle</td>
                             </tr>
@@ -124,7 +123,7 @@
                             <tr>
                                 <td>Number of parts:</td>
                                 <td>5555</td>
-                            </tr>
+                            </tr> -->
                         </table>
                     </div>
                     <div class="tab-pane fade" id="minifigures-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
@@ -140,7 +139,6 @@
                     <div class="tab-pane fade" id="links-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
                         <p>Lego Official : <a href="https://www.lego.com" target="_blank">https://www.lego.com</a></p>
                     </div>
-                    <!-- <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...disabled</div> -->
                 </div>
             </div>
             <div>Featured products</div>
@@ -175,47 +173,41 @@
         <div class="modal fade" id="imageModal" data-bs-keyboard="false" tabindex="-1" aria-label="Image Carousel Modal" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
                 <div class="modal-content">
-                    <!-- Modal-Content in here... -->
-                    <!-- <div class="modalcarouselcontainer"> -->
-                    <!-- <img src="images/product/10305_alt1.png" alt="" class="current_image" /> -->
-                    <div id="modalimagecarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#modalimagecarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#modalimagecarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#modalimagecarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <div class="modal-body modalcarouselcontainer">
+                        <div id="modalimagecarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <!-- <button type="button" data-bs-target="#modalimagecarousel" data-bs-slide-to="0" aria-label="Slide 1" class=""></button>
+                                <button type="button" data-bs-target="#modalimagecarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+                                <button type="button" data-bs-target="#modalimagecarousel" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>                                 -->
+                            </div>
+                            <div class="carousel-inner">
+                                <!-- <div class="carousel-item">
+                                    <img src="images/product/10305.png" class="" alt="..." />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/product/10305_alt1.png" class="" alt="..." />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://res.cloudinary.com/devokuww7/image/upload/v1662462027/40567_1_b04e6922fa.jpg" class="" alt="..." />
+                                </div> -->
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#modalimagecarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#modalimagecarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="images/product/10305.png" class="" alt="..." />
-                                <!-- <img src="images/product/10305.png" class="d-block w-100" alt="..." /> -->
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/product/10305_alt1.png" class="" alt="..." />
-                                <!-- <img src="images/product/10305_alt1.png" class="d-block w-100" alt="..." /> -->
-                            </div>
-                            <div class="carousel-item">
-                                <!-- <img src="images/product/10305.png" class="d-block w-100" alt="..." /> -->
-                                <img src="images/product/10305.png" class="" alt="..." />
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#modalimagecarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#modalimagecarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
-                    <!-- </div> -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
         <script src="js/bootstrap.bundle.min.js"></script>
-        <!-- <script src="js/components/actions/getProductId.js"></script> -->
-        <!-- <script src="js/components/api/getMiniFigs"></script> -->
-        <!-- <script src="js/components/actions/getThumbFromFigImage.js"></script> -->
         <script src="js/script.js" type="module"></script>
-        <!-- <script src="js/components/api/getProducts.js"></script> -->
     </body>
 </html>

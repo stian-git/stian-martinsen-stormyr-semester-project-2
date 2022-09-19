@@ -8,17 +8,6 @@ export default function displayProductDetails(arr) {
 
     // Check if item is already in basket - Then change button to remove from cart.
 
-    // const prodTitle = result.data.attributes.title;
-    //     const prodPrice = result.data.attributes.price;
-    //     const prodNumber = result.data.attributes.prodNumber;
-    //const prodDesc = arr.description;
-    //console.log(prodDesc);
-    //const prodStopped = arr.isProductionStopped;
-    //     const prodStock = result.data.attributes.stock;
-    //     const prodImageArr = result.data.attributes.image.data;
-    //     console.log(prodTitle);
-    //     console.log(prodImageArr);
-
     const detailsTab = document.querySelector("#details-tab-pane");
     detailsTab.innerText = arr.description;
     detailsTab.innerText += "\nStock: " + arr.stock;
@@ -50,15 +39,25 @@ export default function displayProductDetails(arr) {
     });
 
     // display images:
-    const imageArray = arr.image.data;
+    const modalCarouselIndicatorContainer = document.querySelector("#modalimagecarousel .carousel-indicators");
+    const modalCarouselImageContainer = document.querySelector("#modalimagecarousel .carousel-inner");
     const carouselIndicatorContainer = document.querySelector("#imagecarousel .carousel-indicators");
     const carouselImageContainer = document.querySelector("#imagecarousel .carousel-inner");
     arr.image.data.forEach((img, index) => {
         const smallImageUrl = img.attributes.formats.small.url;
         const fullSizeImageUrl = img.attributes.url;
-        //console.log(smallImageUrl);
-        //console.log(fullSizeImageUrl);
-        // add indicators and images:
+
+        // add images to the modal carousel:
+        modalCarouselIndicatorContainer.innerHTML += `
+        <button type="button" data-bs-target="#modalimagecarousel" data-bs-slide-to="${index}" aria-label="Slide ${index + 1}" class=""></button>
+        `;
+        modalCarouselImageContainer.innerHTML += `
+            <div class="carousel-item">
+                <img src="${fullSizeImageUrl}" class="" alt="..." />
+            </div>
+        `;
+
+        // add images to the default carousel...
         if (index === 0) {
             console.log("This is the first image");
             carouselIndicatorContainer.innerHTML += `<button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>`;
@@ -76,8 +75,35 @@ export default function displayProductDetails(arr) {
     });
     // add eventlistener for carousel.
 
-    carouselContainer.addEventListener("click", () => {
-        console.log("Show modal!");
-        const myModal = new bootstrap.Modal(document.querySelector("#imageModal"));
+    carouselContainer.addEventListener("click", (e) => {
+        const previouslyMarkedImages = document.querySelectorAll("#modalimagecarousel .carousel-item.active");
+        const previouslyMarkedIndicators = document.querySelectorAll(`#modalimagecarousel .carousel-indicators button.active`);
+        const allImages = document.querySelectorAll("#modalimagecarousel .carousel-item img");
+        const currentFullsizeImage = e.target.dataset.fullsizeimg;
+        if (currentFullsizeImage) {
+            // remove previously marked indicators.
+            if (previouslyMarkedIndicators) {
+                previouslyMarkedIndicators.forEach((element) => {
+                    element.classList.remove("active");
+                });
+            }
+            // remove previously active image too...
+            if (previouslyMarkedImages) {
+                previouslyMarkedImages.forEach((element) => {
+                    element.classList.remove("active");
+                });
+            }
+            for (let i = 0; i < allImages.length; i++) {
+                // identify the corresponding image in the modal carousel.
+                if (allImages[i].src === currentFullsizeImage) {
+                    allImages[i].parentElement.classList.add("active");
+                    //Then also set the current indicator correct.
+                    document.querySelector(`#modalimagecarousel button[data-bs-slide-to="${i}"]`).classList.add("active");
+                    document.querySelector(`#modalimagecarousel button[data-bs-slide-to="${i}"]`).ariaCurrent = true;
+                }
+            }
+            // Actually open the modal by clicking a hidden button
+            document.querySelector(`button[data-bs-target="#imageModal"]`).click();
+        }
     });
 }
