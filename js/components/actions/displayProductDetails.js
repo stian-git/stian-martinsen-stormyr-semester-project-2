@@ -1,13 +1,22 @@
 import getMinifigs from "../api/getMiniFigs.js";
-import { carouselContainer, legoProductBaseUrl, rebrickableSetUrl } from "../variables.js";
+import isProductInCart from "../validations/isProductInCart.js";
+import { carouselContainer, cartButton, currency, legoProductBaseUrl, priceContainer, productTitle, rebrickableSetUrl } from "../variables.js";
 import displayMiniFigs from "./displayMinifigs.js";
+import getSearchParam from "./getSearchParams.js";
 import isLinkOk from "./isLinkOk.js";
+import toggleProductToAndFromCart from "./toggleProductToAndFromCart.js";
+//import toggleProductToAndFromCart from "./toggleProductToAndFromCart.js";
 
 export default function displayProductDetails(arr) {
     console.log(arr);
 
     // Check if item is already in basket - Then change button to remove from cart.
 
+    document.title = `Brickastle | ${arr.title} (${arr.productnumber})`;
+
+    productTitle.innerHTML = arr.title;
+    priceContainer.innerHTML = `${arr.price} ${currency}`;
+    //console.log(arr.price);
     const detailsTab = document.querySelector("#details-tab-pane");
     detailsTab.innerText = arr.description;
     detailsTab.innerText += "\nStock: " + arr.stock;
@@ -59,7 +68,7 @@ export default function displayProductDetails(arr) {
 
         // add images to the default carousel...
         if (index === 0) {
-            console.log("This is the first image");
+            //console.log("This is the first image");
             carouselIndicatorContainer.innerHTML += `<button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>`;
             carouselImageContainer.innerHTML += `
                 <div class="carousel-item active">
@@ -105,5 +114,25 @@ export default function displayProductDetails(arr) {
             // Actually open the modal by clicking a hidden button
             document.querySelector(`button[data-bs-target="#imageModal"]`).click();
         }
+    });
+
+    // handle toggling of product in and out of the cart.
+    const currentId = getSearchParam("id");
+
+    //toggleProductToAndFromCart(currentId);
+    const isInCart = isProductInCart(currentId);
+
+    //const cartButton = document.querySelector("button.togglecart");
+    if (isInCart) {
+        // show "remove from cart";
+        cartButton.innerHTML = "Remove from cart";
+    } else {
+        // show "Add to cart";
+        cartButton.innerHTML = "Add to cart";
+    }
+
+    // Addeventlistener;
+    cartButton.addEventListener("click", () => {
+        toggleProductToAndFromCart(currentId);
     });
 }

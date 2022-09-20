@@ -54,3 +54,12 @@ export const priceFilter = document.querySelector("th[data-sortby=price]");
 export const carouselContainer = document.querySelector("#imagecarousel");
 
 export const footerContainer = document.querySelector("footer");
+export const currency = "EUR";
+export const priceContainer = document.querySelector(".price");
+
+export const loginButton = document.querySelector(".loginbutton");
+export const logoutButton = document.querySelector(".logoutbutton");
+export const searchButton = document.querySelector(".searchform-button");
+export const searchField = document.querySelector(".searchform-field");
+export const productTitle = document.querySelector("h1.producttitle");
+export const cartButton = document.querySelector("button.togglecart");

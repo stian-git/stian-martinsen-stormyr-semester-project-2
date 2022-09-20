@@ -12,7 +12,7 @@ export default function displayFeaturedProducts(arr) {
     const rowsToBuild = Math.ceil(arr.length / cardsInRow);
     // Build the carousel "rows":
     for (let j = 0; j < rowsToBuild; j++) {
-        console.log("Building row: " + j);
+        //console.log("Building row: " + j);
         carouselContainer.innerHTML += `
         <div class="carousel-item carousel-item-row${j}" data-bs-interval="40000">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-2">
@@ -23,7 +23,7 @@ export default function displayFeaturedProducts(arr) {
     // Then add each featured product in the correct row.
     for (let i = 0; i < arr.length; i++) {
         const prodTitle = arr[i].attributes.title;
-        console.log(prodTitle);
+        //console.log(prodTitle);
         // Calculates the correct row:
         const rowToGoTo = Math.floor(i / cardsInRow);
         // Use the rownumber to identify the row-element to put it into

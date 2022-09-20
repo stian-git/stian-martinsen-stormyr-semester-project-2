@@ -1,37 +1,6 @@
-//console.log("Script running!");
-const loginButton = document.querySelector(".loginbutton");
-const logoutButton = document.querySelector(".logoutbutton");
-
-// const usernameField = document.querySelector("#loginModal #username");
-// const passwordField = document.querySelector("#loginModal #password");
-const searchButton = document.querySelector(".searchform-button");
-
-const searchField = document.querySelector(".searchform-field");
-
-searchButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    searchProducts(searchField.value).then((arr) => {
-        console.log(arr);
-        if (arr.length > 0) {
-            saveSearchResult(arr);
-            window.location.href = "/products.html?search=true";
-        } else {
-            if (currentPage === "products.html") {
-                const productListContainer = document.querySelector("#productlist");
-                productListContainer.innerHTML = "No products matches your search string";
-            }
-            // if there are no results to display...indicate it without forwarding the user?
-        }
-    });
-});
+import { saveProductButton, continueButton, header, imageFormContainer, imagesToAddButton, deleteProductButton, prodIdField, loginButton, logoutButton, searchButton, searchField } from "./components/variables.js";
 
 import doLogin from "./components/api/doLogin.js";
-
-loginButton.addEventListener("click", doLogin);
-logoutButton.addEventListener("click", doLogOut);
-//import isTokenValid from "./components/validations/isTokenValid.js";
-//import isUserAdmin from "./components/validations/isUserAdmin.js";
-//import getUserInfo from "./components/api/getUserInfo.js";
 import toggleUserFeatues from "./components/ui/toggleUserFeatures.js";
 import doLogOut from "./components/api/doLogout.js";
 import getHero from "./components/api/getHero.js";
@@ -50,35 +19,50 @@ import updateProduct from "./components/actions/updateProduct.js";
 import editProduct from "./components/actions/editProduct.js";
 import markDefaultImage from "./components/actions/markDefaultImage.js";
 import addImages from "./components/ui/addImages.js";
-import { saveProductButton, continueButton, header, imageFormContainer, imagesToAddButton, deleteProductButton, prodIdField } from "./components/variables.js";
 import createProductObject from "./components/actions/createProductObject.js";
 import addProduct from "./components/api/addProduct.js";
 import deleteProduct from "./components/api/deleteProduct.js";
 import getUserInfo from "./components/api/getUserInfo.js";
 import requestProductToEdit from "./components/actions/requestProductToEdit.js";
 import addFooter from "./components/ui/addFooter.js";
-// import saveProductsToStorage from "./components/actions/saveProductsToStorage.js";
-let currentPage = document.location.pathname.replace("/", "");
 
-// getUserInfo("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyMzYzNTEzLCJleHAiOjE2NjQ5NTU1MTN9.xYWiYhoG9kzmawsh4bCqWghf7GEHBs6fSQGxpvecqqs").then((result) => {
-//     // console.log(result);
-// });
+// Add search feature:
+
+searchButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    searchProducts(searchField.value).then((arr) => {
+        console.log(arr);
+        if (arr.length > 0) {
+            saveSearchResult(arr);
+            window.location.href = "/products.html?search=true";
+        } else {
+            if (currentPage === "products.html") {
+                const productListContainer = document.querySelector("#productlist");
+                productListContainer.innerHTML = "No products matches your search string";
+            }
+            // if there are no results to display...indicate it without forwarding the user?
+        }
+    });
+});
+
+// identify current page:
+
+let currentPage = document.location.pathname.replace("/", "");
 
 if (currentPage == "") {
     currentPage = "index.html";
 }
 
-//console.log(currentPage);
-
+// perform individual actions for the current page:
 switch (currentPage) {
     case "productdetails.html":
-        // getMinifigs(modelId);
         getProductDetails().then((arr) => {
             displayProductDetails(arr);
         });
         getProducts(true).then((arr) => {
             displayFeaturedProducts(arr);
         });
+
         break;
     case "cart.html":
         displayCart();
@@ -157,25 +141,24 @@ switch (currentPage) {
         } else {
             getProducts(false).then((arr) => {
                 displayProducts(arr);
-                // saveProductsToStorage(arr);
-                //display products
             });
         }
 
         break;
     case "index.html":
-        // getMinifigs(modelId);
         getHero();
         getProducts(true).then((arr) => {
-            //console.log(arr);
             displayFeaturedProducts(arr);
-            //display products
         });
-        // doLogin("test", "Pass1234");
         break;
     default:
         break;
 }
 
+// add login and logout-features:
+loginButton.addEventListener("click", doLogin);
+logoutButton.addEventListener("click", doLogOut);
+
+// common actions
 addFooter();
 toggleUserFeatues();
