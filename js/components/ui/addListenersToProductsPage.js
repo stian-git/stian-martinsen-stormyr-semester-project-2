@@ -1,6 +1,6 @@
-import updateItemInBasket from "../actions/updateItemInCart.js";
+import updateItemInCart from "../actions/updateItemInCart.js";
 import deleteProduct from "../api/deleteProduct.js";
-import { storeCartContent } from "../variables.js";
+//import { storeCartContent } from "../variables.js";
 
 export default function addListenersToProductsPage() {
     // adding "Add to cart"-evenlistener:
@@ -16,7 +16,7 @@ export default function addListenersToProductsPage() {
                 price: button.dataset.price,
                 img: button.dataset.img,
             };
-            updateItemInBasket(button.dataset.id, 1, productObj);
+            updateItemInCart(button.dataset.id, 1, productObj);
         });
     });
 

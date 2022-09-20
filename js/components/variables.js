@@ -52,6 +52,7 @@ export const modelFilter = document.querySelector("th[data-sortby=productnumber]
 export const titleFilter = document.querySelector("th[data-sortby=title]");
 export const priceFilter = document.querySelector("th[data-sortby=price]");
 export const carouselContainer = document.querySelector("#imagecarousel");
+export const carouselImageContainer = document.querySelector("#imagecarousel .carousel-inner");
 
 export const footerContainer = document.querySelector("footer");
 export const currency = "EUR";
@@ -62,4 +63,5 @@ export const logoutButton = document.querySelector(".logoutbutton");
 export const searchButton = document.querySelector(".searchform-button");
 export const searchField = document.querySelector(".searchform-field");
 export const productTitle = document.querySelector("h1.producttitle");
+export const productModel = document.querySelector(".modelnumber");
 export const cartButton = document.querySelector("button.togglecart");

@@ -1,8 +1,11 @@
 import { storeCartContent } from "../variables.js";
+import updateItemInCart from "./updateItemInCart.js";
+// import { updateItemInCart } from "../actions/updateItemInCart.js";
 
 export default function displayCart() {
     const cartContainer = document.querySelector("table.cart tbody");
-    console.log(cartContainer);
+    cartContainer.innerHTML = "";
+    //console.log(cartContainer);
     const currentItemsInCart = JSON.parse(localStorage.getItem(storeCartContent));
     //console.log(currentItemsInCart);
     if (!currentItemsInCart) {
@@ -18,9 +21,22 @@ export default function displayCart() {
                 <td>${item.price}</td>
                 <td>${item.qty}</td>
                 <td class="lineprice">${linePrice}</td>
-                <td>X</td>
+                <td><i class="fa-solid fa-trash" data-id="${item.id}"></i></td>
             </tr>
             `;
+        });
+        // add eventlisteners...
+        const allDeleteButtons = document.querySelectorAll("i.fa-trash");
+        allDeleteButtons.forEach((deletebutton) => {
+            deletebutton.addEventListener("click", (e) => {
+                //console.log(e);
+                updateItemInCart(e.target.dataset.id);
+                //console.log(deletebutton.dataset.id);
+                displayCart();
+            });
+            //line.addEventListener
+
+            //updateItemInCart(line.dataset.id);
         });
     }
 }

@@ -1,6 +1,6 @@
 import getMinifigs from "../api/getMiniFigs.js";
 import isProductInCart from "../validations/isProductInCart.js";
-import { carouselContainer, cartButton, currency, legoProductBaseUrl, priceContainer, productTitle, rebrickableSetUrl } from "../variables.js";
+import { carouselContainer, carouselImageContainer, cartButton, currency, legoProductBaseUrl, priceContainer, productModel, productTitle, rebrickableSetUrl } from "../variables.js";
 import displayMiniFigs from "./displayMinifigs.js";
 import getSearchParam from "./getSearchParams.js";
 import isLinkOk from "./isLinkOk.js";
@@ -13,7 +13,7 @@ export default function displayProductDetails(arr) {
     // Check if item is already in basket - Then change button to remove from cart.
 
     document.title = `Brickastle | ${arr.title} (${arr.productnumber})`;
-
+    productModel.innerHTML = `Model: ${arr.productnumber}`;
     productTitle.innerHTML = arr.title;
     priceContainer.innerHTML = `${arr.price} ${currency}`;
     //console.log(arr.price);
@@ -51,7 +51,9 @@ export default function displayProductDetails(arr) {
     const modalCarouselIndicatorContainer = document.querySelector("#modalimagecarousel .carousel-indicators");
     const modalCarouselImageContainer = document.querySelector("#modalimagecarousel .carousel-inner");
     const carouselIndicatorContainer = document.querySelector("#imagecarousel .carousel-indicators");
-    const carouselImageContainer = document.querySelector("#imagecarousel .carousel-inner");
+    //const carouselImageContainer = document.querySelector("#imagecarousel .carousel-inner");
+
+    carouselImageContainer.dataset.defaultimg = arr.image_url;
     arr.image.data.forEach((img, index) => {
         const smallImageUrl = img.attributes.formats.small.url;
         const fullSizeImageUrl = img.attributes.url;

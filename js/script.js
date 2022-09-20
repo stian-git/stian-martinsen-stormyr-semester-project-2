@@ -58,6 +58,7 @@ switch (currentPage) {
     case "productdetails.html":
         getProductDetails().then((arr) => {
             displayProductDetails(arr);
+            console.log(arr);
         });
         getProducts(true).then((arr) => {
             displayFeaturedProducts(arr);

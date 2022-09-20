@@ -12,6 +12,5 @@ export default function updateProduct() {
     // if (selectedDefaultImage) {
     //     prodObj.data.image_url = document.querySelector(".editimages input:checked").parentElement.nextElementSibling.firstChild.src;
     // }
-
     saveChangedProduct(prodObj, editId);
 }

@@ -1,6 +1,12 @@
 import { storeCartContent } from "../variables.js";
 
-export default function updateItemInBasket(id, action, productObj) {
+export default function updateItemInCart(id, action, productObj = "") {
+    console.log(id);
+    console.log(action);
+    console.log(productObj.id);
+    // if (!id) {
+    //     id = productObj.id
+    // }
     // productObj is required if item doesn`t already exist.
 
     //console.log("Action is: " + action);
@@ -10,10 +16,10 @@ export default function updateItemInBasket(id, action, productObj) {
     if (currentItemsInCart) {
         // If there are items in the cart, check for duplicates:
         for (let i = 0; i < currentItemsInCart.length; i++) {
-            if (currentItemsInCart[i].id == productObj.id || currentItemsInCart[i].id == id) {
-                // Update qty. If action is NaN it will still be handled later on.
+            if (currentItemsInCart[i].id === productObj.id || currentItemsInCart[i].id === id) {
+                // Item already in cart. We will update qty. If action is NaN it will still be handled later on.
                 currentItemsInCart[i].qty = currentItemsInCart[i].qty + action;
-                console.log("New qty: " + currentItemsInCart[i].qty);
+                //console.log("New qty: " + currentItemsInCart[i].qty);
                 if (currentItemsInCart[i].qty < 1) {
                     // We have probably reached 0 and should delete the item.
                     action = "";
