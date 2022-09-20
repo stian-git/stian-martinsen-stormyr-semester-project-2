@@ -1,13 +1,11 @@
 // Use width to calculate the number of featured products to show in each
 // carousel-item
 export default function displayFeaturedProducts(arr) {
-    console.log(arr[0]);
+    //console.log(arr[0]);
     // variables used to calculate number of rows.
     const moreColsOnOffsetWidth = 328;
     const colWidth = 153;
-    //console.log(arr);
-    //console.log(window.innerWidth);
-    const carouselContainer = document.querySelector(".carousel-inner");
+    const carouselContainer = document.querySelector("#featuredproducts .carousel-inner");
     //empty current carousel:
     carouselContainer.innerHTML = "";
     const cardsInRow = 1 + Math.ceil((carouselContainer.offsetWidth - moreColsOnOffsetWidth) / colWidth);
@@ -29,12 +27,12 @@ export default function displayFeaturedProducts(arr) {
         // Calculates the correct row:
         const rowToGoTo = Math.floor(i / cardsInRow);
         // Use the rownumber to identify the row-element to put it into
-        const carouselRowElement = document.querySelector(".carousel-item-row" + rowToGoTo + " .row");
+        const carouselRowElement = document.querySelector("#featuredproducts .carousel-item-row" + rowToGoTo + " .row");
         carouselRowElement.innerHTML += `
-                <div class="col">
+                <div class="col" data-id="${arr[i].id}">
                     <div class="card h-100">
                         <div class="card-img">
-                            <img src="${arr[i].attributes.image_url}" class="card-img-top" alt="..." />
+                            <img src="${arr[i].attributes.image_url}" class="card-img-top" alt="${arr[i].attributes.title}" />
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">${arr[i].attributes.title}</h5>
@@ -47,7 +45,40 @@ export default function displayFeaturedProducts(arr) {
     }
 
     // set first carousel-item as the active.
-    document.querySelector(".carousel-item").classList.add("active");
+    document.querySelector("#featuredproducts .carousel-item").classList.add("active");
+
+    // add eventlisteners:
+
+    const allFeaturedProducts = document.querySelectorAll("#featuredproducts .col");
+    allFeaturedProducts.forEach((element) => {
+        element.addEventListener("click", (e) => {
+            // We catches the ID from any of the clickable elements:
+            let id;
+            switch (e.path.length) {
+                case 14:
+                    id = e.target.parentElement.parentElement.parentElement.dataset.id;
+                    break;
+                case 13:
+                    id = e.target.parentElement.parentElement.dataset.id;
+                    break;
+                case 12:
+                    id = e.target.parentElement.dataset.id;
+                    break;
+                case 11:
+                    id = e.target.dataset.id;
+                    break;
+                default:
+                    id = "";
+                    break;
+            }
+
+            // only forward the user to products page if id is found.
+            if (!isNaN(parseInt(id))) {
+                //console.log("ID is a number and we will forward: " + id);
+                window.location.href = "/productdetails.html?id=" + id;
+            }
+        });
+    });
 }
 
 // < 576 = 1 // offset =< 328                   0

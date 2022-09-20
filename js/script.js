@@ -76,6 +76,9 @@ switch (currentPage) {
         getProductDetails().then((arr) => {
             displayProductDetails(arr);
         });
+        getProducts(true).then((arr) => {
+            displayFeaturedProducts(arr);
+        });
         break;
     case "cart.html":
         displayCart();
