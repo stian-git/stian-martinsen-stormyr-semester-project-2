@@ -11172,6 +11172,14 @@ button[data-bs-target="#imageModal"] {
   margin-right: 1em;
 }
 
+.cart i.fa-trash {
+  cursor: pointer;
+}
+
+.cart i.fa-trash:hover {
+  color: red;
+}
+
 .productform button {
   margin-top: 1em;
 }

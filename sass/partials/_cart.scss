@@ -22,3 +22,11 @@
 .cartsummary p:nth-child(1) {
     margin-right: 1em;
 }
+
+.cart i.fa-trash {
+    cursor: pointer;
+}
+
+.cart i.fa-trash:hover {
+    color: red;
+}

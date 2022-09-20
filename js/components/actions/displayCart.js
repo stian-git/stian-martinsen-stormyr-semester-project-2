@@ -1,3 +1,4 @@
+import getTotalCartPrice from "../ui/getTotalCartPrice.js";
 import { storeCartContent } from "../variables.js";
 import updateItemInCart from "./updateItemInCart.js";
 // import { updateItemInCart } from "../actions/updateItemInCart.js";
@@ -5,12 +6,18 @@ import updateItemInCart from "./updateItemInCart.js";
 export default function displayCart() {
     const cartContainer = document.querySelector("table.cart tbody");
     cartContainer.innerHTML = "";
+
     //console.log(cartContainer);
     const currentItemsInCart = JSON.parse(localStorage.getItem(storeCartContent));
     //console.log(currentItemsInCart);
-    if (!currentItemsInCart) {
+    if (!currentItemsInCart || currentItemsInCart.length === 0) {
         console.log("Nothing to display...");
         // Display a message to the user!
+        document.querySelector("table.cart").style.display = "none";
+        document.querySelector(".cartsummary").style.display = "none";
+        document.querySelector("main").innerHTML += `
+        
+        <p>There are no items in the cart.</p>`;
     } else {
         currentItemsInCart.forEach((item) => {
             const linePrice = item.price * item.qty;
@@ -29,14 +36,10 @@ export default function displayCart() {
         const allDeleteButtons = document.querySelectorAll("i.fa-trash");
         allDeleteButtons.forEach((deletebutton) => {
             deletebutton.addEventListener("click", (e) => {
-                //console.log(e);
                 updateItemInCart(e.target.dataset.id);
-                //console.log(deletebutton.dataset.id);
                 displayCart();
+                getTotalCartPrice();
             });
-            //line.addEventListener
-
-            //updateItemInCart(line.dataset.id);
         });
     }
 }
