@@ -11165,7 +11165,8 @@ button[data-bs-target="#imageModal"] {
 
 .cartsummary {
   display: flex;
-  justify-content: right;
+  float: right;
+  flex-direction: column;
 }
 
 .cartsummary p:nth-child(1) {
@@ -11178,6 +11179,14 @@ button[data-bs-target="#imageModal"] {
 
 .cart i.fa-trash:hover {
   color: red;
+}
+
+.cartsummary div:nth-child(1) {
+  display: flex;
+}
+
+.cartsummary div:nth-child(2) {
+  text-align: right;
 }
 
 .productform button {

@@ -70,3 +70,4 @@ export const loginMenuHeader = document.querySelector("nav .login-menu .dropdown
 export const loginLink = document.querySelector(".login-link");
 //export const adminFeaturesSectionOnProductsPage = document.querySelectorAll("#productlist .card-footer");
 export const cartNavItem = document.querySelector("ul.navbar-nav").children[2].firstElementChild;
+export const emptyCartButton = document.querySelector("button.emptycart");

@@ -1,4 +1,18 @@
-import { saveProductButton, continueButton, header, imageFormContainer, imagesToAddButton, deleteProductButton, prodIdField, loginButton, logoutButton, searchButton, searchField } from "./components/variables.js";
+import {
+    saveProductButton,
+    continueButton,
+    header,
+    imageFormContainer,
+    imagesToAddButton,
+    deleteProductButton,
+    prodIdField,
+    loginButton,
+    logoutButton,
+    searchButton,
+    searchField,
+    emptyCartButton,
+    storeCartContent,
+} from "./components/variables.js";
 
 import doLogin from "./components/api/doLogin.js";
 import toggleUserFeatures from "./components/ui/toggleUserFeatures.js";
@@ -81,7 +95,12 @@ switch (currentPage) {
     case "cart.html":
         displayCart();
         getTotalCartPrice();
-        getNumberOfItemsInCart();
+        //getNumberOfItemsInCart();
+        emptyCartButton.addEventListener("click", () => {
+            localStorage.setItem(storeCartContent, "[]");
+            displayCart();
+            getNumberOfItemsInCart();
+        });
         break;
     case "admin/user.html":
         getUserInfo().then((isLoggedIn) => {
