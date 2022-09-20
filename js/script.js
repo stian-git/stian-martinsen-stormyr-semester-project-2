@@ -25,6 +25,7 @@ import deleteProduct from "./components/api/deleteProduct.js";
 import getUserInfo from "./components/api/getUserInfo.js";
 import requestProductToEdit from "./components/actions/requestProductToEdit.js";
 import addFooter from "./components/ui/addFooter.js";
+import getNumberOfItemsInCart from "./components/ui/getNumberOfItemsInCart.js";
 
 // Add search feature:
 
@@ -80,6 +81,7 @@ switch (currentPage) {
     case "cart.html":
         displayCart();
         getTotalCartPrice();
+        getNumberOfItemsInCart();
         break;
     case "admin/user.html":
         getUserInfo().then((isLoggedIn) => {
@@ -177,3 +179,4 @@ logoutButton.addEventListener("click", doLogOut);
 
 addFooter();
 toggleUserFeatures();
+getNumberOfItemsInCart();

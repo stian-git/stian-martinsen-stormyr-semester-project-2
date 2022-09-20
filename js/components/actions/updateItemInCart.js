@@ -1,3 +1,4 @@
+import getNumberOfItemsInCart from "../ui/getNumberOfItemsInCart.js";
 import { storeCartContent } from "../variables.js";
 
 export default function updateItemInCart(id, action, productObj = "") {
@@ -28,12 +29,14 @@ export default function updateItemInCart(id, action, productObj = "") {
                     }
                     //     Item value is either above 0 and will be updated in the Cart or already deleted.
                     localStorage.setItem(storeCartContent, JSON.stringify(currentItemsInCart));
+                    getNumberOfItemsInCart();
                     return;
                 } else {
                     //console.log("We will delete this item because the action is not a number...");
                     currentItemsInCart.splice(i, 1);
                     localStorage.setItem(storeCartContent, JSON.stringify(currentItemsInCart));
                 }
+                getNumberOfItemsInCart();
                 return;
             }
         }
@@ -50,5 +53,5 @@ export default function updateItemInCart(id, action, productObj = "") {
         localStorage.setItem(storeCartContent, JSON.stringify(newCartList));
     }
 
-    // console.log(currentItemsInCart.length);
+    getNumberOfItemsInCart();
 }
