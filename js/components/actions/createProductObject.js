@@ -12,7 +12,8 @@ export default function createProductObject() {
     } else if (anyImageRadioButtonExists) {
         console.log(anyImageRadioButtonExists);
         anyImageRadioButtonExists.checked = true;
-        selectedImage = anyImageRadioButtonExists.parentElement.parentElement.children[1].firstChild.lastChild.src;
+        //selectedImage = anyImageRadioButtonExists.parentElement.parentElement.children[1].firstChild.lastChild.src;
+        selectedImage = anyImageRadioButtonExists.parentElement.parentElement.children[1].firstChild.src;
     }
 
     console.log(selectedImage);

@@ -45,6 +45,17 @@ searchButton.addEventListener("click", (e) => {
     });
 });
 
+searchButton.disabled = true;
+
+searchField.addEventListener("keyup", (e) => {
+    if (e.target.value !== "") {
+        // Enables the searchbutton when there is something to show.
+        searchButton.disabled = false;
+    } else {
+        searchButton.disabled = true;
+    }
+});
+
 // identify current page:
 
 let currentPage = document.location.pathname.replace("/", "");
@@ -163,9 +174,6 @@ loginButton.addEventListener("click", doLogin);
 logoutButton.addEventListener("click", doLogOut);
 
 // common actions
-// loadSite().then(() => {
-//     console.log("After loading the site, we toggle the user features...");
-//     toggleUserFeatures();
-// });
+
 addFooter();
 toggleUserFeatures();
