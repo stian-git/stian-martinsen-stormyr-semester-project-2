@@ -1,12 +1,11 @@
-import { storeUserIsAdmin, storeUserIsLoggedIn } from "../variables.js";
+import { loginLink, loginMenu, loginMenuHeader, storeUserIsAdmin, storeUserIsLoggedIn } from "../variables.js";
 
-export default function toggleUserFeatues() {
+export default async function toggleUserFeatures() {
+    console.log("Running toggleUserFeatures");
     const userIsLoggedIn = localStorage.getItem(storeUserIsLoggedIn);
     const userIsAdmin = localStorage.getItem(storeUserIsAdmin);
     // console.log(userIsLoggedIn);
-    const loginMenu = document.querySelector("nav .login-menu");
-    const loginMenuHeader = document.querySelector("nav .login-menu .dropdown-toggle");
-    const loginLink = document.querySelector(".login-link");
+    const adminFeaturesSectionOnProductsPage = document.querySelectorAll("#productlist .card-footer");
     if (userIsLoggedIn === "true") {
         //console.log(userIsLoggedIn);
         //console.log(typeof userIsLoggedIn);
@@ -19,10 +18,32 @@ export default function toggleUserFeatues() {
                 element.style.display = "block";
             });
             // enable admintools.
-            //console.log("Adding admin menu items");
+            //console.log("Adding admin menu items")
+            //console.log(window.location.pathname);
+            switch (window.location.pathname) {
+                case "/products.html":
+                    //console.log(adminFeaturesSectionOnProductsPage[0]);
+                    adminFeaturesSectionOnProductsPage.forEach((element) => {
+                        element.style.display = "flex";
+                    });
+
+                    break;
+
+                default:
+                    break;
+            }
         }
     } else {
         loginMenu.style.display = "none";
         loginLink.style.display = "block";
+        switch (window.location.pathname) {
+            case "/products.html":
+                adminFeaturesSectionOnProductsPage.forEach((element) => {
+                    element.style.display = "none";
+                });
+                break;
+            default:
+                break;
+        }
     }
 }

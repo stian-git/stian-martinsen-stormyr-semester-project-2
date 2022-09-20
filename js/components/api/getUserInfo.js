@@ -20,15 +20,15 @@ export default async function getUserInfo(token) {
             const response = await fetch(url, options);
             const json = await response.json();
             if (response.ok) {
-                console.log(json);
+                //console.log(json);
                 localStorage.setItem(storeUserIsBlocked, json.blocked);
                 localStorage.setItem(storeUserIsLoggedIn, true);
-                console.log(json.hasOwnProperty("role"));
+                //console.log(json.hasOwnProperty("role"));
                 if (json.hasOwnProperty("role")) {
-                    console.log("Id exists");
+                    //console.log("Id exists");
                     const userRoleId = json.role.id;
                     if (json.role.id === userAdminGroupId) {
-                        console.log("User is admin");
+                        //console.log("User is admin");
                         localStorage.setItem(storeUserIsAdmin, true);
                     }
                 }
@@ -39,7 +39,7 @@ export default async function getUserInfo(token) {
                 // return false;
             }
         } catch (error) {
-            console.log("Error occured: " + error);
+            //console.log("Error occured: " + error);
             doLogOut();
             return false;
         }

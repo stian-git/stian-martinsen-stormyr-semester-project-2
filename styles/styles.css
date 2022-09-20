@@ -10917,8 +10917,8 @@ footer i.fa-brands {
   justify-content: space-between;
 }
 
-.card-footer {
-  display: flex;
+#productlist .card-footer {
+  display: none;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -11243,7 +11243,7 @@ button[data-bs-target="#imageModal"] {
   text-align: center;
 }
 
-.deleteproductbutton {
+button.deleteproductbutton {
   display: none;
 }
 

@@ -1,4 +1,5 @@
 import addListenersToProductsPage from "../ui/addListenersToProductsPage.js";
+import toggleUserFeatures from "../ui/toggleUserFeatures.js";
 
 export default function displayProducts(arr) {
     const productlist = document.querySelector("#productlist");
@@ -34,4 +35,5 @@ export default function displayProducts(arr) {
     });
     // adding eventlisteners
     addListenersToProductsPage();
+    toggleUserFeatures();
 }

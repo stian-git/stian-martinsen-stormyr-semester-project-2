@@ -1,7 +1,7 @@
 import { saveProductButton, continueButton, header, imageFormContainer, imagesToAddButton, deleteProductButton, prodIdField, loginButton, logoutButton, searchButton, searchField } from "./components/variables.js";
 
 import doLogin from "./components/api/doLogin.js";
-import toggleUserFeatues from "./components/ui/toggleUserFeatures.js";
+import toggleUserFeatures from "./components/ui/toggleUserFeatures.js";
 import doLogOut from "./components/api/doLogout.js";
 import getHero from "./components/api/getHero.js";
 import getProducts from "./components/api/getProducts.js";
@@ -54,6 +54,7 @@ if (currentPage == "") {
 }
 
 // perform individual actions for the current page:
+
 switch (currentPage) {
     case "productdetails.html":
         getProductDetails().then((arr) => {
@@ -126,6 +127,7 @@ switch (currentPage) {
 
         break;
     case "products.html":
+        console.log("products.html entered...");
         const isSearchMode = getSearchParam("search");
         if (isSearchMode) {
             const searchResult = getSearchResult();
@@ -161,5 +163,9 @@ loginButton.addEventListener("click", doLogin);
 logoutButton.addEventListener("click", doLogOut);
 
 // common actions
+// loadSite().then(() => {
+//     console.log("After loading the site, we toggle the user features...");
+//     toggleUserFeatures();
+// });
 addFooter();
-toggleUserFeatues();
+toggleUserFeatures();

@@ -65,3 +65,7 @@ export const searchField = document.querySelector(".searchform-field");
 export const productTitle = document.querySelector("h1.producttitle");
 export const productModel = document.querySelector(".modelnumber");
 export const cartButton = document.querySelector("button.togglecart");
+export const loginMenu = document.querySelector("nav .login-menu");
+export const loginMenuHeader = document.querySelector("nav .login-menu .dropdown-toggle");
+export const loginLink = document.querySelector(".login-link");
+//export const adminFeaturesSectionOnProductsPage = document.querySelectorAll("#productlist .card-footer");

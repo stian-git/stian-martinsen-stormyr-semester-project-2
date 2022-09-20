@@ -7,7 +7,7 @@ export default async function doLogin(username, password) {
     const usernameField = document.querySelector("#loginModal #username");
     const passwordField = document.querySelector("#loginModal #password");
     const loginStatusMessage = document.querySelector(".modal-error");
-    // const loginModal = document.querySelector("#loginModal");
+    //const loginModal = document.querySelector("#loginModal");
 
     username = usernameField.value;
     password = passwordField.value;
@@ -24,15 +24,15 @@ export default async function doLogin(username, password) {
     try {
         const response = await fetch(url, options);
         const json = await response.json();
-        console.log(response);
+        //console.log(response);
         if (response.ok) {
             // saveToken(json.jwt);
             // toggleUserGui(true);
             //console.log(json);
-            console.log(json.jwt);
+            //console.log(json.jwt);
             localStorage.setItem(storeUserToken, json.jwt);
             getUserInfo(json.jwt).then(() => toggleUserFeatues());
-            loginModal.style.display = "none";
+            //loginModal.style.display = "none";
             // remove login modal by clicking the cancel button after actual login.
             document.querySelector(".logincancel").click();
         } else {

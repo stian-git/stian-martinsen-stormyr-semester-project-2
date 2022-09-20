@@ -1,7 +1,7 @@
 //clean variables
 //reset menus.
 
-import toggleUserFeatues from "../ui/toggleUserFeatures.js";
+import toggleUserFeatures from "../ui/toggleUserFeatures.js";
 import { storeUserIsAdmin, storeUserIsBlocked, storeUserIsLoggedIn, storeUserToken } from "../variables.js";
 
 export default function doLogOut() {
@@ -10,5 +10,6 @@ export default function doLogOut() {
     localStorage.setItem(storeUserIsLoggedIn, "false");
     localStorage.removeItem(storeUserToken);
     // localStorage.removeItem()
-    toggleUserFeatues();
+    console.log("Logging out...ready to toggle off admin features now...");
+    toggleUserFeatures();
 }
