@@ -22,6 +22,7 @@ export const storeSearchResult = "storeSearchResult";
 export const storeAllProductsArray = "storeAllProductsArray";
 export const storeCartContent = "storeCartContent";
 
+export const defaultAuthenticatedUserGroupName = "Authenticated user";
 export const noCorsUrl = "https://noroffcors.herokuapp.com/";
 export const legoProductBaseUrl = "https://www.lego.com/en-gb/product/";
 
@@ -71,3 +72,7 @@ export const loginLink = document.querySelector(".login-link");
 //export const adminFeaturesSectionOnProductsPage = document.querySelectorAll("#productlist .card-footer");
 export const cartNavItem = document.querySelector("ul.navbar-nav").children[2].firstElementChild;
 export const emptyCartButton = document.querySelector("button.emptycart");
+
+export const modalCarouselIndicatorContainer = document.querySelector("#modalimagecarousel .carousel-indicators");
+export const modalCarouselImageContainer = document.querySelector("#modalimagecarousel .carousel-inner");
+export const carouselIndicatorContainer = document.querySelector("#imagecarousel .carousel-indicators");

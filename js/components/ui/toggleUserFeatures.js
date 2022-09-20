@@ -1,7 +1,7 @@
 import { loginLink, loginMenu, loginMenuHeader, storeUserIsAdmin, storeUserIsLoggedIn } from "../variables.js";
 
 export default async function toggleUserFeatures() {
-    console.log("Running toggleUserFeatures");
+    //console.log("Running toggleUserFeatures");
     const userIsLoggedIn = localStorage.getItem(storeUserIsLoggedIn);
     const userIsAdmin = localStorage.getItem(storeUserIsAdmin);
     // console.log(userIsLoggedIn);

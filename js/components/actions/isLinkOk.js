@@ -7,8 +7,11 @@ export default async function isLinkOk(url) {
             // 200 is success for both Lego.com and rebrickable.com
             return true;
         }
-        return false;
+        if (data.status === 404) {
+            console.log("Link do not exist and will be hidden.");
+        }
     } catch (error) {
+        console.log("Link do not exist and will be hidden.");
         return false;
     }
 }

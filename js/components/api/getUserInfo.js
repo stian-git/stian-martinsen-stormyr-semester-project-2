@@ -1,4 +1,4 @@
-import { baseUrl, storeUserIsAdmin, storeUserIsLoggedIn, storeUserIsBlocked, userAdminGroupId, storeUserToken } from "../variables.js";
+import { baseUrl, storeUserIsAdmin, storeUserIsLoggedIn, storeUserIsBlocked, userAdminGroupId, storeUserToken, storeUserEmail, storeUserName } from "../variables.js";
 import doLogOut from "./doLogout.js";
 
 // export default async function isUserAdmin(token) {
@@ -23,10 +23,12 @@ export default async function getUserInfo(token) {
                 //console.log(json);
                 localStorage.setItem(storeUserIsBlocked, json.blocked);
                 localStorage.setItem(storeUserIsLoggedIn, true);
+                localStorage.setItem(storeUserEmail, json.email);
+                localStorage.setItem(storeUserName, json.username);
                 //console.log(json.hasOwnProperty("role"));
                 if (json.hasOwnProperty("role")) {
                     //console.log("Id exists");
-                    const userRoleId = json.role.id;
+                    //const userRoleId = json.role.id;
                     if (json.role.id === userAdminGroupId) {
                         //console.log("User is admin");
                         localStorage.setItem(storeUserIsAdmin, true);
@@ -44,7 +46,7 @@ export default async function getUserInfo(token) {
             return false;
         }
     } else {
-        // doLogOut();
-        // return false;
+        doLogOut();
+        return false;
     }
 }

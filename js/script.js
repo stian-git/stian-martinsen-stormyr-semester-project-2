@@ -40,6 +40,7 @@ import getUserInfo from "./components/api/getUserInfo.js";
 import requestProductToEdit from "./components/actions/requestProductToEdit.js";
 import addFooter from "./components/ui/addFooter.js";
 import getNumberOfItemsInCart from "./components/ui/getNumberOfItemsInCart.js";
+import displayUserInfo from "./components/actions/displayUserInfo.js";
 
 // Add search feature:
 
@@ -95,7 +96,6 @@ switch (currentPage) {
     case "cart.html":
         displayCart();
         getTotalCartPrice();
-        //getNumberOfItemsInCart();
         emptyCartButton.addEventListener("click", () => {
             localStorage.setItem(storeCartContent, "[]");
             displayCart();
@@ -106,6 +106,8 @@ switch (currentPage) {
         getUserInfo().then((isLoggedIn) => {
             if (!isLoggedIn) {
                 history.back();
+            } else {
+                displayUserInfo();
             }
         });
         break;

@@ -7,7 +7,6 @@ export default async function deleteImage(e) {
     const rowElement = this.parentElement.parentElement;
     const productId = rowElement.dataset.imageid;
     const url = baseUrl + "api/upload/files/" + productId;
-
     const options = {
         method: "DELETE",
         headers: {
