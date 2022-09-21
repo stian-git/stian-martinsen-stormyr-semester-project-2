@@ -76,3 +76,5 @@ export const emptyCartButton = document.querySelector("button.emptycart");
 export const modalCarouselIndicatorContainer = document.querySelector("#modalimagecarousel .carousel-indicators");
 export const modalCarouselImageContainer = document.querySelector("#modalimagecarousel .carousel-inner");
 export const carouselIndicatorContainer = document.querySelector("#imagecarousel .carousel-indicators");
+
+export const totalPriceContainer = document.querySelector(".cartsummary-price");
