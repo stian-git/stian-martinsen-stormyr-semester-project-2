@@ -88,3 +88,8 @@ export const minifigsContainer = document.querySelector("#minifigures-tab-pane .
 
 export const detailsTab = document.querySelector("#details-tab-pane");
 export const linkTab = document.querySelector("#links-tab-pane");
+
+export const cartContainer = document.querySelector("table.cart tbody");
+export const cartTable = document.querySelector("table.cart");
+export const cartsummary = document.querySelector(".cartsummary");
+export const mainElement = document.querySelector("main");
