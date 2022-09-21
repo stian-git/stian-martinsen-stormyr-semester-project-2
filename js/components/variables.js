@@ -97,3 +97,4 @@ export const mainElement = document.querySelector("main");
 export const spinnerModalBackButton = document.querySelector("#spinnerModal button.spinnercancel");
 export const spinnerModalMessage = document.querySelector("#spinnerModal .spinnermessage");
 export const spinnerModalTriggerButton = document.querySelector("button.spinnermodaltrigger");
+export const spinnerModalHeader = document.querySelector("#spinnerModal .modal-title");
