@@ -1,11 +1,14 @@
 import displayEditImages from "../actions/displayEditImages.js";
-import { apiFormDataField, apiFormDataRef, baseUrl, prodIdField, storeUserToken } from "../variables.js";
+import { apiFormDataField, apiFormDataRef, baseUrl, prodIdField, spinnerModalBackButton, spinnerModalMessage, spinnerModalTriggerButton, storeUserToken } from "../variables.js";
 
 export default async function addImages() {
-    const fileList = this.files;
-    //console.log(fileList[0]);
-    //console.log(fileList[0].name);
+    // SpinnerModal resets:
+    spinnerModalBackButton.disabled = true;
+    spinnerModalTriggerButton.click();
+    spinnerModalBackButton.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Saving...`;
+    spinnerModalMessage.innerHTML = "Please wait while uploading image(s).";
 
+    const fileList = this.files;
     const apiToken = localStorage.getItem(storeUserToken);
     const url = baseUrl + "api/upload";
     const formData = new FormData();
@@ -27,15 +30,17 @@ export default async function addImages() {
     try {
         const data = await fetch(url, options);
         const result = await data.json();
-        console.log(result);
         result.forEach((img) => {
             displayEditImages(img.id, img.formats.thumbnail.url, img.url);
         });
         this.value = "";
-        //document.querySelector("input[type=file]").value = "";
-
         // Present successful adding.
+        spinnerModalMessage.innerHTML = "Image(s) successfully added.";
     } catch (error) {
         console.log("An error occured adding images...");
+        spinnerModalMessage.innerHTML = "Upload of image(s) failed. Please try again.";
+    } finally {
+        spinnerModalBackButton.disabled = false;
+        spinnerModalBackButton.innerHTML = "Go Back";
     }
 }

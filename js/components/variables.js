@@ -93,3 +93,7 @@ export const cartContainer = document.querySelector("table.cart tbody");
 export const cartTable = document.querySelector("table.cart");
 export const cartsummary = document.querySelector(".cartsummary");
 export const mainElement = document.querySelector("main");
+
+export const spinnerModalBackButton = document.querySelector("#spinnerModal button.spinnercancel");
+export const spinnerModalMessage = document.querySelector("#spinnerModal .spinnermessage");
+export const spinnerModalTriggerButton = document.querySelector("button.spinnermodaltrigger");
