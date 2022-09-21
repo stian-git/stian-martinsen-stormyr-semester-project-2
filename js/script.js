@@ -12,6 +12,9 @@ import {
     searchField,
     emptyCartButton,
     storeCartContent,
+    loginStatusMessage,
+    loginCancelButton,
+    loginForm,
 } from "./components/variables.js";
 
 import doLogin from "./components/api/doLogin.js";
@@ -86,7 +89,7 @@ switch (currentPage) {
     case "productdetails.html":
         getProductDetails().then((arr) => {
             displayProductDetails(arr);
-            console.log(arr);
+            //console.log(arr);
         });
         getProducts(true).then((arr) => {
             displayFeaturedProducts(arr);
@@ -195,6 +198,19 @@ switch (currentPage) {
 // add login and logout-features:
 loginButton.addEventListener("click", doLogin);
 logoutButton.addEventListener("click", doLogOut);
+
+//const loginCancelButton = document.querySelector(".logincancel");
+loginCancelButton.addEventListener("click", () => {
+    //console.log("Cancelling now...");
+    loginStatusMessage.style.display = "none";
+});
+
+// attempt login when clicking enter...
+loginForm.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+        doLogin();
+    }
+});
 
 // common actions
 

@@ -6,7 +6,9 @@ import {
     carouselIndicatorContainer,
     cartButton,
     currency,
+    detailsTab,
     legoProductBaseUrl,
+    linkTab,
     modalCarouselImageContainer,
     modalCarouselIndicatorContainer,
     priceContainer,
@@ -18,11 +20,8 @@ import displayMiniFigs from "./displayMinifigs.js";
 import getSearchParam from "./getSearchParams.js";
 import isLinkOk from "./isLinkOk.js";
 import toggleProductToAndFromCart from "./toggleProductToAndFromCart.js";
-//import toggleProductToAndFromCart from "./toggleProductToAndFromCart.js";
 
 export default function displayProductDetails(arr) {
-    console.log(arr);
-
     // Check if item is already in basket - Then change button to remove from cart.
 
     document.title = `Brickastle | ${arr.title} (${arr.productnumber})`;
@@ -30,13 +29,13 @@ export default function displayProductDetails(arr) {
     productTitle.innerHTML = arr.title;
     priceContainer.innerHTML = `${arr.price} ${currency}`;
     //console.log(arr.price);
-    const detailsTab = document.querySelector("#details-tab-pane");
+    //const detailsTab = document.querySelector("#details-tab-pane");
     detailsTab.innerText = arr.description;
     detailsTab.innerText += "\nStock: " + arr.stock;
     if (arr.isProductionStopped) {
         detailsTab.innerText += "\nProductionstatus: Stopped.";
     }
-    const linkTab = document.querySelector("#links-tab-pane");
+    //    const linkTab = document.querySelector("#links-tab-pane");
     // make Lego-link:
     const legoProductLink = legoProductBaseUrl + arr.productnumber;
     isLinkOk(legoProductLink).then((isLegoLinkOk) => {
@@ -55,7 +54,6 @@ export default function displayProductDetails(arr) {
     // Retrieve minifigs:
     getMinifigs(arr.productnumber).then((arr) => {
         if (arr.count > 0) {
-            console.log("Attempt to display minifigs...");
             displayMiniFigs(arr);
         }
     });

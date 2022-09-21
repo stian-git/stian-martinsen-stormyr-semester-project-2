@@ -69,6 +69,12 @@ export const cartButton = document.querySelector("button.togglecart");
 export const loginMenu = document.querySelector("nav .login-menu");
 export const loginMenuHeader = document.querySelector("nav .login-menu .dropdown-toggle");
 export const loginLink = document.querySelector(".login-link");
+export const loginStatusMessage = document.querySelector(".modal-error");
+export const loginCancelButton = document.querySelector(".logincancel");
+export const loginForm = document.querySelector("#loginModal .modal-body form");
+export const usernameField = document.querySelector("#loginModal #username");
+export const passwordField = document.querySelector("#loginModal #password");
+
 //export const adminFeaturesSectionOnProductsPage = document.querySelectorAll("#productlist .card-footer");
 export const cartNavItem = document.querySelector("ul.navbar-nav").children[2].firstElementChild;
 export const emptyCartButton = document.querySelector("button.emptycart");
@@ -79,3 +85,6 @@ export const carouselIndicatorContainer = document.querySelector("#imagecarousel
 
 export const totalPriceContainer = document.querySelector(".cartsummary-price");
 export const minifigsContainer = document.querySelector("#minifigures-tab-pane .card-group");
+
+export const detailsTab = document.querySelector("#details-tab-pane");
+export const linkTab = document.querySelector("#links-tab-pane");

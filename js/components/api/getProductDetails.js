@@ -21,7 +21,7 @@ export default async function getProductDetails(id) {
     try {
         const data = await fetch(getProdUrl);
         const result = await data.json();
-        console.log(result);
+        //console.log(result);
         return result.data.attributes;
     } catch (error) {
         console.log("An error occured: " + error);

@@ -10,6 +10,6 @@ export default function doLogOut() {
     localStorage.setItem(storeUserIsLoggedIn, "false");
     localStorage.removeItem(storeUserToken);
     // localStorage.removeItem()
-    console.log("Logging out...ready to toggle off admin features now...");
+    //console.log("Logging out...ready to toggle off admin features now...");
     toggleUserFeatures();
 }
