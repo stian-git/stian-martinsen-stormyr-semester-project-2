@@ -151,9 +151,12 @@ switch (currentPage) {
                     saveProductButton.style.display = "none";
                     continueButton.addEventListener("click", (e) => {
                         e.preventDefault();
+                        continueButton.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Saving product...`;
+                        continueButton.disabled = true;
                         let prodObj = createProductObject();
                         addProduct(prodObj);
-                        deleteProductButton.style.display = "inline-block";
+                        //deleteProductButton.style.display = "inline-block";
                     });
                 }
             } else {

@@ -1,22 +1,14 @@
 import getTotalCartPrice from "../ui/getTotalCartPrice.js";
-import { storeCartContent } from "../variables.js";
+import { cartContainer, cartsummary, cartTable, mainElement, storeCartContent } from "../variables.js";
 import updateItemInCart from "./updateItemInCart.js";
-// import { updateItemInCart } from "../actions/updateItemInCart.js";
 
 export default function displayCart() {
-    const cartContainer = document.querySelector("table.cart tbody");
     cartContainer.innerHTML = "";
-
-    //console.log(cartContainer);
     const currentItemsInCart = JSON.parse(localStorage.getItem(storeCartContent));
-    //console.log(currentItemsInCart);
     if (!currentItemsInCart || currentItemsInCart.length === 0) {
-        console.log("Nothing to display...");
-        // Display a message to the user!
-        document.querySelector("table.cart").style.display = "none";
-        document.querySelector(".cartsummary").style.display = "none";
-        document.querySelector("main").innerHTML += `
-        
+        cartTable.style.display = "none";
+        cartsummary.style.display = "none";
+        mainElement.innerHTML += `
         <p>There are no items in the cart.</p>`;
     } else {
         currentItemsInCart.forEach((item) => {

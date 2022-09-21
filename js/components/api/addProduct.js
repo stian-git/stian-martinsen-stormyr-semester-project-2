@@ -1,23 +1,8 @@
-import { baseUrl, continueButton, header, imageFormContainer, prodIdField, saveProductButton } from "../variables.js";
+import { baseUrl, continueButton, deleteProductButton, header, imageFormContainer, prodIdField, saveProductButton } from "../variables.js";
 
 export default async function addProduct(prodObj) {
     const addProductUrl = baseUrl + "api/products";
     const apiToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyOTYyNjk5LCJleHAiOjE2NjU1NTQ2OTl9.imsBfAoVMhVEhBjsw2V3iBMMO7anweekVazf-CRzNyU";
-
-    // prodObj = JSON.stringify({
-    //     data: {
-    //         title: "Test Product 2",
-    //         description: "This is a test product.",
-    //         price: 666,
-    //         stock: 666,
-    //         productnumber: "66666",
-    //         image_url: "https://www.google.com",
-    //         isProductionStopped: true,
-    //         featured: false,
-    //     },
-    // });
-
-    // Below was changed 13.9 to perform JSON.stringify here instead of in updateProduct.js
     const options = {
         method: "POST",
         body: JSON.stringify(prodObj),
@@ -38,8 +23,12 @@ export default async function addProduct(prodObj) {
         imageFormContainer.style.display = "block";
         continueButton.style.display = "none";
         saveProductButton.style.display = "inline-block";
+        deleteProductButton.style.display = "inline-block";
         header.innerHTML = "Add Product (2/2)";
     } catch (error) {
         console.log("Error occured adding product: " + error);
+    } finally {
+        continueButton.innerHTML = "Continue";
+        continueButton.disabled = false;
     }
 }
