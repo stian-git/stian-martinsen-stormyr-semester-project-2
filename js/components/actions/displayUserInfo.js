@@ -17,15 +17,15 @@ export default function displayUserInfo() {
                 <tbody>
                     <tr>
                         <th>Username</th>
-                        <td>${username}</td>
+                        <td class="userprofile__row-data">${username}</td>
                     </tr>
                     <tr>
                         <th>Email</th>
-                        <td>${useremail}</td>
+                        <td class="userprofile__row-data">${useremail}</td>
                     </tr>
                     <tr>
                         <th>Role</th>
-                        <td>${userrole}</td>
+                        <td class="userprofile__row-data">${userrole}</td>
                     </tr>
                 </tbody>
             </table>`;

@@ -11251,10 +11251,10 @@ input.textfilter {
   height: 0px;
 }
 
-table.userprofile {
+.userprofile {
   margin-top: 2em;
 }
-table.userprofile td {
+.userprofile__row-data {
   padding: 0.2em 2em;
 }
 
