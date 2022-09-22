@@ -10912,25 +10912,25 @@ ul.navbar-nav {
   display: none;
 }
 
-footer {
+.footer {
   background-color: #ffcf00;
   padding: 1em 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-footer p {
-  margin: 0px;
-  text-align: center;
-  font-size: 0.8em;
-}
-footer i.fa-brands {
+.footer__section-someicon {
   font-size: 2em;
   margin: 2px;
   cursor: pointer;
 }
-footer i.fa-brands:hover {
+.footer__section-someicon:hover {
   color: red;
+}
+.footer__section-info {
+  margin: 0px;
+  text-align: center;
+  font-size: 0.8em;
 }
 
 .card-body {

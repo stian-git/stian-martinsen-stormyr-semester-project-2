@@ -1,20 +1,22 @@
-footer {
+.footer {
     background-color: #ffcf00;
     padding: 1em 2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    p {
-        margin: 0px;
-        text-align: center;
-        font-size: 0.8em;
-    }
-    i.fa-brands {
-        font-size: 2em;
-        margin: 2px;
-        cursor: pointer;
-        &:hover {
-            color: red;
+    &__section {
+        &-someicon {
+            font-size: 2em;
+            margin: 2px;
+            cursor: pointer;
+            &:hover {
+                color: red;
+            }
+        }
+        &-info {
+            margin: 0px;
+            text-align: center;
+            font-size: 0.8em;
         }
     }
 }
