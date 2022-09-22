@@ -17,29 +17,16 @@ main {
     border-right: 2px solid black;
 }
 
-@include media-breakpoint-up(lg) {
-    main {
-        padding: 1em 10em 4em 10em;
-    }
-}
-
-.navbar {
-    box-shadow: 1px 0px 10px black;
-}
-
-// below makes the content align just below the header on every page, no matter what the first element is.
 header:first-of-type + * {
+    //this makes the content align just below the header on every page, no matter what the first element is.
     margin-top: 63px;
 }
 
 @include media-breakpoint-up(lg) {
+    main {
+        padding: 1em 10em 4em 10em;
+    }
     header:first-of-type + * {
         margin-top: 80px;
     }
-}
-
-h2,
-h3,
-h1:not(:first-of-type) {
-    margin-top: 3em;
 }

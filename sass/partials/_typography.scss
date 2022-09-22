@@ -36,3 +36,9 @@ h2 {
 h3 {
     text-decoration: underline;
 }
+
+h2,
+h3,
+h1:not(:first-of-type) {
+    margin-top: 3em;
+}

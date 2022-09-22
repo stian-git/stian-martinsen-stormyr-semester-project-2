@@ -10785,6 +10785,14 @@ h3, .h3 {
   text-decoration: underline;
 }
 
+h2, .h2,
+h3,
+.h3,
+h1:not(:first-of-type),
+.h1:not(:first-of-type) {
+  margin-top: 3em;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -10804,32 +10812,21 @@ main {
   border-right: 2px solid black;
 }
 
-@media (min-width: 992px) {
-  main {
-    padding: 1em 10em 4em 10em;
-  }
-}
-.navbar {
-  box-shadow: 1px 0px 10px black;
-}
-
 header:first-of-type + * {
   margin-top: 63px;
 }
 
 @media (min-width: 992px) {
+  main {
+    padding: 1em 10em 4em 10em;
+  }
   header:first-of-type + * {
     margin-top: 80px;
   }
 }
-h2, .h2,
-h3,
-.h3,
-h1:not(:first-of-type),
-.h1:not(:first-of-type) {
-  margin-top: 3em;
+.header {
+  box-shadow: 1px 0px 10px black;
 }
-
 .header__logo {
   max-width: 20%;
 }
