@@ -11274,13 +11274,15 @@ button[data-bs-target="#imageModal"] {
 }
 
 .producttable img.thumbnail {
-  height: 60px;
+  max-height: 100%;
+  max-width: 100%;
   padding: 5px;
 }
 
 .producttable td {
   margin: 5px;
   padding: 5px;
+  height: 60px;
 }
 
 .producttable tr:nth-child(even) {
@@ -11306,9 +11308,22 @@ input.textfilter {
   color: green;
 }
 
+.producttable .fa-solid {
+  display: none;
+}
+
+.producttable .sorting-enabled.ascending .sort-up {
+  display: inline-block;
+}
+
+.producttable .sorting-enabled.descending .down {
+  display: inline-block;
+}
+
 .producttable thead th div {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 table.userprofile {
