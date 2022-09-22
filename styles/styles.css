@@ -11002,24 +11002,10 @@ main > div {
 }
 
 .minifig {
-  width: 100px;
-  border: 1px solid black;
-  display: inline-flex;
-  flex-direction: column;
-  padding: 5px 10px;
-  margin: 5px;
-}
-
-.minifig p {
-  font-size: 0.6em;
-}
-
-#minifigures-tab-pane .card-group {
   flex-flow: wrap-reverse;
   justify-content: center;
 }
-
-#minifigures-tab-pane .card {
+.minifig__card {
   min-width: 150px;
   max-width: 300px;
   padding: 5px;
@@ -11027,6 +11013,9 @@ main > div {
   border: 1px solid black;
   border-radius: 0px;
   box-shadow: 1px 1px 6px black;
+}
+.minifig__card-title {
+  font-size: 0.8em;
 }
 
 .topcontainer {

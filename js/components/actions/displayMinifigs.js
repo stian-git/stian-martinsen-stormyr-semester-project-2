@@ -13,10 +13,10 @@ export default function displayMiniFigs(figdata) {
         const figureTitle = figure.set_name;
         // gather the variables and display them.
         minifigsContainer.innerHTML += `
-            <div class="card">
-                <img src="${figurethumbImage}" class="card-img-top" alt="${figureTitle}" />
-                <div class="card-body">
-                    <h5 class="card-title">${figureTitle}</h5>
+            <div class="card minifig__card">
+                <img src="${figurethumbImage}" class="card-img-top minifig__card-img" alt="${figureTitle}" />
+                <div class="card-body minifig__card-body">
+                    <h5 class="card-title minifig__card-title">${figureTitle}</h5>
                 </div>
             </div>`;
     });
