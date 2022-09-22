@@ -11274,9 +11274,19 @@ table.userprofile td {
   font-size: 1.5em;
   border-bottom: 1px solid black;
 }
-
-.statuscontainer.active {
+.statuscontainer-message {
+  font-family: "Orbitron";
+  margin: 0;
+}
+.statuscontainer__status-active {
   animation: showStatusBar 5s 1 ease;
+}
+.statuscontainer__status-error {
+  background-color: #ff5050;
+  color: black;
+}
+.statuscontainer__status-success {
+  background-color: green;
 }
 
 @keyframes showStatusBar {
@@ -11293,20 +11303,6 @@ table.userprofile td {
     top: -5em;
   }
 }
-.statuscontainer_message {
-  font-family: "Orbitron";
-  margin: 0;
-}
-
-.statuscontainer.error {
-  background-color: #ff5050;
-  color: black;
-}
-
-.statuscontainer.success {
-  background-color: green;
-}
-
 .modal-error {
   background-color: red;
   text-align: center;

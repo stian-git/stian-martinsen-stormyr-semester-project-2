@@ -100,7 +100,7 @@ export const spinnerModalTriggerButton = document.querySelector("button.spinnerm
 export const spinnerModalHeader = document.querySelector("#spinnerModal .modal-title");
 
 export const statusContainer = document.querySelector(".statuscontainer");
-export const statusMessage = document.querySelector(".statuscontainer_message");
+export const statusMessage = document.querySelector(".statuscontainer-message");
 
 export const productlist = document.querySelector("#productlist");
 

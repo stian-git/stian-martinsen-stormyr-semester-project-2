@@ -10,15 +10,25 @@
     color: white;
     z-index: 2000;
     top: -5em;
-    // top: 0;
     font-weight: bold;
     font-size: 1.5em;
     border-bottom: 1px solid black;
-    //font-family: "Roboto Slab";
-}
-
-.statuscontainer.active {
-    animation: showStatusBar 5s 1 ease;
+    &-message {
+        font-family: "Orbitron";
+        margin: 0;
+    }
+    &__status {
+        &-active {
+            animation: showStatusBar 5s 1 ease;
+        }
+        &-error {
+            background-color: #ff5050;
+            color: black;
+        }
+        &-success {
+            background-color: green;
+        }
+    }
 }
 
 @keyframes showStatusBar {
@@ -34,17 +44,4 @@
     100% {
         top: -5em;
     }
-}
-
-.statuscontainer_message {
-    font-family: "Orbitron";
-    margin: 0;
-}
-.statuscontainer.error {
-    background-color: #ff5050;
-    color: black;
-}
-
-.statuscontainer.success {
-    background-color: green;
 }
