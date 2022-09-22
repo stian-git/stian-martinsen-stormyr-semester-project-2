@@ -11,38 +11,38 @@
     </head>
     <body>
         <header>
-            <nav class="navbar fixed-top navbar-expand-lg bg-white">
+            <nav class="navbar fixed-top navbar-expand-lg bg-white header">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/"><img src="../images/logo_brickastle_purple_transparent.png" class="logo" alt="" /></a>
+                    <a class="navbar-brand header__logo" href="/"><img src="../images/logo_brickastle_purple_transparent.png" class="header__logo-img" alt="" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mainmenu">
+                            <li class="nav-item mainmenu__item">
                                 <a class="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item mainmenu__item">
                                 <a class="nav-link" href="/products.html">Products</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item mainmenu__item">
                                 <a class="nav-link" href="/cart.html">Cart</a>
                             </li>
-                            <li class="nav-item login-link">
+                            <li class="nav-item login-link mainmenu__item">
                                 <!-- <button type="button" class="btn nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button> -->
                                 <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                             </li>
-                            <li class="nav-item dropdown login-menu">
+                            <li class="nav-item dropdown login-menu mainmenu__item mainmenu__adminmenu">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">User</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="/admin/user.html">User Profile</a></li>
-                                    <li><a class="dropdown-item adminitem" href="/admin/edit.html">Add Product</a></li>
-                                    <li><a class="dropdown-item adminitem" href="/admin/edit.html?id=search">Edit Product</a></li>
+                                    <li><a class="dropdown-item adminitem mainmenu__adminmenu-link" href="/admin/edit.html">Add Product</a></li>
+                                    <li><a class="dropdown-item adminitem mainmenu__adminmenu-link" href="/admin/edit.html?id=search">Edit Product</a></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><a class="dropdown-item logoutbutton" href="#">Logout</a></li>
                                 </ul>
                             </li>
-                            <!-- <li class="nav-item">
+                            <!-- <li class="nav-item mainmenu__item">
                                 <a class="nav-link disabled">Disabled</a>
                             </li> -->
                         </ul>
@@ -55,9 +55,6 @@
             </nav>
             <!-- <div class="header__bottom_line"></div> -->
         </header>
-        <!-- <div class="hero">
-            <div class="herotext">This is a hero text</div>
-        </div> -->
         <div class="header__bottom_line"></div>
         <main>
             <h1>User Profile</h1>

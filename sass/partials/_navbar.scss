@@ -1,0 +1,9 @@
+.mainmenu {
+    margin: auto;
+    &__adminmenu {
+        display: none;
+        &-link {
+            display: none;
+        }
+    }
+}

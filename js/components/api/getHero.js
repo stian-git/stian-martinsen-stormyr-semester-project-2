@@ -10,7 +10,7 @@ export default async function getHero() {
             const heroImage = json.data.attributes.hero_banner.data.attributes.url;
             // may concider different sizes on different screens...
             const heroContainer = document.querySelector(".hero");
-            const heroTextContainer = document.querySelector(".herotext");
+            const heroTextContainer = document.querySelector(".hero-text");
             heroContainer.style.backgroundImage = "URL(" + heroImage + ")";
             heroTextContainer.innerHTML = heroText;
         } else {

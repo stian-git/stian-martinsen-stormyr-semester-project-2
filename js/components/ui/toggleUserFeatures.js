@@ -9,7 +9,7 @@ export default async function toggleUserFeatures() {
         loginMenuHeader.innerHTML = "User";
         loginLink.style.display = "none";
         if (userIsAdmin === "true") {
-            //const adminMenuItems = document.querySelectorAll(".navbar .adminitem");
+            //const adminMenuItems = document.querySelectorAll(".navbar .adminitem mainmenu__adminmenu-link");
             adminMenuItems.forEach((element) => {
                 element.style.display = "block";
             });

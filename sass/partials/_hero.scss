@@ -1,0 +1,30 @@
+.hero {
+    height: 250px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &-text {
+        background-color: #ffcf00;
+        padding: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border: 1px solid black;
+        border-left: none;
+        position: absolute;
+        left: 0px;
+        animation: showHeroText 2s 1 ease-out;
+    }
+}
+
+@keyframes showHeroText {
+    0% {
+        left: -250px;
+    }
+    100% {
+        left: 0px;
+    }
+}

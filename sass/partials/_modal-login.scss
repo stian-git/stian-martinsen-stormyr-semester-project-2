@@ -1,0 +1,9 @@
+.modal {
+    &-error {
+        background-color: red;
+        text-align: center;
+        padding: 5px;
+        border-radius: 10px;
+        display: none;
+    }
+}

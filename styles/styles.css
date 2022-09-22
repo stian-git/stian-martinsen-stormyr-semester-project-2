@@ -10830,13 +10830,13 @@ h1:not(:first-of-type),
   margin-top: 3em;
 }
 
-.header__top {
-  margin: 0;
+.header__logo {
+  max-width: 20%;
 }
-.header__top_logo {
-  display: inline-flex;
-  box-shadow: 1px 1px 17px black;
-  padding-bottom: 10px;
+.header__logo-img {
+  display: block;
+  width: 100%;
+  min-width: 240px;
 }
 .header__bottom_line {
   background-color: #ffcf00;
@@ -10846,72 +10846,11 @@ h1:not(:first-of-type),
   padding: 0;
 }
 
-.logo {
-  display: block;
-  width: 100%;
-  min-width: 240px;
-}
-
-.navbar-brand {
-  max-width: 20%;
-}
-
 @media (min-width: 992px) {
-  .navbar {
+  .header {
     min-height: 80px !important;
   }
 }
-.hero {
-  height: 250px;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  border-top: 1px solid black;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.herotext {
-  background-color: #ffcf00;
-  padding: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: 1px solid black;
-  border-left: none;
-  position: absolute;
-  left: 0px;
-  animation: showHeroText 2s 1 ease-out;
-}
-
-@keyframes showHeroText {
-  0% {
-    left: -250px;
-  }
-  100% {
-    left: 0px;
-  }
-}
-ul.navbar-nav {
-  margin: auto;
-}
-
-.navbar .login-menu {
-  display: none;
-}
-
-.navbar .adminitem {
-  display: none;
-}
-
-.modal-error {
-  background-color: red;
-  text-align: center;
-  padding: 5px;
-  border-radius: 10px;
-  display: none;
-}
-
 .footer {
   background-color: #ffcf00;
   padding: 1em 2em;
@@ -11380,4 +11319,53 @@ table.userprofile td {
 
 .statuscontainer.success {
   background-color: green;
+}
+
+.modal-error {
+  background-color: red;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  display: none;
+}
+
+.mainmenu {
+  margin: auto;
+}
+.mainmenu__adminmenu {
+  display: none;
+}
+.mainmenu__adminmenu-link {
+  display: none;
+}
+
+.hero {
+  height: 250px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-top: 1px solid black;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.hero-text {
+  background-color: #ffcf00;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid black;
+  border-left: none;
+  position: absolute;
+  left: 0px;
+  animation: showHeroText 2s 1 ease-out;
+}
+
+@keyframes showHeroText {
+  0% {
+    left: -250px;
+  }
+  100% {
+    left: 0px;
+  }
 }

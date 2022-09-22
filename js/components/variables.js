@@ -104,4 +104,5 @@ export const statusMessage = document.querySelector(".statuscontainer_message");
 
 export const productlist = document.querySelector("#productlist");
 
-export const adminMenuItems = document.querySelectorAll(".navbar .adminitem");
+//export const adminMenuItems = document.querySelectorAll(".navbar .adminitem mainmenu__adminmenu-link");
+export const adminMenuItems = document.querySelectorAll(".navbar .mainmenu__adminmenu-link");
