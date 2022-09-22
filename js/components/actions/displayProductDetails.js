@@ -62,6 +62,7 @@ export default function displayProductDetails(arr) {
 
     carouselImageContainer.dataset.defaultimg = arr.image_url;
     if (arr.image.data) {
+        carouselImageContainer.innerHTML = "";
         arr.image.data.forEach((img, index) => {
             const smallImageUrl = img.attributes.formats.small.url;
             const fullSizeImageUrl = img.attributes.url;

@@ -97,13 +97,13 @@ switch (currentPage) {
 
         break;
     case "cart.html":
-        displayCart();
-        getTotalCartPrice();
-        emptyCartButton.addEventListener("click", () => {
-            localStorage.setItem(storeCartContent, "[]");
-            displayCart();
-            getNumberOfItemsInCart();
-        });
+        // displayCart();
+        // getTotalCartPrice();
+        // emptyCartButton.addEventListener("click", () => {
+        //     localStorage.setItem(storeCartContent, "[]");
+        //     displayCart();
+        //     getNumberOfItemsInCart();
+        // });
         break;
     case "admin/user.html":
         getUserInfo().then((isLoggedIn) => {
