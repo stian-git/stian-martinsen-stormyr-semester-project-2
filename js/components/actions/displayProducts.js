@@ -1,8 +1,9 @@
 import addListenersToProductsPage from "../ui/addListenersToProductsPage.js";
 import toggleUserFeatures from "../ui/toggleUserFeatures.js";
+import { currency, productlist } from "../variables.js";
 
 export default function displayProducts(arr) {
-    const productlist = document.querySelector("#productlist");
+    //const productlist = document.querySelector("#productlist");
     productlist.innerHTML = "";
     arr.forEach((product) => {
         //console.log(product);
@@ -20,8 +21,8 @@ export default function displayProducts(arr) {
                       <h6 class="card-title">${product.attributes.title}</h6>
                       <!-- <p class="card-text"> -->
                         <div class="product__details-row card-text">
-                            <p class="product__details_price">${product.attributes.price} EUR</p>
-                            <p class="product__details_stock">In stock: ${product.attributes.stock}</p>
+                            <p class="product__details_price">${product.attributes.price}<span class="currency"> ${currency}</span></p>
+                            <p class="product__details_stock">Stock: ${product.attributes.stock}</p>
                         </div>
                     <!-- </p> -->
                     </div>

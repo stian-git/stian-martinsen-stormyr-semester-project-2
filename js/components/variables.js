@@ -101,3 +101,5 @@ export const spinnerModalHeader = document.querySelector("#spinnerModal .modal-t
 
 export const statusContainer = document.querySelector(".statuscontainer");
 export const statusMessage = document.querySelector(".statuscontainer_message");
+
+export const productlist = document.querySelector("#productlist");

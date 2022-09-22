@@ -44,14 +44,14 @@ import requestProductToEdit from "./components/actions/requestProductToEdit.js";
 import addFooter from "./components/ui/addFooter.js";
 import getNumberOfItemsInCart from "./components/ui/getNumberOfItemsInCart.js";
 import displayUserInfo from "./components/actions/displayUserInfo.js";
+import displayStatusMessage from "./components/ui/displayStatusMessage.js";
 
 // Add search feature:
 
 searchButton.addEventListener("click", (e) => {
     e.preventDefault();
     searchProducts(searchField.value).then((arr) => {
-        console.log(arr);
-        if (arr.length > 0) {
+        if (arr && arr.length > 0) {
             saveSearchResult(arr);
             window.location.href = "/products.html?search=true";
         } else {
@@ -59,6 +59,7 @@ searchButton.addEventListener("click", (e) => {
                 const productListContainer = document.querySelector("#productlist");
                 productListContainer.innerHTML = "No products matches your search string";
             }
+            displayStatusMessage("Nothing matches your search. Please try again.", "error");
             // if there are no results to display...indicate it without forwarding the user?
         }
     });
@@ -89,7 +90,6 @@ switch (currentPage) {
     case "productdetails.html":
         getProductDetails().then((arr) => {
             displayProductDetails(arr);
-            //console.log(arr);
         });
         getProducts(true).then((arr) => {
             displayFeaturedProducts(arr);
@@ -132,7 +132,7 @@ switch (currentPage) {
 
                 if (idToEdit) {
                     if (idToEdit !== "search") {
-                        console.log("We will edit product id: " + idToEdit);
+                        // editing a specific product with provided id
                         getProductDetails(idToEdit).then((product) => {
                             editProduct(product);
                             markDefaultImage(product.image_url);
@@ -140,14 +140,13 @@ switch (currentPage) {
                         imageFormContainer.style.display = "block";
                         deleteProductButton.style.display = "inline-block";
                     } else {
-                        console.log("No product-id is provided...");
+                        // id is not provided. We will request the user to select.
                         requestProductToEdit();
                     }
                     header.innerHTML = "Edit Product";
                     continueButton.style.display = "none";
                 } else {
                     // We will add a new product.
-                    console.log("We will add a product");
                     saveProductButton.style.display = "none";
                     continueButton.addEventListener("click", (e) => {
                         e.preventDefault();
@@ -156,31 +155,27 @@ switch (currentPage) {
                         continueButton.disabled = true;
                         let prodObj = createProductObject();
                         addProduct(prodObj);
-                        //deleteProductButton.style.display = "inline-block";
                     });
                 }
             } else {
-                console.log("User is not logged in...");
+                // User is not logged in.
                 history.back();
             }
         });
 
         break;
     case "products.html":
-        console.log("products.html entered...");
         const isSearchMode = getSearchParam("search");
         if (isSearchMode) {
             const searchResult = getSearchResult();
-            console.log(searchResult);
             if (searchResult.length > 0) {
                 displayProducts(searchResult);
                 // indicate this is a search-result
-            } else {
-                console.log("There are no search results to display.");
-                // const productListContainer = document.querySelector("#productlist");
-                // productListContainer.innerHTML = "No products matches your search string";
-                // Show error + load default after a while.?
             }
+            // else {
+            //     console.log("There are no search results to display.");
+            //     // Show error + load default after a while.?
+            // }
         } else {
             getProducts(false).then((arr) => {
                 displayProducts(arr);

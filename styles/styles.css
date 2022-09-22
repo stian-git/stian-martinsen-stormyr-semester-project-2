@@ -10822,7 +10822,11 @@ header:first-of-type + * {
     margin-top: 80px;
   }
 }
-h1:not(:first-of-type), .h1:not(:first-of-type) {
+h2, .h2,
+h3,
+.h3,
+h1:not(:first-of-type),
+.h1:not(:first-of-type) {
   margin-top: 3em;
 }
 
@@ -10935,6 +10939,10 @@ footer i.fa-brands:hover {
   justify-content: space-between;
 }
 
+#productlist .col {
+  height: 300px;
+}
+
 #productlist .card-footer {
   display: none;
   flex-direction: row;
@@ -10950,6 +10958,10 @@ footer i.fa-brands:hover {
   height: inherit;
   justify-content: center;
   padding: 10px;
+}
+#productlist .product__header_imagecontainer img {
+  object-fit: contain;
+  max-height: 170px;
 }
 
 #productlist .card {
@@ -10992,6 +11004,9 @@ footer i.fa-brands:hover {
 #productlist .product__details_price {
   font-size: 1.2em;
   color: red;
+}
+#productlist .product__details_price .currency {
+  font-size: 0.5em;
 }
 
 #productlist .product__details_stock {
@@ -11090,6 +11105,8 @@ main > div {
 
 .carouselcontainer {
   width: 400px;
+  display: flex;
+  justify-content: center;
 }
 
 .carouselcontainer img.d-block.w-100 {
@@ -11136,10 +11153,12 @@ button[data-bs-target="#imageModal"] {
 .featured .row {
   margin: 5px;
 }
+.featured .row .col {
+  height: 340px;
+}
 
 .featured .card {
   box-shadow: 1px 1px 3px black;
-  padding: 5px;
   cursor: pointer;
   border: 1px solid black;
 }
@@ -11161,6 +11180,11 @@ button[data-bs-target="#imageModal"] {
 
 .featured .card-img {
   height: 190px;
+}
+.featured .card-img img {
+  object-fit: contain;
+  height: 170px;
+  padding: 5px;
 }
 
 .cart {

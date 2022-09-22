@@ -6,6 +6,10 @@
     justify-content: space-between;
 }
 
+#productlist .col {
+    height: 300px;
+}
+
 #productlist .card-footer {
     display: none;
     flex-direction: row;
@@ -22,11 +26,11 @@
     height: inherit;
     justify-content: center;
     padding: 10px;
+    img {
+        object-fit: contain;
+        max-height: 170px;
+    }
 }
-
-// #productlist .product__details-row p {
-//     font-size: 0.7em;
-// }
 
 #productlist .card {
     box-shadow: 1px 1px 3px black;
@@ -72,6 +76,9 @@
 #productlist .product__details_price {
     font-size: 1.2em;
     color: red;
+    .currency {
+        font-size: 0.5em;
+    }
 }
 
 #productlist .product__details_stock {

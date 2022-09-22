@@ -10,6 +10,8 @@
 
 .carouselcontainer {
     width: 400px;
+    display: flex;
+    justify-content: center;
 }
 
 .carouselcontainer img.d-block.w-100 {

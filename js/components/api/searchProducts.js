@@ -1,21 +1,17 @@
-// /api/products?filters[$or][0][title][$containsi]=hideout&filters[$or][1][description][$containsi]=47&populate=*
-
+import displayStatusMessage from "../ui/displayStatusMessage.js";
 import { baseUrl } from "../variables.js";
 
 export default async function searchProducts(str) {
     const searchUrl = baseUrl + "api/products?filters[$or][0][title][$containsi]=" + str + "&filters[$or][1][description][$containsi]=" + str + "&populate=*";
-    console.log("Searching for: " + str);
-    console.log(searchUrl);
-
-    // /api/products?filters[$or][0][title][$containsi]=hideout&filters[$or][1][description][$containsi]=47&populate=*
     try {
         const data = await fetch(searchUrl);
-        const result = await data.json();
-        //console.log(result.data);
-        //console.log(typeof result.data);
-        return result.data;
+        if (data.ok) {
+            const result = await data.json();
+            return result.data;
+        } else {
+            throw "Error searching";
+        }
     } catch (error) {
-        console.log("Error occured searching...");
-        //add error message.
+        displayStatusMessage("Search failed. Please try again.", "error");
     }
 }

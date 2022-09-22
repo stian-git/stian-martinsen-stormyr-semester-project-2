@@ -1,43 +1,14 @@
-// .featured .carousel-item {
-//     display: flex;
-//     // height: 50px;
-//     flex-direction: row;
-//     width: auto;
-//     width: 100%;
-//     height: auto;
-//     background-color: white;
-// }
-
-// .featured .carousel-item.active {
-//     // z-index: 1;
-// }
-// .featured .product img {
-//     // height: 100px;
-// }
-
-// .featured p {
-//     font-size: 0.7em;
-// }
-
-// .featured .product {
-//     width: 160px;
-//     height: 300px;
-// }
-
-// .featured .product p:nth-child(3) {
-//     // color: red;
-//     align-self: center;
-//     font-size: 1em;
-// }
-
 // Carousel w/Cards:
 
 .featured .row {
     margin: 5px;
+    .col {
+        height: 340px;
+    }
 }
 .featured .card {
     box-shadow: 1px 1px 3px black;
-    padding: 5px;
+    // padding: 5px;
     cursor: pointer;
     border: 1px solid black;
 }
@@ -63,4 +34,9 @@
 
 .featured .card-img {
     height: 190px;
+    img {
+        object-fit: contain;
+        height: 170px;
+        padding: 5px;
+    }
 }
