@@ -10865,15 +10865,25 @@ header:first-of-type + * {
 }
 
 .herotext {
-  display: absolute;
   background-color: #ffcf00;
   padding: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border: 1px solid black;
   border-left: none;
+  position: absolute;
+  left: 0px;
+  animation: showHeroText 2s 1 ease-out;
 }
 
+@keyframes showHeroText {
+  0% {
+    left: -250px;
+  }
+  100% {
+    left: 0px;
+  }
+}
 ul.navbar-nav {
   margin: auto;
 }
