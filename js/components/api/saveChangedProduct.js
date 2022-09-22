@@ -16,11 +16,9 @@ export default async function saveChangedProduct(prodObj, id) {
     try {
         const data = await fetch(url, options);
         if (data.ok) {
-            displayStatusMessage(`Successfully saved product.`, "success");
-        } else {
-            throw "Update failed";
+            displayStatusMessage(`Successfully updated product.`, "success");
         }
     } catch (error) {
-        displayStatusMessage(`Saving product failed. Please try again.`, "error");
+        displayStatusMessage(`Updating the product failed. Please try again.`, "error");
     }
 }
