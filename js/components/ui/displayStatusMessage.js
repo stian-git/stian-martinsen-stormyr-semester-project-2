@@ -12,5 +12,5 @@ export default function displayStatusMessage(message, statusClass = "error") {
     setTimeout(() => {
         statusContainer.classList.remove(statusClass);
         statusContainer.classList.remove("active");
-    }, 4000);
+    }, 5000);
 }
