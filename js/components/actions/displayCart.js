@@ -15,12 +15,12 @@ export default function displayCart() {
             const linePrice = item.price * item.qty;
             cartContainer.innerHTML += `
             <tr>
-                <td><img src="${item.img}" /></td>
-                <td><a href="productdetails.html?id=${item.id}">${item.title} (${item.model})</a></td>
+                <td><img src="${item.img}" class="cart__row-img"/></td>
+                <td><a href="productdetails.html?id=${item.id}" class="cart__row-productlink">${item.title} (${item.model})</a></td>
                 <td>${item.price}</td>
                 <td>${item.qty}</td>
                 <td class="lineprice">${linePrice}</td>
-                <td><i class="fa-solid fa-trash" data-id="${item.id}"></i></td>
+                <td><i class="fa-solid fa-trash cart__row-trashicon" data-id="${item.id}"></i></td>
             </tr>
             `;
         });

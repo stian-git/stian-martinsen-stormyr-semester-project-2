@@ -83,7 +83,7 @@ export const modalCarouselIndicatorContainer = document.querySelector("#modalima
 export const modalCarouselImageContainer = document.querySelector("#modalimagecarousel .carousel-inner");
 export const carouselIndicatorContainer = document.querySelector("#imagecarousel .carousel-indicators");
 
-export const totalPriceContainer = document.querySelector(".cartsummary-price");
+export const totalPriceContainer = document.querySelector(".cartsummary__container-price");
 export const minifigsContainer = document.querySelector("#minifigures-tab-pane .card-group");
 
 export const detailsTab = document.querySelector("#details-tab-pane");
