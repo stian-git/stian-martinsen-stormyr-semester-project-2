@@ -12,5 +12,9 @@ footer {
     i.fa-brands {
         font-size: 2em;
         margin: 2px;
+        cursor: pointer;
+        &:hover {
+            color: red;
+        }
     }
 }

@@ -12,14 +12,14 @@ main {
     background-color: white;
     width: 80vw;
     margin: auto;
-    padding: 1em 4em;
+    padding: 1em 4em 4em 4em;
     border-left: 2px solid black;
     border-right: 2px solid black;
 }
 
 @include media-breakpoint-up(lg) {
     main {
-        padding: 1em 10em;
+        padding: 1em 10em 4em 10em;
     }
 }
 
@@ -36,4 +36,8 @@ header:first-of-type + * {
     header:first-of-type + * {
         margin-top: 80px;
     }
+}
+
+h1:not(:first-of-type) {
+    margin-top: 3em;
 }

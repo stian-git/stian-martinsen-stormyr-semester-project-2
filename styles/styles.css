@@ -10799,14 +10799,14 @@ main {
   background-color: white;
   width: 80vw;
   margin: auto;
-  padding: 1em 4em;
+  padding: 1em 4em 4em 4em;
   border-left: 2px solid black;
   border-right: 2px solid black;
 }
 
 @media (min-width: 992px) {
   main {
-    padding: 1em 10em;
+    padding: 1em 10em 4em 10em;
   }
 }
 .navbar {
@@ -10822,6 +10822,10 @@ header:first-of-type + * {
     margin-top: 80px;
   }
 }
+h1:not(:first-of-type), .h1:not(:first-of-type) {
+  margin-top: 3em;
+}
+
 .header__top {
   margin: 0;
 }
@@ -10919,6 +10923,10 @@ footer p {
 footer i.fa-brands {
   font-size: 2em;
   margin: 2px;
+  cursor: pointer;
+}
+footer i.fa-brands:hover {
+  color: red;
 }
 
 .card-body {
