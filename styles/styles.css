@@ -11287,11 +11287,20 @@ button[data-bs-target="#imageModal"] {
 
 .producttable tr:nth-child(even) {
   display: none;
+  animation: smoothDisplay 1s 1 ease-out;
 }
 .producttable tr:nth-child(even) td:nth-child(1) {
   justify-content: center;
 }
 
+@keyframes smoothDisplay {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 .producttable .proddescription {
   text-align: center;
 }
@@ -11324,6 +11333,10 @@ input.textfilter {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+}
+
+.producttable .tableheight {
+  height: 0px;
 }
 
 table.userprofile {

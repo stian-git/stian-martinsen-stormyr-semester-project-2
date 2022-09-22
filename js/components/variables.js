@@ -103,3 +103,5 @@ export const statusContainer = document.querySelector(".statuscontainer");
 export const statusMessage = document.querySelector(".statuscontainer_message");
 
 export const productlist = document.querySelector("#productlist");
+
+export const adminMenuItems = document.querySelectorAll(".navbar .adminitem");

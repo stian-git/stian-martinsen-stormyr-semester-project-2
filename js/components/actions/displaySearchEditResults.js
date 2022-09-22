@@ -22,14 +22,15 @@ export default function displaySearchEditResults(arr) {
                 <td>${prodPrice}</td>
             </tr>
             <tr class="additionalinfo" data-productid="${prodId}">
-                <td colspan="3" class="proddescription">
-                    ${prodDescriptionHTML}
-                </td>
-                <td>
-                    <p>Stock: ${prodStock}</p>
-                    <p>Featured: ${prodIsFeatured}</p>
-                    <p>End-Of-Sale: ${prodIsStopped}</p> 
-                </td>
+                    <td colspan="3" class="proddescription">
+                        ${prodDescriptionHTML}
+                    </td>
+                    <td>
+                        <p>Stock: ${prodStock}</p>
+                        <p>Featured: ${prodIsFeatured}</p>
+                        <p>End-Of-Sale: ${prodIsStopped}</p> 
+                    </td>
+                
             </tr>`;
     });
     const allProductLines = document.querySelectorAll(".producttable tbody tr");
