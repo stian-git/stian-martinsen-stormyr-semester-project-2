@@ -1,42 +1,33 @@
 // Carousel w/Cards:
 
-.featured .row {
-    margin: 5px;
-    .col {
-        height: 340px;
+.featured {
+    &__container {
+        width: 100%;
+        height: auto;
+        &row {
+            margin: 5px;
+            justify-content: center;
+            background-color: white;
+        }
     }
-}
-.featured .card {
-    box-shadow: 1px 1px 3px black;
-    // padding: 5px;
-    cursor: pointer;
-    border: 1px solid black;
-}
-
-.featured .card:hover {
-    box-shadow: none;
-    border: 1px solid black;
-}
-// .featured img {
-//     // margin: 5px;
-//     // padding: 5px;
-// }
-
-.featured .carousel-item {
-    width: 100%;
-    height: auto;
-}
-
-.featured .row {
-    justify-content: center;
-    background-color: white;
-}
-
-.featured .card-img {
-    height: 190px;
-    img {
-        object-fit: contain;
-        height: 170px;
-        padding: 5px;
+    &__wrapper {
+        height: 340px;
+        &-card {
+            box-shadow: 1px 1px 3px black;
+            cursor: pointer;
+            border: 1px solid black;
+            &:hover {
+                box-shadow: none;
+                border: 1px solid black;
+            }
+            &-imgbox {
+                height: 190px;
+                &-img {
+                    object-fit: contain;
+                    height: 170px;
+                    padding: 5px;
+                }
+            }
+        }
     }
 }

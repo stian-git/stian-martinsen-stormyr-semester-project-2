@@ -11151,38 +11151,31 @@ button[data-bs-target="#imageModal"] {
   display: none;
 }
 
-.featured .row {
-  margin: 5px;
+.featured__container {
+  width: 100%;
+  height: auto;
 }
-.featured .row .col {
+.featured__containerrow {
+  margin: 5px;
+  justify-content: center;
+  background-color: white;
+}
+.featured__wrapper {
   height: 340px;
 }
-
-.featured .card {
+.featured__wrapper-card {
   box-shadow: 1px 1px 3px black;
   cursor: pointer;
   border: 1px solid black;
 }
-
-.featured .card:hover {
+.featured__wrapper-card:hover {
   box-shadow: none;
   border: 1px solid black;
 }
-
-.featured .carousel-item {
-  width: 100%;
-  height: auto;
-}
-
-.featured .row {
-  justify-content: center;
-  background-color: white;
-}
-
-.featured .card-img {
+.featured__wrapper-card-imgbox {
   height: 190px;
 }
-.featured .card-img img {
+.featured__wrapper-card-imgbox-img {
   object-fit: contain;
   height: 170px;
   padding: 5px;

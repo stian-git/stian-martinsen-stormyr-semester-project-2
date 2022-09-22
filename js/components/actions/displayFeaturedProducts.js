@@ -14,25 +14,25 @@ export default function displayFeaturedProducts(arr) {
     for (let j = 0; j < rowsToBuild; j++) {
         //console.log("Building row: " + j);
         carouselContainer.innerHTML += `
-        <div class="carousel-item carousel-item-row${j}" data-bs-interval="40000">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-2">
+        <div class="featured__container carousel-item carousel-item-row${j}" data-bs-interval="40000">
+            <div class="featured__containerrow row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-2">
             </div>
         </div>
         `;
     }
     // Then add each featured product in the correct row.
     for (let i = 0; i < arr.length; i++) {
-        const prodTitle = arr[i].attributes.title;
+        //const prodTitle = arr[i].attributes.title;
         //console.log(prodTitle);
         // Calculates the correct row:
         const rowToGoTo = Math.floor(i / cardsInRow);
         // Use the rownumber to identify the row-element to put it into
         const carouselRowElement = document.querySelector("#featuredproducts .carousel-item-row" + rowToGoTo + " .row");
         carouselRowElement.innerHTML += `
-                <div class="col" data-id="${arr[i].id}">
-                    <div class="card h-100">
-                        <div class="card-img">
-                            <img src="${arr[i].attributes.image_url}" class="card-img-top" alt="${arr[i].attributes.title}" />
+                <div class="col featured__wrapper" data-id="${arr[i].id}">
+                    <div class="card h-100 featured__wrapper-card">
+                        <div class="card-img featured__wrapper-card-imgbox">
+                            <img src="${arr[i].attributes.image_url}" class="card-img-top featured__wrapper-card-imgbox-img" alt="${arr[i].attributes.title}" />
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">${arr[i].attributes.title}</h5>
