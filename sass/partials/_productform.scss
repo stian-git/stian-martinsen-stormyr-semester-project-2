@@ -1,124 +1,48 @@
-.productform button {
-    margin-top: 1em;
+.productform {
+    &__controls {
+        &-deletebutton {
+            display: none;
+        }
+        &-continuebutton {
+            margin-top: 1em;
+        }
+    }
 }
 
 .editimages {
     display: none;
     margin-top: 2em;
-}
-
-.editimages label {
-    margin-bottom: 1em;
-}
-
-.editimages table {
-    display: none;
-}
-
-.editimages input[type="file"] {
-    display: none;
-}
-
-.editimages img {
-    height: 60px;
-    box-shadow: 1px 1px 3px black;
-    cursor: pointer;
-}
-
-.tooltip .enlargedthumb {
-    height: 20vw;
-    padding: 5px;
-}
-
-.tooltip-inner {
-    min-width: fit-content;
-    padding: 0px;
-}
-
-// TOOLTIP-LAYOUT from BootStrap below:
-// <div class="tooltip bs-tooltip-top" role="tooltip">
-//   <div class="tooltip-arrow"></div>
-//   <div class="tooltip-inner">
-//     Some tooltip text!
-//   </div>
-// </div>
-
-.producttable {
-    display: none;
-    table-layout: fixed;
-    &__row {
-        &-field {
-            margin: 5px;
-            padding: 5px;
+    &__table {
+        display: none;
+        &-thumb {
             height: 60px;
+            box-shadow: 1px 1px 3px black;
+            cursor: pointer;
         }
-        &-img {
-            max-height: 100%;
-            max-width: 100%;
+        &-radiobutton {
+            margin-top: 1.5em;
+        }
+        &-deletebutton {
+            margin-top: 0.8em;
+        }
+    }
+    &__form {
+        &-addbutton {
+            margin-bottom: 1em;
+        }
+        &-fileinput {
+            display: none;
+        }
+    }
+}
+
+.tooltip {
+    &-inner {
+        min-width: fit-content;
+        padding: 0px;
+        &-enlargedthumb {
+            height: 20vw;
             padding: 5px;
         }
-        &:nth-child(even) {
-            display: none;
-            animation: smoothDisplay 1s 1 ease-out;
-        }
     }
-}
-
-.producttable tr:nth-child(even) {
-    // display: none;
-    // animation: smoothDisplay 1s 1 ease-out;
-    td:nth-child(1) {
-        justify-content: center;
-    }
-}
-
-@keyframes smoothDisplay {
-    0% {
-        opacity: 0%;
-    }
-    100% {
-        opacity: 100%;
-    }
-}
-
-.producttable .proddescription {
-    text-align: center;
-}
-
-button.deleteproductbutton {
-    display: none;
-}
-
-input.textfilter {
-    margin-bottom: 5px;
-}
-
-// search features
-
-.producttable .sorting-enabled {
-    color: green;
-}
-
-.producttable .fa-solid {
-    display: none;
-}
-.producttable .sorting-enabled.ascending .sort-up {
-    display: inline-block;
-}
-
-.producttable .sorting-enabled.descending .down {
-    display: inline-block;
-}
-
-.producttable thead th div {
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-}
-// .producttable thead th p {
-//     display: flex;
-// }
-
-.producttable .tableheight {
-    height: 0px;
 }

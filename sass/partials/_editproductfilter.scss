@@ -1,0 +1,56 @@
+.producttable {
+    display: none;
+    table-layout: fixed;
+    &__row {
+        &-field {
+            margin: 5px;
+            padding: 5px;
+            height: 60px;
+            &-description {
+                text-align: center;
+            }
+        }
+        &-img {
+            max-height: 100%;
+            max-width: 100%;
+            padding: 5px;
+        }
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            &-input {
+                margin-bottom: 5px;
+            }
+            &-sortup {
+                display: none;
+            }
+            &-sortdown {
+                display: none;
+            }
+        }
+        &:nth-child(even) {
+            display: none;
+            animation: smoothDisplay 1s 1 ease-out;
+        }
+    }
+    &__attribute {
+        &-sortenabled {
+            color: green;
+        }
+    }
+}
+
+@keyframes smoothDisplay {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.producttable__attribute-sortenabled.producttable__attribute-descending .producttable__row-header-sortdown,
+.producttable__attribute-sortenabled.producttable__attribute-ascending .producttable__row-header-sortup {
+    display: inline-block;
+}

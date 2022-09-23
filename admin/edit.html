@@ -92,9 +92,9 @@
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchProductionStopped" />
                     <label class="form-check-label" for="flexSwitchProductionStopped">Production has stopped.</label>
                 </div>
-                <button type="submit" class="btn btn-primary continuebutton">Continue</button>
+                <button type="submit" class="btn btn-primary continuebutton productform__controls-continuebutton">Continue</button>
                 <div class="editimages">
-                    <table class="table table-hover">
+                    <table class="table table-hover editimages__table">
                         <thead>
                             <tr>
                                 <th>Set as default</td>
@@ -105,16 +105,16 @@
                         <tbody>
                         </tbody>
                     </table>
-                    <form action="">
+                    <form action="" class="editimages__form">
                         <div class="mb-3">
-                            <label for="imagesToAdd" class="form-label btn btn-primary">Add images</label>
-                            <input class="form-control" type="file" id="imagesToAdd" multiple>
+                            <label for="imagesToAdd" class="form-label btn btn-primary editimages__form-addbutton">Add images</label>
+                            <input class="form-control editimages__form-fileinput" type="file" id="imagesToAdd" multiple>
                           </div>
                     </form>
                 </div>
-                <button type="submit" class="btn btn-danger deleteproductbutton">Delete</button>
-                <button type="submit" class="btn btn-primary saveproductbutton">Save</button>
-                <button type="button" class="btn btn-primary spinnermodaltrigger" data-bs-toggle="modal" data-bs-target="#spinnerModal" hidden></button>
+                <button type="submit" class="btn btn-danger deleteproductbutton productform__controls-deletebutton">Delete</button>
+                <button type="submit" class="btn btn-primary saveproductbutton productform__controls-savebutton">Save</button>
+                <button type="button" class="btn btn-primary spinnermodaltrigger productform__controls-spinnermodaltrigger" data-bs-toggle="modal" data-bs-target="#spinnerModal" hidden></button>
             </form>
             <h2></h2>
 
@@ -123,30 +123,30 @@
                     <tr class="producttable__row">
                         <th>
                             <form class="d-flex" role="search" id="filtersearch">
-                                <div class="row g-3">
+                                <div class="row g-3 producttable__row-header">
                                     <div class="col-sd-6">
-                                    <input class="form-control me-2 textfilter" type="search" placeholder="Filter" aria-label="Filter Search" />
+                                    <input class="form-control me-2 textfilter producttable__row-header-input" type="search" placeholder="Filter" aria-label="Filter Search" />
                                 </div>
-                            </div>
+                            <!-- </div> -->
                             </form>
-                        <th data-sortby="productnumber" class="flex ascending">
-                            <div>
+                        <th data-sortby="productnumber" class="flex ascending producttable__attribute-ascending">
+                            <div class="producttable__row-header">
                                 <p>Model</p>
-                                <p><i class="fa-solid fa-arrow-up-z-a sort-down"></i><i class="fa-solid fa-arrow-down-a-z sort-up"></i></p>
+                                <p><i class="fa-solid fa-arrow-up-z-a sort-down producttable__row-header-sortdown"></i><i class="fa-solid fa-arrow-down-a-z sort-up producttable__row-header-sortup"></i></p>
                                 <!-- <p><i class="fa-solid fa-arrow-up-a-z sort-up"></i><i class="fa-solid fa-arrow-down-z-a sort-down"></i></p> -->
                             </div>
                             
                         </th>
-                        <th class="flex sorting-enabled ascending" data-sortby="title">
-                            <div>
+                        <th class="flex sorting-enabled ascending producttable__attribute-ascending producttable__attribute-sortenabled" data-sortby="title">
+                            <div class="producttable__row-header">
                                 <p>Title</p>
-                                <p><i class="fa-solid fa-arrow-up-z-a sort-down"></i><i class="fa-solid fa-arrow-down-a-z sort-up"></i></p>
+                                <p><i class="fa-solid fa-arrow-up-z-a sort-down producttable__row-header-sortdown"></i><i class="fa-solid fa-arrow-down-a-z sort-up producttable__row-header-sortup"></i></p>
                             </div>
                         </th>
-                        <th data-sortby="price" class="flex ascending">
-                            <div>
+                        <th data-sortby="price" class="flex ascending producttable__attribute-ascending">
+                            <div class="producttable__row-header">
                                 <p>Price</p>
-                                <p><i class="fa-solid fa-arrow-up-9-1 sort-down"></i><i class="fa-solid fa-arrow-down-1-9 sort-up"></i></p>
+                                <p><i class="fa-solid fa-arrow-up-9-1 sort-down producttable__row-header-sortdown"></i><i class="fa-solid fa-arrow-down-1-9 sort-up producttable__row-header-sortup"></i></p>
                             </div>
                         </th>
                     </tr>

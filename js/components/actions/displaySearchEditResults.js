@@ -22,7 +22,7 @@ export default function displaySearchEditResults(arr) {
                 <td class="producttable__row-field">${prodPrice}</td>
             </tr>
             <tr class="additionalinfo producttable__row" data-productid="${prodId}">
-                    <td colspan="3" class="proddescription producttable__row-field">
+                    <td colspan="3" class="proddescription producttable__row-field producttable__row-field-description">
                         ${prodDescriptionHTML}
                     </td>
                     <td class="producttable__row-field">

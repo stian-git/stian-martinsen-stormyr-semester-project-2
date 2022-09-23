@@ -1,7 +1,7 @@
 export default function sortEditableProducts(arr) {
     // identify sort method and direction.
-    const currentSortMethod = document.querySelector("th.sorting-enabled").dataset.sortby;
-    const isAscending = document.querySelector("th.sorting-enabled").classList.contains("ascending");
+    const currentSortMethod = document.querySelector("th.producttable__attribute-sortenabled").dataset.sortby;
+    const isAscending = document.querySelector("th.producttable__attribute-sortenabled").classList.contains("producttable__attribute-ascending");
 
     let lowerThanValue = -1;
     let higherThanValue = 1;
