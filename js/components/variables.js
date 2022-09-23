@@ -106,3 +106,6 @@ export const productlist = document.querySelector("#productlist");
 
 //export const adminMenuItems = document.querySelectorAll(".navbar .adminitem mainmenu__adminmenu-link");
 export const adminMenuItems = document.querySelectorAll(".navbar .mainmenu__adminmenu-link");
+
+export const editProductButton = document.querySelector(".topcontainer__buysection-editbutton");
+export const editProductButtonLink = document.querySelector(".topcontainer__buysection-editbuttonlink");

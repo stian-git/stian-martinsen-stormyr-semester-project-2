@@ -10976,6 +10976,15 @@ header:first-of-type + * {
 .topcontainer__buysection-modaltogglebutton {
   display: none;
 }
+.topcontainer__buysection-editbutton {
+  display: block;
+  text-decoration: none;
+  margin: 0.5em 0;
+  display: none;
+}
+.topcontainer__buysection-editbuttonlink {
+  text-decoration: none;
+}
 .topcontainer__imagesection {
   width: 400px;
   display: flex;

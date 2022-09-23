@@ -3,7 +3,7 @@ import displayEditImages from "./displayEditImages.js";
 import getSearchParam from "./getSearchParams.js";
 
 export default function editProduct(prodObj) {
-    console.log(prodObj);
+    //console.log(prodObj);
     //console.log(getSearchParam("id"));
     prodIdField.value = getSearchParam("id");
     prodNumberField.value = prodObj.productnumber;

@@ -8,6 +8,15 @@
         &-modaltogglebutton {
             display: none;
         }
+        &-editbutton {
+            display: block;
+            text-decoration: none;
+            margin: 0.5em 0;
+            display: none;
+            &link {
+                text-decoration: none;
+            }
+        }
     }
     &__imagesection {
         width: 400px;

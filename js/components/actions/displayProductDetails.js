@@ -8,6 +8,7 @@ import {
     cartButton,
     currency,
     detailsTab,
+    editProductButtonLink,
     legoProductBaseUrl,
     linkTab,
     modalCarouselImageContainer,
@@ -24,12 +25,12 @@ import toggleProductToAndFromCart from "./toggleProductToAndFromCart.js";
 
 export default function displayProductDetails(arr) {
     // Check if item is already in basket - Then change button to remove from cart.
-
     document.title = `Brickastle | ${arr.title} (${arr.productnumber})`;
     productModel.innerHTML = `Model: ${arr.productnumber}`;
     productTitle.innerHTML = arr.title;
     priceContainer.innerHTML = `${arr.price} ${currency}`;
     //console.log(arr.price);
+
     //const detailsTab = document.querySelector("#details-tab-pane");
     detailsTab.innerText = arr.description;
     detailsTab.innerText += "\nStock: " + arr.stock;
@@ -144,4 +145,7 @@ export default function displayProductDetails(arr) {
         toggleProductToAndFromCart(currentId);
         getNumberOfItemsInCart();
     });
+
+    // set correct link for the edit-button:
+    editProductButtonLink.href = "/admin/edit.html?id=" + currentId;
 }
