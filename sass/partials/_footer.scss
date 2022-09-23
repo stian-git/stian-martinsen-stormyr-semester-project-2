@@ -17,6 +17,12 @@
             margin: 0px;
             text-align: center;
             font-size: 0.8em;
+            &-link {
+                color: black;
+                &:hover {
+                    color: gray;
+                }
+            }
         }
     }
 }

@@ -10868,6 +10868,12 @@ header:first-of-type + * {
   text-align: center;
   font-size: 0.8em;
 }
+.footer__section-info-link {
+  color: black;
+}
+.footer__section-info-link:hover {
+  color: gray;
+}
 
 .productlist__product {
   height: 300px;
