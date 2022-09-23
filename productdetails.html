@@ -55,8 +55,8 @@
             <h1 class="producttitle">Lion Knights' Castle</h1>
             <h4 class="modelnumber">Model: 13455</h4>
             <div class="topcontainer">
-                <div class="carouselcontainer">
-                    <div id="imagecarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                <div class="carouselcontainer topcontainer__imagesection">
+                    <div id="imagecarousel" class="carousel slide carousel-dark imagecarousel" data-bs-ride="carousel">
                         <div class="carousel-indicators"></div>
                         <div class="carousel-inner">
                             <div class="spinner-border text-warning" role="status">
@@ -73,13 +73,13 @@
                         </button>
                     </div>
                 </div>
-                <div>
+                <div class="topcontainer__buysection">
                     <p class="price">555 EUR</p>
                     <button type="button" class="btn btn-primary togglecart">Add to cart</button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal">Launch demo modal</button>
+                    <button type="button" class="btn btn-primary topcontainer__buysection-modaltogglebutton" data-bs-toggle="modal" data-bs-target="#imageModal">Launch demo modal</button>
                 </div>
             </div>
-            <div>
+            <div class="bottomcontainer">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item mainmenu__item" role="presentation">
                         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#details-tab-pane" type="button" role="tab" aria-controls="details-tab-pane" aria-selected="true">Details</button>
@@ -91,7 +91,7 @@
                         <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#links-tab-pane" type="button" role="tab" aria-controls="links-tab-pane" aria-selected="false">Links</button>
                     </li>
                 </ul>
-                <div class="tab-content" id="myTabContent">
+                <div class="tab-content bottomcontainer__tabs" id="myTabContent">
                     <div class="tab-pane fade show active" id="details-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                         <table></table>
                         <div class="spinner-border text-warning" role="status">
@@ -151,13 +151,13 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="imageModal" data-bs-keyboard="false" tabindex="-1" aria-label="Image Carousel Modal" aria-hidden="true">
+        <div class="modal fade imagemodal" id="imageModal" data-bs-keyboard="false" tabindex="-1" aria-label="Image Carousel Modal" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
                 <div class="modal-content">
-                    <div class="modal-body modalcarouselcontainer">
-                        <div id="modalimagecarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                    <div class="modal-body modalcarouselcontainer imagemodal__body">
+                        <div id="modalimagecarousel" class="carousel slide carousel-dark modalcarousel" data-bs-ride="carousel">
                             <div class="carousel-indicators"></div>
-                            <div class="carousel-inner"></div>
+                            <div class="carousel-inner modalcarousel-slide"></div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#modalimagecarousel" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>

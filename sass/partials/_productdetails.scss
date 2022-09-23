@@ -2,21 +2,19 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-
-.topcontainer > div:nth-child(2) {
-    margin: auto;
-}
-
-.carouselcontainer {
-    width: 400px;
-    display: flex;
-    justify-content: center;
-    cursor: zoom-in;
-}
-
-.carouselcontainer img.d-block.w-100 {
-    max-height: 300px;
+    margin-bottom: 1em;
+    &__buysection {
+        margin: auto;
+        &-modaltogglebutton {
+            display: none;
+        }
+    }
+    &__imagesection {
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        cursor: zoom-in;
+    }
 }
 
 @include media-breakpoint-up(lg) {
@@ -25,48 +23,26 @@
     }
 }
 
-// Image Modal....
-
-#imageModal {
-    background-color: rgba($color: #000000, $alpha: 0.8);
-    .modal-content {
-        // padding: 0em;
-        // justify-content: center;
-    }
-    .modal-body {
-        align-self: center;
-    }
-}
-
-// .modal-content - height: 70% ?
-// carousel-item : 70vh.
-#imageModal #modalimagecarousel,
-#imagecarousel.carousel {
-    // height: 70vh;
+.imagecarousel {
     place-self: center;
     width: min-content;
-    // padding: auto;
+    &__item {
+        width: 300px;
+        height: 300px;
+        &-img {
+            max-height: 300px;
+        }
+    }
 }
 
-// #imageModal .modal-content {
-
-// }
-
-#imageModal .carousel-inner {
-    text-align: center;
-    padding: 1em;
-    height: inherit;
-}
-
-#imageModal .carousel-item {
-    height: unset;
-    width: unset;
-}
-
-#imageModal .carousel-item img {
-    height: 60vh;
-}
-// Hidden modal trigger button
-button[data-bs-target="#imageModal"] {
-    display: none;
+.bottomcontainer {
+    &__tabs {
+        border: 1px solid rgb(222, 226, 230);
+        border-top: none;
+        padding: 2em;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        max-height: 500px;
+        overflow-y: auto;
+    }
 }

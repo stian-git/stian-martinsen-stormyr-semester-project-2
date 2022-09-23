@@ -1,4 +1,5 @@
 import getMinifigs from "../api/getMiniFigs.js";
+import getNumberOfItemsInCart from "../ui/getNumberOfItemsInCart.js";
 import isProductInCart from "../validations/isProductInCart.js";
 import {
     carouselContainer,
@@ -71,8 +72,8 @@ export default function displayProductDetails(arr) {
             <button type="button" data-bs-target="#modalimagecarousel" data-bs-slide-to="${index}" aria-label="Slide ${index + 1}" class=""></button>
             `;
             modalCarouselImageContainer.innerHTML += `
-                <div class="carousel-item">
-                    <img src="${fullSizeImageUrl}" class="" alt="..." />
+                <div class="carousel-item modalcarousel__slide-item">
+                    <img src="${fullSizeImageUrl}" class="modalcarousel__slide-item-img" alt="..." />
                 </div>
             `;
 
@@ -80,14 +81,14 @@ export default function displayProductDetails(arr) {
             if (index === 0) {
                 carouselIndicatorContainer.innerHTML += `<button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>`;
                 carouselImageContainer.innerHTML += `
-                    <div class="carousel-item active">
-                        <img src="${smallImageUrl}" data-fullsizeimg="${fullSizeImageUrl}" class="d-block w-100" alt="${arr.title}" />
+                    <div class="carousel-item imagecarousel__item active">
+                        <img src="${smallImageUrl}" data-fullsizeimg="${fullSizeImageUrl}" class="d-block w-100 imagecarousel__item-img" alt="${arr.title}" />
                     </div>`;
             } else {
                 carouselIndicatorContainer.innerHTML += `<button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="${index}" aria-label="Slide ${index + 1}"></button>`;
                 carouselImageContainer.innerHTML += `
-                    <div class="carousel-item">
-                        <img src="${smallImageUrl}" data-fullsizeimg="${fullSizeImageUrl}" class="d-block w-100" alt="${arr.title}" />
+                    <div class="carousel-item imagecarousel__item">
+                        <img src="${smallImageUrl}" data-fullsizeimg="${fullSizeImageUrl}" class="d-block w-100 imagecarousel__item-img" alt="${arr.title}" />
                     </div>`;
             }
         });
@@ -141,5 +142,6 @@ export default function displayProductDetails(arr) {
 
     cartButton.addEventListener("click", () => {
         toggleProductToAndFromCart(currentId);
+        getNumberOfItemsInCart();
     });
 }
