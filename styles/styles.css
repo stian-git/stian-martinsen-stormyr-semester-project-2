@@ -10869,54 +10869,37 @@ header:first-of-type + * {
   font-size: 0.8em;
 }
 
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-#productlist .col {
+.productlist__product {
   height: 300px;
 }
 
-#productlist .card-footer {
-  display: none;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-#productlist a {
+.productcard {
   text-decoration: none;
   color: black;
 }
-
-#productlist .product__header_imagecontainer {
-  height: inherit;
-  justify-content: center;
-  padding: 10px;
-}
-#productlist .product__header_imagecontainer img {
-  object-fit: contain;
-  max-height: 170px;
-}
-
-#productlist .card {
+.productcard__box {
   box-shadow: 1px 1px 3px black;
 }
-
-#productlist .card:hover {
+.productcard__box:hover {
   box-shadow: none;
   border: 2px solid black;
 }
-#productlist .card:hover .product__header_imagecontainer_buymebanner {
+.productcard__box:hover .productcard__box-imagewrapper-banner {
   display: flex;
 }
-
-#productlist .card-body {
-  padding: 0 10px;
+.productcard__box-imagewrapper {
+  height: inherit;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
 }
-
-.product__header_imagecontainer_buymebanner {
+.productcard__box-imagewrapper-img {
+  object-fit: contain;
+  max-height: 170px;
+}
+.productcard__box-imagewrapper-banner {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   position: absolute;
@@ -10930,29 +10913,31 @@ header:first-of-type + * {
   top: 5px;
   padding: 10px;
 }
-
-.product__header_imagecontainer {
-  position: relative;
-  display: inline-flex;
+.productcard__box-body {
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10px;
 }
-
-#productlist .product__details_price {
-  font-size: 1.2em;
-  color: red;
+.productcard__box-footer {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
 }
-#productlist .product__details_price .currency {
-  font-size: 0.5em;
-}
-
-#productlist .product__details_stock {
-  font-size: 0.7em;
-}
-
-.product__details-row {
+.productcard__box-details {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+.productcard__box-details-price {
+  font-size: 1.2em;
+  color: red;
+}
+.productcard__box-details-price-currency {
+  font-size: 0.5em;
+}
+.productcard__box-details-stock {
+  font-size: 0.7em;
 }
 
 .minifig {
