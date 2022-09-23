@@ -46,22 +46,27 @@
 .producttable {
     display: none;
     table-layout: fixed;
-}
-.producttable img.thumbnail {
-    max-height: 100%;
-    max-width: 100%;
-    padding: 5px;
-}
-
-.producttable td {
-    margin: 5px;
-    padding: 5px;
-    height: 60px;
+    &__row {
+        &-field {
+            margin: 5px;
+            padding: 5px;
+            height: 60px;
+        }
+        &-img {
+            max-height: 100%;
+            max-width: 100%;
+            padding: 5px;
+        }
+        &:nth-child(even) {
+            display: none;
+            animation: smoothDisplay 1s 1 ease-out;
+        }
+    }
 }
 
 .producttable tr:nth-child(even) {
-    display: none;
-    animation: smoothDisplay 1s 1 ease-out;
+    // display: none;
+    // animation: smoothDisplay 1s 1 ease-out;
     td:nth-child(1) {
         justify-content: center;
     }

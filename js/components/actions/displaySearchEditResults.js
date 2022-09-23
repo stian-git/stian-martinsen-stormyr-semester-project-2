@@ -15,17 +15,17 @@ export default function displaySearchEditResults(arr) {
         const prodDescription = product.attributes.description;
         const prodDescriptionHTML = prodDescription.replace(/(\r\n|\n|\r)/gm, "<br>");
         rowContainer.innerHTML += `
-            <tr data-productid="${prodId}">
-                <td><img src="${prodThumb}" class="thumbnail"></td>
-                <td>${prodModel}</td>
-                <td>${prodTitle}</td>
-                <td>${prodPrice}</td>
+            <tr data-productid="${prodId}" class="producttable__row">
+                <td class="producttable__row-field"><img src="${prodThumb}" class="thumbnail producttable__row-img"></td>
+                <td class="producttable__row-field">${prodModel}</td>
+                <td class="producttable__row-field">${prodTitle}</td>
+                <td class="producttable__row-field">${prodPrice}</td>
             </tr>
-            <tr class="additionalinfo" data-productid="${prodId}">
-                    <td colspan="3" class="proddescription">
+            <tr class="additionalinfo producttable__row" data-productid="${prodId}">
+                    <td colspan="3" class="proddescription producttable__row-field">
                         ${prodDescriptionHTML}
                     </td>
-                    <td>
+                    <td class="producttable__row-field">
                         <p>Stock: ${prodStock}</p>
                         <p>Featured: ${prodIsFeatured}</p>
                         <p>End-Of-Sale: ${prodIsStopped}</p> 
