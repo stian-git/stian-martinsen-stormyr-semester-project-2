@@ -11,7 +11,8 @@
         box-shadow: 1px 1px 3px black;
         &:hover {
             box-shadow: none;
-            border: 2px solid black;
+            border: 1px solid black;
+            color: black;
             .productcard__box-imagewrapper-banner {
                 display: flex;
             }
@@ -47,6 +48,11 @@
             flex-direction: column;
             justify-content: space-between;
             padding: 0 10px;
+            // &-title {
+            //     &:hover {
+            //         color: black;
+            //     }
+            // }
         }
         &-footer {
             display: none;

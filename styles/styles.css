@@ -10888,7 +10888,8 @@ header:first-of-type + * {
 }
 .productcard__box:hover {
   box-shadow: none;
-  border: 2px solid black;
+  border: 1px solid black;
+  color: black;
 }
 .productcard__box:hover .productcard__box-imagewrapper-banner {
   display: flex;
