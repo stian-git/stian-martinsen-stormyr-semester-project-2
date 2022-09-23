@@ -56,7 +56,7 @@ export default function displaySearchEditResults(arr) {
             let currentProdId = e.target.parentElement.dataset.productid;
             if (!currentProdId) {
                 //Avoids a bug when the current element is the thumbnail.
-                currentProdId = e.fromElement.parentElement.parentElement.dataset.productid;
+                currentProdId = e.target.parentElement.parentElement.dataset.productid;
             }
             document.querySelector(`.additionalinfo[data-productid="${currentProdId}"]`).style.display = "none";
         });
