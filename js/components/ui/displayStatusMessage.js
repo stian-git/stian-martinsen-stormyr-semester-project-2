@@ -5,7 +5,6 @@ export default function displayStatusMessage(message, statusClass = "error") {
     if (statusClass === "success") {
         statusBemClass = "statuscontainer__status-success";
     }
-    console.log(statusBemClass);
     statusMessage.innerHTML = message;
     statusContainer.classList.add(statusBemClass);
     statusContainer.classList.add("statuscontainer__status-active");

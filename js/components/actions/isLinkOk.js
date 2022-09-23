@@ -10,8 +10,13 @@ export default async function isLinkOk(url) {
         if (data.status === 404) {
             console.log("Link do not exist and will be hidden.");
         }
+
+        // fetch(noCorsUrl + url).then((data) => {
+        //     console.log(data2);
+        // });
     } catch (error) {
         console.log("Link do not exist and will be hidden.");
+        console.log(error);
         return false;
     }
 }
