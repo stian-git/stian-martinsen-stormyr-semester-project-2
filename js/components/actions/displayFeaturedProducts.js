@@ -3,8 +3,8 @@
 export default function displayFeaturedProducts(arr) {
     console.log("Running displayFeaturedProducts...");
     //variables used to calculate number of rows.
-    //const moreColsOnOffsetWidth = 328;
-    const moreColsOnOffsetWidth = 250;
+    const moreColsOnOffsetWidth = 328;
+    //const moreColsOnOffsetWidth = 250;
     const colWidth = 153;
     const carouselContainer = document.querySelector("#featuredproducts .carousel-inner");
     //empty current carousel:
@@ -12,7 +12,7 @@ export default function displayFeaturedProducts(arr) {
     const cardsInRow = 1 + Math.ceil((carouselContainer.offsetWidth - moreColsOnOffsetWidth) / colWidth);
     const rowsToBuild = Math.ceil(arr.length / cardsInRow);
     // Build the carousel "rows":
-    for (let i = 0; i < rowsToBuild; i++) {
+    for (let i = 0; i <= rowsToBuild; i++) {
         console.log("Building row: " + i);
         const rowClass = "carousel-item-row" + i;
         console.log(rowClass);
