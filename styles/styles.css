@@ -11113,6 +11113,10 @@ header:first-of-type + * {
   font-style: italic;
 }
 
+.productform__inputrequirement {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
 .productform__controls-deletebutton {
   display: none;
 }

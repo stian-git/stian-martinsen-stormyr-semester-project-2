@@ -55,28 +55,32 @@
         <div class="header__bottom_line"></div>
         <main>
             <h1>Add Product (1/2)</h1>
-            <form action="" method="get" class="productform" id="productform">
+            <form action="" method="get" class="productform" id="productform" novalidate>
                 <input type="text" id="productid" value="" hidden />
                 <div class="mb-3">
-                    <label for="productnumber" class="form-label">Product Number</label>
+                    <label for="productnumber" class="form-label">Product Number*</label>
+                    <div class="invalid-feedback productnumber-requirement productform__inputrequirement"></div>
                     <input type="text" class="form-control" id="productnumber" aria-describedby="productnumber" />
                 </div>
                 <div class="mb-3">
-                    <label for="producttitle" class="form-label">Name</label>
+                    <label for="producttitle" class="form-label">Product Name*</label>
+                    <div class="invalid-feedback producttitle-requirement productform__inputrequirement"></div>
                     <input type="text" class="form-control" id="producttitle" aria-describedby="producttitle" />
                 </div>
                 <div class="mb-3">
                     <label for="productdescription" class="form-label">Description</label>
                     <textarea class="form-control" id="productdescription" aria-describedby="productdescription"></textarea>
                 </div>
-                <label for="productPrice" class="form-label">Price</label>
+                <label for="productPrice" class="form-label">Price*</label>
                 <div class="input-group mb-3">
+                    <div class="invalid-feedback productprice-requirement productform__inputrequirement">Price must be 0 or above</div>
                     <span class="input-group-text">EUR</span>
                     <input type="number" min="0" max="9999" id="productprice" class="form-control" aria-label="Amount (to the nearest EURO)" />
                     <span class="input-group-text">.00</span>
                 </div>
                 <div class="mb-3">
-                    <label for="productstock" class="form-label">Stock</label>
+                    <label for="productstock" class="form-label">Stock*</label>
+                    <div class="invalid-feedback productstock-requirement productform__inputrequirement">Stock must be 0 or above</div>
                     <input type="number" step="1" min="0" max="9999" class="form-control" id="productstock" aria-describedby="productstock" />
                 </div>
                 <div class="form-check form-switch">

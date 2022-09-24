@@ -114,3 +114,8 @@ export const editProductButtonLink = document.querySelector(".topcontainer__buys
 export const charsToIgnoreInNumbers = ["-", ",", "e", "E", "."];
 export const minLengthProdNumber = 3;
 export const minLengthProdTitle = 2;
+
+export const prodNumberRequirementLabel = document.querySelector(".productnumber-requirement");
+export const prodTitleRequirementLabel = document.querySelector(".producttitle-requirement");
+export const prodPriceRequirementLabel = document.querySelector(".productprice-requirement");
+export const prodStockRequirementLabel = document.querySelector(".productstock-requirement");

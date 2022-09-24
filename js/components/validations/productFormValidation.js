@@ -8,12 +8,10 @@ export default function productFormValidation() {
     const isOkprodPrice = prodPriceField.value !== "";
     const isOkprodStock = prodStockField.value !== "";
     if (isOkprodNumber && isOkprodName && isOkprodPrice && isOkprodStock) {
-        // enable continuebutton
-        //console.log("All fields ok!");
-        continueButton.disabled = false;
+        // Form validation OK.
         return true;
     } else {
-        continueButton.disabled = true;
+        // Validation failed.
         return false;
     }
 }

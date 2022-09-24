@@ -1,4 +1,8 @@
 .productform {
+    &__inputrequirement {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
     &__controls {
         &-deletebutton {
             display: none;
