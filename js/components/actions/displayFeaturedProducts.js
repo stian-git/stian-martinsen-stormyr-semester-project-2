@@ -1,7 +1,6 @@
 // Use width to calculate the number of featured products to show in each
 // carousel-item
 export default function displayFeaturedProducts(arr) {
-    console.log("Running displayFeaturedProducts...");
     //variables used to calculate number of rows.
     const moreColsOnOffsetWidth = 328;
     //const moreColsOnOffsetWidth = 250;
@@ -13,9 +12,9 @@ export default function displayFeaturedProducts(arr) {
     const rowsToBuild = Math.ceil(arr.length / cardsInRow);
     // Build the carousel "rows":
     for (let j = 0; j < rowsToBuild; j++) {
-        console.log("Building row: " + j);
+        //console.log("Building row: " + j);
         const rowClass = "carousel-item-row" + j;
-        console.log(rowClass);
+        //console.log(rowClass);
         carouselContainer.innerHTML += `
         <div class="featured__container carousel-item ${rowClass}" data-bs-interval="40000">
             <div class="featured__containerrow row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-2"></div>

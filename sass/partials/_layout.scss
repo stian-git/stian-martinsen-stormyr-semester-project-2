@@ -15,6 +15,9 @@ main {
     padding: 1em 4em 4em 4em;
     border-left: 2px solid black;
     border-right: 2px solid black;
+    &.wide__main {
+        width: 100%;
+    }
 }
 
 header:first-of-type + * {
@@ -28,5 +31,12 @@ header:first-of-type + * {
     }
     header:first-of-type + * {
         margin-top: 80px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    main {
+        width: 88%;
+        padding: 3em 1.2em 4em 1.2em;
     }
 }

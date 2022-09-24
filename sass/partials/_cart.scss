@@ -47,3 +47,8 @@
         }
     }
 }
+@include media-breakpoint-down(sm) {
+    .cart {
+        font-size: 0.8em;
+    }
+}

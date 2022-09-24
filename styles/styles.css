@@ -10760,6 +10760,7 @@ textarea.form-control-lg {
 h1, .h1 {
   font-family: "Orbitron";
   font-weight: bolder;
+  margin-bottom: 1em;
 }
 
 h1::first-letter, .h1::first-letter {
@@ -10777,7 +10778,7 @@ h3,
 }
 
 h2, .h2 {
-  color: #9700ff;
+  font-size: 1.3em;
   font-weight: bold;
 }
 
@@ -10811,6 +10812,9 @@ main {
   border-left: 2px solid black;
   border-right: 2px solid black;
 }
+main.wide__main {
+  width: 100%;
+}
 
 header:first-of-type + * {
   margin-top: 63px;
@@ -10822,6 +10826,12 @@ header:first-of-type + * {
   }
   header:first-of-type + * {
     margin-top: 80px;
+  }
+}
+@media (max-width: 575.98px) {
+  main {
+    width: 88%;
+    padding: 3em 1.2em 4em 1.2em;
   }
 }
 .header {
@@ -10875,6 +10885,14 @@ header:first-of-type + * {
   color: #8e2579;
 }
 
+@media (max-width: 767.98px) {
+  .footer {
+    flex-direction: column;
+  }
+  .footer__section {
+    margin-top: 1.5em;
+  }
+}
 .productlist__product {
   height: 300px;
 }
@@ -11113,6 +11131,11 @@ header:first-of-type + * {
   font-style: italic;
 }
 
+@media (max-width: 575.98px) {
+  .cart {
+    font-size: 0.8em;
+  }
+}
 .productform__inputrequirement {
   margin-top: 0;
   margin-bottom: 0.5em;
@@ -11344,4 +11367,10 @@ header:first-of-type + * {
 .producttable__attribute-sortenabled.producttable__attribute-descending .producttable__row-header-sortdown,
 .producttable__attribute-sortenabled.producttable__attribute-ascending .producttable__row-header-sortup {
   display: inline-block;
+}
+
+@media (max-width: 575.98px) {
+  .producttable__row-header-input {
+    padding: 0.375em 0.2em 0.375em 0.7em;
+  }
 }

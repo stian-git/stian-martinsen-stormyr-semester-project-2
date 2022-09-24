@@ -26,3 +26,12 @@
         }
     }
 }
+
+@include media-breakpoint-down(md) {
+    .footer {
+        flex-direction: column;
+        &__section {
+            margin-top: 1.5em;
+        }
+    }
+}

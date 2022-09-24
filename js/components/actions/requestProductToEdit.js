@@ -14,7 +14,7 @@ export default function requestProductToEdit() {
     deleteProductButton.remove();
 
     const mainH2 = document.querySelector("main h2");
-    mainH2.innerHTML += `<h2>Please select the product to edit</h2>`;
+    mainH2.innerHTML += `Please select the product to edit:`;
 
     // get the products, store them for later use, sort and display them.
     getProducts().then((allProducts) => {

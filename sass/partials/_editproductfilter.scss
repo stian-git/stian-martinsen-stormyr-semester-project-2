@@ -56,3 +56,15 @@
 .producttable__attribute-sortenabled.producttable__attribute-ascending .producttable__row-header-sortup {
     display: inline-block;
 }
+
+@include media-breakpoint-down(sm) {
+    .producttable {
+        &__row {
+            &-header {
+                &-input {
+                    padding: 0.375em 0.2em 0.375em 0.7em;
+                }
+            }
+        }
+    }
+}
