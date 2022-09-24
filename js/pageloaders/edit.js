@@ -9,8 +9,9 @@ import deleteProduct from "../components/api/deleteProduct.js";
 import getProductDetails from "../components/api/getProductDetails.js";
 import getUserInfo from "../components/api/getUserInfo.js";
 import addImages from "../components/api/addImages.js";
-import { continueButton, deleteProductButton, header, imageFormContainer, imagesToAddButton, prodIdField, productForm, saveProductButton } from "../components/variables.js";
+import { continueButton, deleteProductButton, header, imageFormContainer, imagesToAddButton, prodIdField, prodPriceField, prodStockField, productForm, saveProductButton } from "../components/variables.js";
 import productFormValidation from "../components/validations/productFormValidation.js";
+import removeUnwantedChars from "../components/validations/removeUnwantedChars.js";
 
 getUserInfo().then((isLoggedIn) => {
     if (isLoggedIn) {
@@ -53,11 +54,20 @@ getUserInfo().then((isLoggedIn) => {
                 let prodObj = createProductObject();
                 addProduct(prodObj);
             });
+            continueButton.disabled = true;
         }
 
         // Validate form here?
+        prodStockField.addEventListener("keydown", (e) => {
+            console.log("Checking for unwanted chars now 1");
+            removeUnwantedChars(e);
+        });
+        prodPriceField.addEventListener("keydown", (e) => {
+            console.log("Checking for unwanted chars now 2");
+            removeUnwantedChars(e);
+        });
         productForm.addEventListener("keyup", (e) => {
-            const dataIsValid = productFormValidation();
+            const dataIsValid = productFormValidation(e);
             if (dataIsValid) {
                 console.log("We can enable the button...");
             }

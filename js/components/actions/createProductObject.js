@@ -1,6 +1,9 @@
 import { placeHolderThumb, prodDescField, prodIsFeaturedField, prodIsStoppedField, prodNumberField, prodPriceField, prodStockField, prodTitleField } from "../variables.js";
 
 export default function createProductObject() {
+    // if (!prodDescField.value) {
+    //     prodDescField.value = " ";
+    // }
     let selectedImage = placeHolderThumb;
     const anyImageRadioButtonExists = document.querySelector(".editimages input[type=radio]");
     const selectedImageRadioButtonExists = document.querySelector(".editimages input[type=radio]:checked");

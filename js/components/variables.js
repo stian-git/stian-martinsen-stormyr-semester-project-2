@@ -47,8 +47,8 @@ export const imageEditContainerTable = document.querySelector(".editimages table
 export const deleteProductButton = document.querySelector(".deleteproductbutton");
 export const searchFilterField = document.querySelector("input.textfilter");
 
-export const placeHolderImage = "https://res.cloudinary.com/devokuww7/image/upload/v1663252624/logo_brickastle_purple_transparent_1c1aae1509.png";
-export const placeHolderThumb = "https://res.cloudinary.com/devokuww7/image/upload/v1663252624/thumbnail_logo_brickastle_purple_transparent_1c1aae1509.png";
+export const placeHolderImage = "https://res.cloudinary.com/devokuww7/image/upload/v1664034347/brickastle_placeholder_image_7c8fd39a31.png";
+export const placeHolderThumb = "https://res.cloudinary.com/devokuww7/image/upload/v1664034347/thumbnail_brickastle_placeholder_image_7c8fd39a31.png";
 
 export const modelFilter = document.querySelector("th[data-sortby=productnumber]");
 export const titleFilter = document.querySelector("th[data-sortby=title]");
@@ -110,3 +110,7 @@ export const adminMenuItems = document.querySelectorAll(".navbar .mainmenu__admi
 
 export const editProductButton = document.querySelector(".topcontainer__buysection-editbutton");
 export const editProductButtonLink = document.querySelector(".topcontainer__buysection-editbuttonlink");
+
+export const charsToIgnoreInNumbers = ["-", ",", "e", "E", "."];
+export const minLengthProdNumber = 3;
+export const minLengthProdTitle = 2;
