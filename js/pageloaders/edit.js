@@ -8,7 +8,7 @@ import addProduct from "../components/api/addProduct.js";
 import deleteProduct from "../components/api/deleteProduct.js";
 import getProductDetails from "../components/api/getProductDetails.js";
 import getUserInfo from "../components/api/getUserInfo.js";
-import addImages from "../components/ui/addImages.js";
+import addImages from "../components/api/addImages.js";
 import { continueButton, deleteProductButton, header, imageFormContainer, imagesToAddButton, prodIdField, saveProductButton } from "../components/variables.js";
 
 getUserInfo().then((isLoggedIn) => {

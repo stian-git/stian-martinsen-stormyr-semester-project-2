@@ -5,12 +5,9 @@ export default function createProductObject() {
     const anyImageRadioButtonExists = document.querySelector(".editimages input[type=radio]");
     const selectedImageRadioButtonExists = document.querySelector(".editimages input[type=radio]:checked");
     if (selectedImageRadioButtonExists) {
-        //selectedImage = selectedImageRadioButtonExists.parentElement.parentElement.children[1].firstChild.lastChild.src;
         selectedImage = selectedImageRadioButtonExists.parentElement.parentElement.children[1].firstChild.src;
     } else if (anyImageRadioButtonExists) {
-        console.log(anyImageRadioButtonExists);
         anyImageRadioButtonExists.checked = true;
-        //selectedImage = anyImageRadioButtonExists.parentElement.parentElement.children[1].firstChild.lastChild.src;
         selectedImage = anyImageRadioButtonExists.parentElement.parentElement.children[1].firstChild.src;
     }
 
