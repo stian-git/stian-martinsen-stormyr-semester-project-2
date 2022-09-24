@@ -3,7 +3,8 @@
 export default function displayFeaturedProducts(arr) {
     console.log("Running displayFeaturedProducts...");
     //variables used to calculate number of rows.
-    const moreColsOnOffsetWidth = 328;
+    //const moreColsOnOffsetWidth = 328;
+    const moreColsOnOffsetWidth = 250;
     const colWidth = 153;
     const carouselContainer = document.querySelector("#featuredproducts .carousel-inner");
     //empty current carousel:
@@ -16,7 +17,7 @@ export default function displayFeaturedProducts(arr) {
         const rowClass = "carousel-item-row" + i;
         console.log(rowClass);
         carouselContainer.innerHTML += `
-        <div class="featured__container carousel-item ${rowClass}" data-bs-interval="40000">
+        <div class="featured__container carousel-item" data-bs-interval="40000">
             <div class="featured__containerrow row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-2"></div>
         </div>`;
     }
