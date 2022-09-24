@@ -21,29 +21,29 @@ export default function displayFeaturedProducts(arr) {
         `;
     }
     // // Then add each featured product in the correct row.
-    for (let i = 0; i < arr.length; i++) {
-        // Calculates the correct row:
-        const rowToGoTo = Math.floor(i / cardsInRow);
-        // Use the rownumber to identify the row-element to put it into
-        const carouselRowElement = document.querySelector("#featuredproducts .carousel-item-row" + rowToGoTo + " .row");
-        carouselRowElement.innerHTML += `
-                <div class="col featured__wrapper" data-id="${arr[i].id}">
-                    <div class="card h-100 featured__wrapper-card">
-                        <div class="card-img featured__wrapper-card-imgbox">
-                            <img src="${arr[i].attributes.image_url}" class="card-img-top featured__wrapper-card-imgbox-img" aria-label="Image of ${arr[i].attributes.title}" title="Image of ${arr[i].attributes.title}" alt="Image of ${arr[i].attributes.title}" />
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">${arr[i].attributes.title}</h5>
-                            <p class="card-text">${arr[i].attributes.price} EUR</p>
-                        </div>
-                        <div class="card-footer">Model: ${arr[i].attributes.productnumber}</div>
-                    </div>
-                </div>
-        `;
-    }
+    // for (let i = 0; i < arr.length; i++) {
+    //     // Calculates the correct row:
+    //     const rowToGoTo = Math.floor(i / cardsInRow);
+    //     // Use the rownumber to identify the row-element to put it into
+    //     const carouselRowElement = document.querySelector("#featuredproducts .carousel-item-row" + rowToGoTo + " .row");
+    //     carouselRowElement.innerHTML += `
+    //             <div class="col featured__wrapper" data-id="${arr[i].id}">
+    //                 <div class="card h-100 featured__wrapper-card">
+    //                     <div class="card-img featured__wrapper-card-imgbox">
+    //                         <img src="${arr[i].attributes.image_url}" class="card-img-top featured__wrapper-card-imgbox-img" aria-label="Image of ${arr[i].attributes.title}" title="Image of ${arr[i].attributes.title}" alt="Image of ${arr[i].attributes.title}" />
+    //                     </div>
+    //                     <div class="card-body">
+    //                         <h5 class="card-title">${arr[i].attributes.title}</h5>
+    //                         <p class="card-text">${arr[i].attributes.price} EUR</p>
+    //                     </div>
+    //                     <div class="card-footer">Model: ${arr[i].attributes.productnumber}</div>
+    //                 </div>
+    //             </div>
+    //     `;
+    // }
 
     // // set first carousel-item as the active.
-    document.querySelector("#featuredproducts .carousel-item").classList.add("active");
+    // document.querySelector("#featuredproducts .carousel-item").classList.add("active");
 
     // // add eventlisteners:
 
