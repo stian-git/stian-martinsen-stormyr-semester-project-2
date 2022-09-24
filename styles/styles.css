@@ -11010,6 +11010,7 @@ header:first-of-type + * {
   }
 }
 .imagecarousel {
+  margin-top: 2em;
   place-self: center;
   width: min-content;
 }
@@ -11262,11 +11263,13 @@ header:first-of-type + * {
   height: inherit;
 }
 .modalcarousel__slide-item {
-  height: unset;
-  width: unset;
+  width: 60vw;
+  height: 60vh;
 }
 .modalcarousel__slide-item-img {
-  height: 60vh;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 .modalcarousel__controls-prev {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;

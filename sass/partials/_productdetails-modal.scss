@@ -13,10 +13,15 @@
         padding: 1em;
         height: inherit;
         &-item {
-            height: unset;
-            width: unset;
+            // height: unset;
+            // width: unset;
+            width: 60vw;
+            height: 60vh;
             &-img {
-                height: 60vh;
+                //height: 60vh;
+                max-height: 100%;
+                max-width: 100%;
+                object-fit: contain;
             }
         }
     }
