@@ -1,4 +1,7 @@
+import updateItemInCart from "../actions/updateItemInCart.js";
 import displayStatusMessage from "../ui/displayStatusMessage.js";
+import getNumberOfItemsInCart from "../ui/getNumberOfItemsInCart.js";
+import isProductInCart from "../validations/isProductInCart.js";
 import { baseUrl, spinnerModalBackButton, spinnerModalHeader, spinnerModalMessage, spinnerModalTriggerButton, storeUserToken } from "../variables.js";
 
 // NB: Deleting the product will not delete the images in Cloudinary because in theory these images can be used by other things.
@@ -39,6 +42,15 @@ export default async function deleteProduct(id, deletebutton) {
             }
         } catch (error) {
             displayStatusMessage("Deleting product failed. Please try again.", "error");
+        }
+
+        // Remove from basket if it is there...
+        //updateItemInCart(id);
+        const isInCart = isProductInCart(id);
+        if (isInCart) {
+            updateItemInCart(id, "delete");
+            getNumberOfItemsInCart();
+            // Update basket counter.
         }
     }
 }

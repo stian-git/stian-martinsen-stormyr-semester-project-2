@@ -9,7 +9,7 @@ import deleteProduct from "../components/api/deleteProduct.js";
 import getProductDetails from "../components/api/getProductDetails.js";
 import getUserInfo from "../components/api/getUserInfo.js";
 import addImages from "../components/ui/addImages.js";
-import { continueButton, deleteProductButton, header, imageFormContainer, imagesToAddButton, saveProductButton } from "../components/variables.js";
+import { continueButton, deleteProductButton, header, imageFormContainer, imagesToAddButton, prodIdField, saveProductButton } from "../components/variables.js";
 
 getUserInfo().then((isLoggedIn) => {
     if (isLoggedIn) {
