@@ -26,6 +26,7 @@ export const defaultAuthenticatedUserGroupName = "Authenticated user";
 export const noCorsUrl = "https://noroffcors.herokuapp.com/";
 export const legoProductBaseUrl = "https://www.lego.com/en-gb/product/";
 
+export const productForm = document.querySelector("form.productform");
 export const prodNumberField = document.querySelector(".productform #productnumber");
 export const prodTitleField = document.querySelector(".productform #producttitle");
 export const prodDescField = document.querySelector(".productform #productdescription");

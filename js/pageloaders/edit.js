@@ -9,7 +9,8 @@ import deleteProduct from "../components/api/deleteProduct.js";
 import getProductDetails from "../components/api/getProductDetails.js";
 import getUserInfo from "../components/api/getUserInfo.js";
 import addImages from "../components/api/addImages.js";
-import { continueButton, deleteProductButton, header, imageFormContainer, imagesToAddButton, prodIdField, saveProductButton } from "../components/variables.js";
+import { continueButton, deleteProductButton, header, imageFormContainer, imagesToAddButton, prodIdField, productForm, saveProductButton } from "../components/variables.js";
+import productFormValidation from "../components/validations/productFormValidation.js";
 
 getUserInfo().then((isLoggedIn) => {
     if (isLoggedIn) {
@@ -53,6 +54,14 @@ getUserInfo().then((isLoggedIn) => {
                 addProduct(prodObj);
             });
         }
+
+        // Validate form here?
+        productForm.addEventListener("keyup", (e) => {
+            const dataIsValid = productFormValidation();
+            if (dataIsValid) {
+                console.log("We can enable the button...");
+            }
+        });
     } else {
         // User is not logged in.
         history.back();
