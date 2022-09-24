@@ -1,7 +1,6 @@
 // Use width to calculate the number of featured products to show in each
 // carousel-item
 export default function displayFeaturedProducts(arr) {
-    //console.log(arr[0]);
     // variables used to calculate number of rows.
     const moreColsOnOffsetWidth = 328;
     const colWidth = 153;
