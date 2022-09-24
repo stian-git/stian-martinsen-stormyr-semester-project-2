@@ -17,4 +17,8 @@ export default function displayStatusMessage(message, statusClass = "error") {
         statusContainer.classList.remove(statusBemClass);
         statusContainer.classList.remove("statuscontainer__status-active");
     }, 5000);
+    statusContainer.addEventListener("click", () => {
+        console.log("Status message clicked...");
+        statusContainer.classList.remove("statuscontainer__status-active");
+    });
 }
