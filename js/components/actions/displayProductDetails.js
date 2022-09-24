@@ -24,20 +24,16 @@ import isLinkOk from "./isLinkOk.js";
 import toggleProductToAndFromCart from "./toggleProductToAndFromCart.js";
 
 export default function displayProductDetails(arr) {
-    // Check if item is already in basket - Then change button to remove from cart.
+    // set title and populate fields:
     document.title = `Brickastle | ${arr.title} (${arr.productnumber})`;
     productModel.innerHTML = `Model: ${arr.productnumber}`;
     productTitle.innerHTML = arr.title;
     priceContainer.innerHTML = `${arr.price} ${currency}`;
-    //console.log(arr.price);
-
-    //const detailsTab = document.querySelector("#details-tab-pane");
     detailsTab.innerText = arr.description;
     detailsTab.innerText += "\nStock: " + arr.stock;
     if (arr.isProductionStopped) {
         detailsTab.innerText += "\nProductionstatus: Stopped.";
     }
-    //    const linkTab = document.querySelector("#links-tab-pane");
     // make Lego-link:
     const legoProductLink = legoProductBaseUrl + arr.productnumber;
     isLinkOk(legoProductLink).then((isLegoLinkOk) => {
@@ -128,7 +124,7 @@ export default function displayProductDetails(arr) {
         });
     }
 
-    // handle toggling of product in and out of the cart.
+    // Handle toggling of product in and out of the cart.
     const currentId = getSearchParam("id");
     const isInCart = isProductInCart(currentId);
     if (isInCart) {
