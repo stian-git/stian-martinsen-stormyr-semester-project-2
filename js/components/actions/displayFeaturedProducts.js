@@ -12,9 +12,9 @@ export default function displayFeaturedProducts(arr) {
     const rowsToBuild = Math.ceil(arr.length / cardsInRow);
     // Build the carousel "rows":
     for (let i = 0; i < rowsToBuild; i++) {
-        console.log("Building row: " + j);
+        console.log("Building row: " + i);
         carouselContainer.innerHTML += `
-        <div class="featured__container carousel-item carousel-item-row${j}" data-bs-interval="40000">
+        <div class="featured__container carousel-item carousel-item-row${i}" data-bs-interval="40000">
             <div class="featured__containerrow row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-2"></div>
         </div>`;
     }
