@@ -14,7 +14,7 @@ export default function displayProducts(arr) {
             <a href="productdetails.html?id=${product.id}" class="productcard">
                   <div class="card h-100 productcard__box">
                     <div class="product__header_imagecontainer productcard__box-imagewrapper">
-                        <img src="${product.attributes.image_url}" class="productcard__box-imagewrapper-img card-img-top product__header_imagecontainer_image" alt="...">
+                        <img src="${product.attributes.image_url}" class="productcard__box-imagewrapper-img card-img-top product__header_imagecontainer_image" aria-label="Image of ${product.attributes.title}" title="Image of ${product.attributes.title}" alt="Image of ${product.attributes.title}">
                         <div class="product__header_imagecontainer_buymebanner productcard__box-imagewrapper-banner" data-id="${product.id}" data-title="${product.attributes.title}" data-model="${product.attributes.productnumber}" data-img="${product.attributes.image_url}" data-price="${product.attributes.price}" >Add to cart.</div>
                     </div>
                     <div class="card-body productcard__box-body">

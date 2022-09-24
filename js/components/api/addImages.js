@@ -17,7 +17,6 @@ export default async function addImages() {
     formData.append("refId", prodIdField.value);
     for (let i = 0; i < fileList.length; i++) {
         formData.append("files", fileList[i]);
-        //document.querySelector(".main_image").innerHTML += `<img src="${fileList[i].name}">`;
     }
     const options = {
         method: "POST",

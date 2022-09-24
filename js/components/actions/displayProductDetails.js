@@ -70,7 +70,7 @@ export default function displayProductDetails(arr) {
             `;
             modalCarouselImageContainer.innerHTML += `
                 <div class="carousel-item modalcarousel__slide-item">
-                    <img src="${fullSizeImageUrl}" class="modalcarousel__slide-item-img" alt="..." />
+                    <img src="${fullSizeImageUrl}" class="modalcarousel__slide-item-img" aria-label="Image of ${arr.title}" title="Image of ${arr.title}" alt="Image of ${arr.title}" />
                 </div>
             `;
 
@@ -79,13 +79,13 @@ export default function displayProductDetails(arr) {
                 carouselIndicatorContainer.innerHTML += `<button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>`;
                 carouselImageContainer.innerHTML += `
                     <div class="carousel-item imagecarousel__item active">
-                        <img src="${smallImageUrl}" data-fullsizeimg="${fullSizeImageUrl}" class="d-block w-100 imagecarousel__item-img" alt="${arr.title}" />
+                        <img src="${smallImageUrl}" data-fullsizeimg="${fullSizeImageUrl}" class="d-block w-100 imagecarousel__item-img" aria-label="Image of ${arr.title}" title="Image of ${arr.title}" alt="Image of ${arr.title}" />
                     </div>`;
             } else {
                 carouselIndicatorContainer.innerHTML += `<button type="button" data-bs-target="#imagecarousel" data-bs-slide-to="${index}" aria-label="Slide ${index + 1}"></button>`;
                 carouselImageContainer.innerHTML += `
                     <div class="carousel-item imagecarousel__item">
-                        <img src="${smallImageUrl}" data-fullsizeimg="${fullSizeImageUrl}" class="d-block w-100 imagecarousel__item-img" alt="${arr.title}" />
+                        <img src="${smallImageUrl}" data-fullsizeimg="${fullSizeImageUrl}" class="d-block w-100 imagecarousel__item-img" aria-label="Image of ${arr.title}" title="Image of ${arr.title}" alt="Image of ${arr.title}" />
                     </div>`;
             }
         });

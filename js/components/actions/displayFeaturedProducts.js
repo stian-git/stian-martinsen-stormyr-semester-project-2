@@ -32,7 +32,7 @@ export default function displayFeaturedProducts(arr) {
                 <div class="col featured__wrapper" data-id="${arr[i].id}">
                     <div class="card h-100 featured__wrapper-card">
                         <div class="card-img featured__wrapper-card-imgbox">
-                            <img src="${arr[i].attributes.image_url}" class="card-img-top featured__wrapper-card-imgbox-img" alt="${arr[i].attributes.title}" />
+                            <img src="${arr[i].attributes.image_url}" class="card-img-top featured__wrapper-card-imgbox-img" aria-label="Image of ${arr[i].attributes.title}" title="Image of ${arr[i].attributes.title}" alt="Image of ${arr[i].attributes.title}" />
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">${arr[i].attributes.title}</h5>

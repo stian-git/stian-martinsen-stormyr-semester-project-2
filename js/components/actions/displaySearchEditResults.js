@@ -16,7 +16,7 @@ export default function displaySearchEditResults(arr) {
         const prodDescriptionHTML = prodDescription.replace(/(\r\n|\n|\r)/gm, "<br>");
         rowContainer.innerHTML += `
             <tr data-productid="${prodId}" class="producttable__row">
-                <td class="producttable__row-field"><img src="${prodThumb}" class="thumbnail producttable__row-img"></td>
+                <td class="producttable__row-field"><img src="${prodThumb}" class="thumbnail producttable__row-img" aria-label="Thumbnail of ${prodTitle}" title="Thumbnail of ${prodTitle}" alt="Thumbnail of product: ${prodTitle}"></td>
                 <td class="producttable__row-field">${prodModel}</td>
                 <td class="producttable__row-field">${prodTitle}</td>
                 <td class="producttable__row-field">${prodPrice}</td>

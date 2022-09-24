@@ -15,7 +15,7 @@ export default function displayCart() {
             const linePrice = item.price * item.qty;
             cartContainer.innerHTML += `
             <tr>
-                <td><img src="${item.img}" class="cart__row-img"/></td>
+                <td><img src="${item.img}" class="cart__row-img" aria-label="Thumbnail of ${item.title}" title="Thumbnail of ${item.title}" alt="Thumbnail of ${item.title}"/></td>
                 <td><a href="productdetails.html?id=${item.id}" class="cart__row-productlink">${item.title} (${item.model})</a></td>
                 <td>${item.price}</td>
                 <td>${item.qty}</td>
