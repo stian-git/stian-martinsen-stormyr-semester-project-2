@@ -28,3 +28,12 @@
         left: 0px;
     }
 }
+
+@include media-breakpoint-down(sm) {
+    .hero {
+        align-items: unset;
+        &-text {
+            margin-top: 1em;
+        }
+    }
+}
