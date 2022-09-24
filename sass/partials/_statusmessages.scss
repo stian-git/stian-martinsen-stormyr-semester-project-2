@@ -1,6 +1,6 @@
 .statuscontainer {
     cursor: pointer;
-    background-color: green;
+    background-color: $statusmessage-success-bg;
     display: flex;
     place-content: center;
     height: 5em;
@@ -8,7 +8,7 @@
     position: fixed;
     width: 100%;
     opacity: 90%;
-    color: white;
+    color: $statusmessage-success-text;
     z-index: 2000;
     top: -5em;
     font-weight: bold;
@@ -23,11 +23,11 @@
             animation: showStatusBar 5s 1 ease;
         }
         &-error {
-            background-color: #ff5050;
-            color: black;
+            background-color: $statusmessage-error-bg;
+            color: $statusmessage-error-text;
         }
         &-success {
-            background-color: green;
+            background-color: $statusmessage-success-bg;
         }
     }
 }

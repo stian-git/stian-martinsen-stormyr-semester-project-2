@@ -1,5 +1,5 @@
 .footer {
-    background-color: #ffcf00;
+    background-color: $footer-bg;
     padding: 1em 2em;
     display: flex;
     justify-content: space-between;
@@ -10,7 +10,7 @@
             margin: 2px;
             cursor: pointer;
             &:hover {
-                color: red;
+                color: $textlinkhovercolor;
             }
         }
         &-info {
@@ -20,7 +20,7 @@
             &-link {
                 color: black;
                 &:hover {
-                    color: gray;
+                    color: $textlinkhovercolor;
                 }
             }
         }

@@ -2,6 +2,7 @@
     display: none;
     table-layout: fixed;
     &__row {
+        cursor: pointer;
         &-field {
             margin: 5px;
             padding: 5px;
@@ -36,7 +37,7 @@
     }
     &__attribute {
         &-sortenabled {
-            color: green;
+            color: $sortingenabled;
         }
     }
 }

@@ -1,2 +1,33 @@
-$background-colour: #000;
-$font-family-sans-serif: "Antonio";
+//$background-colour: #000;
+$font-family-sans-serif: "Antonio", sans-serif;
+$font-family-serif: "Roboto Slab", serif;
+$font-family-mainheaders: "Orbitron", sans-serif;
+$font-family-lego: "Legothick", $font-family-mainheaders;
+
+// Main colors:
+
+$purple: #8e2579;
+
+// Others:
+
+$headerblack: #000;
+$warning: #ffcf00;
+
+$success: $purple;
+$primary: $purple;
+
+$correct: green;
+$error: #ff5050;
+
+// Custom colors:
+$sortingenabled: green;
+$legoyellow: #ffcf00;
+
+$footer-bg: $legoyellow;
+
+$textlinkhovercolor: $primary;
+
+$statusmessage-success-bg: green;
+$statusmessage-error-bg: #ff5050;
+$statusmessage-success-text: #fff;
+$statusmessage-error-text: #000;
