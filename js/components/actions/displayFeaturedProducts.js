@@ -13,8 +13,10 @@ export default function displayFeaturedProducts(arr) {
     // Build the carousel "rows":
     for (let i = 0; i < rowsToBuild; i++) {
         console.log("Building row: " + i);
+        const rowClass = "carousel-item-row" + i;
+        console.log(rowClass);
         carouselContainer.innerHTML += `
-        <div class="featured__container carousel-item carousel-item-row${i}" data-bs-interval="40000">
+        <div class="featured__container carousel-item carousel-item-row${rowClass}" data-bs-interval="40000">
             <div class="featured__containerrow row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-2"></div>
         </div>`;
     }
