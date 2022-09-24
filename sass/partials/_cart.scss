@@ -30,11 +30,20 @@
         &:nth-child(1) {
             display: flex;
         }
-        &:nth-child(2) {
+        &:nth-child(2),
+        &:nth-child(3) {
             text-align: right;
         }
         &-pricetext {
             margin-right: 1em;
+            margin-bottom: 0;
+        }
+        &-price {
+            margin-bottom: 0;
+        }
+        &-vattext {
+            font-size: 0.7em;
+            font-style: italic;
         }
     }
 }

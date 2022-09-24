@@ -11098,11 +11098,19 @@ header:first-of-type + * {
 .cartsummary__container:nth-child(1) {
   display: flex;
 }
-.cartsummary__container:nth-child(2) {
+.cartsummary__container:nth-child(2), .cartsummary__container:nth-child(3) {
   text-align: right;
 }
 .cartsummary__container-pricetext {
   margin-right: 1em;
+  margin-bottom: 0;
+}
+.cartsummary__container-price {
+  margin-bottom: 0;
+}
+.cartsummary__container-vattext {
+  font-size: 0.7em;
+  font-style: italic;
 }
 
 .productform__controls-deletebutton {
