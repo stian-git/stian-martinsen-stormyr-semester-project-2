@@ -17,6 +17,18 @@
                 text-decoration: none;
             }
         }
+        &-price {
+            font-size: 2.5em;
+            margin-top: 1.5em;
+            margin-bottom: 0;
+            line-height: 20px;
+        }
+        &-currency {
+            font-size: 0.3em;
+        }
+        &-vatinfo {
+            font-size: 0.6em;
+        }
     }
     &__imagesection {
         width: 400px;

@@ -28,7 +28,7 @@ export default function displayProductDetails(arr) {
     document.title = `Brickastle | ${arr.title} (${arr.productnumber})`;
     productModel.innerHTML = `Model: ${arr.productnumber}`;
     productTitle.innerHTML = arr.title;
-    priceContainer.innerHTML = `${arr.price} ${currency}`;
+    priceContainer.innerHTML = `${arr.price.toFixed(2)}<span class="topcontainer__buysection-currency"> ${currency}</span>`;
     detailsTab.innerText = arr.description;
     detailsTab.innerText += "\nStock: " + arr.stock;
     if (arr.isProductionStopped) {
