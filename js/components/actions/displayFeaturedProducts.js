@@ -36,7 +36,7 @@ export default function displayFeaturedProducts(arr) {
                             <img src="${arr[i].attributes.image_url}" class="card-img-top featured__wrapper-card-imgbox-img" aria-label="Image of ${arr[i].attributes.title}" title="Image of ${arr[i].attributes.title}" alt="Image of ${arr[i].attributes.title}" />
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">${arr[i].attributes.title}</h5>
+                            <h5 class="card-title featured__wrapper-card-title">${arr[i].attributes.title}</h5>
                             <p class="card-text">${arr[i].attributes.price} EUR</p>
                         </div>
                         <div class="card-footer">Model: ${arr[i].attributes.productnumber}</div>

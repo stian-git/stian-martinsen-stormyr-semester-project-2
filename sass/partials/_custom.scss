@@ -1,8 +1,9 @@
-//$background-colour: #000;
 $font-family-sans-serif: "Antonio", sans-serif;
 $font-family-serif: "Roboto Slab", serif;
 $font-family-mainheaders: "Orbitron", sans-serif;
 $font-family-lego: "Legothick", $font-family-mainheaders;
+
+$statusmessage-font: $font-family-mainheaders;
 
 // Main colors:
 
@@ -19,15 +20,33 @@ $primary: $purple;
 $correct: green;
 $error: #ff5050;
 
-// Custom colors:
+// Element-colors:
 $sortingenabled: green;
 $legoyellow: #ffcf00;
 
 $footer-bg: $legoyellow;
 
 $textlinkhovercolor: $primary;
+$textlinkcolor: #000;
 
 $statusmessage-success-bg: green;
 $statusmessage-error-bg: #ff5050;
 $statusmessage-success-text: #fff;
 $statusmessage-error-text: #000;
+$main-bg: #fff;
+$main-border: #000;
+$hero-text-bg: $legoyellow;
+
+$featured-row-bg: white;
+$featured-title: $primary;
+$tabs-border: rgb(222, 226, 230);
+
+$imagemodal-bg: rgba(
+    $color: #000000,
+    $alpha: 0.8,
+);
+
+$addtocart-bg: rgba(0, 0, 0, 0.85);
+$addtocart-text: $legoyellow;
+
+$product-price: red;

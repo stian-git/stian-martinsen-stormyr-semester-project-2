@@ -20,7 +20,7 @@
         display: none;
         &-thumb {
             height: 60px;
-            box-shadow: 1px 1px 3px black;
+            box-shadow: 1px 1px 3px $main-border;
             cursor: pointer;
         }
         &-radiobutton {

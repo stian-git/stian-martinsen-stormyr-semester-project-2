@@ -6,13 +6,13 @@
 
 .productcard {
     text-decoration: none;
-    color: black;
+    color: $featured-title;
     &__box {
-        box-shadow: 1px 1px 3px black;
+        box-shadow: 1px 1px 3px $main-border;
         &:hover {
             box-shadow: none;
-            border: 1px solid black;
-            color: black;
+            border: 1px solid $main-border;
+            color: $textlinkcolor;
             .productcard__box-imagewrapper-banner {
                 display: flex;
             }
@@ -29,8 +29,8 @@
                 max-height: 170px;
             }
             &-banner {
-                background-color: rgba(0, 0, 0, 0.6);
-                color: white;
+                background-color: $addtocart-bg;
+                color: $addtocart-text;
                 position: absolute;
                 display: none;
                 width: 100px;
@@ -41,6 +41,7 @@
                 align-self: center;
                 top: 5px;
                 padding: 10px;
+                cursor: cell;
             }
         }
         &-body {
@@ -48,11 +49,6 @@
             flex-direction: column;
             justify-content: space-between;
             padding: 0 10px;
-            // &-title {
-            //     &:hover {
-            //         color: black;
-            //     }
-            // }
         }
         &-footer {
             display: none;
@@ -65,13 +61,14 @@
             align-items: baseline;
             &-price {
                 font-size: 1.2em;
-                color: red;
+                color: $product-price;
                 &-currency {
                     font-size: 0.5em;
                 }
             }
             &-stock {
                 font-size: 0.7em;
+                color: $textlinkcolor;
             }
         }
     }

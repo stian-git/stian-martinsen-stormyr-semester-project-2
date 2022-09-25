@@ -1,5 +1,5 @@
 .imagemodal {
-    background-color: rgba($color: #000000, $alpha: 0.8);
+    background-color: $imagemodal-bg;
     &__content {
         overflow: hidden;
     }
@@ -17,12 +17,9 @@
         padding: 1em;
         height: inherit;
         &-item {
-            // height: unset;
-            // width: unset;
             width: 60vw;
             height: 60vh;
             &-img {
-                //height: 60vh;
                 max-height: 100%;
                 max-width: 100%;
                 object-fit: contain;
@@ -31,10 +28,10 @@
     }
     &__controls {
         &-prev {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+            background-image: var(--arrow-previous) !important;
         }
         &-next {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+            background-image: var(--arrow-next) !important;
         }
     }
 }

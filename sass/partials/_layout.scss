@@ -2,19 +2,19 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-image: url("../../images/stud.svg");
+    background-image: var(--body-bg);
     background-size: 20px;
     background-attachment: fixed;
 }
 
 main {
     flex-grow: 1;
-    background-color: white;
+    background-color: $main-bg;
     width: 80vw;
     margin: auto;
     padding: 1em 4em 4em 4em;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 2px solid $main-border;
+    border-right: 2px solid $main-border;
 }
 
 header:first-of-type + * {

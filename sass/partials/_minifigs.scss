@@ -6,9 +6,9 @@
         max-width: 300px;
         padding: 5px;
         margin: 10px;
-        border: 1px solid black;
+        border: 1px solid $main-border;
         border-radius: 0px;
-        box-shadow: 1px 1px 6px black;
+        box-shadow: 1px 1px 6px $main-border;
         &-title {
             font-size: 0.8em;
         }

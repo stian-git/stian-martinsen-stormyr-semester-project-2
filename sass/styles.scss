@@ -1,9 +1,10 @@
 // Own customizations
 
 @import "partials/custom";
+@import "partials/variables";
 
 // BootStrap Configuration
-@import "../bootstrap-scss/functions";
+// @import "../bootstrap-scss/functions";
 @import "../bootstrap-scss/functions";
 @import "../bootstrap-scss/variables";
 @import "../bootstrap-scss/maps";
@@ -55,7 +56,7 @@
 @import "partials/layout";
 @import "partials/header";
 @import "partials/footer";
-@import "partials/product";
+@import "partials/products";
 @import "partials/minifigs";
 @import "partials/productdetails";
 @import "partials/featuredproducts";

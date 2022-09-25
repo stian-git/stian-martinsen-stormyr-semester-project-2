@@ -1,5 +1,5 @@
 .header {
-    box-shadow: 1px 0px 10px black;
+    box-shadow: 1px 0px 10px $main-border;
     &__logo {
         max-width: 20%;
         &-img {
@@ -9,7 +9,7 @@
         }
     }
     &__bottom_line {
-        background-color: #ffcf00;
+        background-color: $hero-text-bg;
         height: 20px;
         width: 100%;
         margin: 0;

@@ -1,6 +1,6 @@
 .modal {
     &-error {
-        background-color: red;
+        background-color: $error;
         text-align: center;
         padding: 5px;
         border-radius: 10px;
