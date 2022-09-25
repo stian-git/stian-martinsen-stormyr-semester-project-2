@@ -33,23 +33,24 @@ import productFormValidation from "../components/validations/productFormValidati
 import removeUnwantedChars from "../components/validations/removeUnwantedChars.js";
 
 getUserInfo().then((isLoggedIn) => {
+    // Only runs when logged in:
     if (isLoggedIn) {
-        const idToEdit = getSearchParam("id");
+        // Eventlisteners:
         saveProductButton.addEventListener("click", (e) => {
             e.preventDefault();
             updateProduct();
         });
-
         deleteProductButton.addEventListener("click", (e) => {
             e.preventDefault();
             deleteProduct(prodIdField.value);
         });
-
         imagesToAddButton.addEventListener("change", addImages, false);
 
+        // check id to identify if this is an edit request.
+        const idToEdit = getSearchParam("id");
         if (idToEdit) {
             if (idToEdit !== "search") {
-                // editing a specific product with provided id
+                // editing a specific product with provided id:
                 getProductDetails(idToEdit).then((product) => {
                     editProduct(product);
                     markDefaultImage(product.image_url);
@@ -58,14 +59,14 @@ getUserInfo().then((isLoggedIn) => {
                 deleteProductButton.style.display = "inline-block";
                 saveProductButton.hidden = false;
             } else {
-                // id is not provided. We will request the user to select.
+                // id is not provided. We will request the user to select the product.
                 requestProductToEdit();
             }
             header.innerHTML = "Edit Product";
             continueButton.style.display = "none";
         } else {
-            // We will add a new product.
-            //saveProductButton.style.display = "none";
+            // ID is not provided. We will add a new product.
+            // Add eventlistener.
             continueButton.addEventListener("click", (e) => {
                 e.preventDefault();
                 continueButton.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -77,7 +78,7 @@ getUserInfo().then((isLoggedIn) => {
             });
             continueButton.disabled = true;
         }
-        // Validate form here?
+        // Validations:
         prodPriceField.addEventListener("keyup", (e) => {
             if (e.key !== "Tab") {
                 if (prodPriceField.value && prodPriceField.value >= 0) {
@@ -136,7 +137,7 @@ getUserInfo().then((isLoggedIn) => {
             }
         });
     } else {
-        // User is not logged in.
+        // User is not logged in and will be forwarded back to the previous page in browser log.
         history.back();
     }
 });

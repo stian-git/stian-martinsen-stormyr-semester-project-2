@@ -16,7 +16,7 @@ export default function sortEditableProducts(arr) {
             const valueA = parseFloat(a.attributes[currentSortMethod]).toFixed(2);
             const valueB = parseFloat(b.attributes[currentSortMethod]).toFixed(2);
             if (!isAscending) {
-                // opposite values when descending
+                // opposite values when descending numbers
                 return valueB - valueA;
             }
             return valueA - valueB;

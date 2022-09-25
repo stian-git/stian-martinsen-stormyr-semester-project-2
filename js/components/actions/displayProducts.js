@@ -3,13 +3,10 @@ import toggleUserFeatures from "../ui/toggleUserFeatures.js";
 import { currency, placeHolderThumb, productlist } from "../variables.js";
 
 export default function displayProducts(arr) {
-    //const productlist = document.querySelector("#productlist");
     productlist.innerHTML = "";
     arr.forEach((product) => {
-        //console.log(product);
-        // title, image_url, price, productnumber, stock
         if (!product.attributes.image_url) {
-            console.log("Setting placeholderImage");
+            // Adds placeHolderImage.
             product.attributes.image_url = placeHolderThumb;
         }
         productlist.innerHTML += `

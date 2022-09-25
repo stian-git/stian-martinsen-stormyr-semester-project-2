@@ -7,7 +7,6 @@ export default async function addImages() {
     spinnerModalTriggerButton.click();
     spinnerModalBackButton.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Saving...`;
     spinnerModalMessage.innerHTML = "Please wait while uploading image(s).";
-
     const fileList = this.files;
     const apiToken = localStorage.getItem(storeUserToken);
     const url = baseUrl + "api/upload";
@@ -28,15 +27,18 @@ export default async function addImages() {
 
     try {
         const data = await fetch(url, options);
-        const result = await data.json();
-        result.forEach((img) => {
-            displayEditImages(img.id, img.formats.thumbnail.url, img.url);
-        });
-        this.value = "";
-        // Present successful adding.
-        spinnerModalMessage.innerHTML = "Image(s) successfully added.";
+        if (data.ok) {
+            const result = await data.json();
+            result.forEach((img) => {
+                displayEditImages(img.id, img.formats.thumbnail.url, img.url);
+            });
+            this.value = "";
+            // Present successful adding.
+            spinnerModalMessage.innerHTML = "Image(s) successfully added.";
+        } else {
+            throw "Upload of image(s) failed.";
+        }
     } catch (error) {
-        console.log("An error occured adding images...");
         spinnerModalMessage.innerHTML = "Upload of image(s) failed. Please try again.";
     } finally {
         spinnerModalBackButton.disabled = false;

@@ -26,7 +26,6 @@ export default async function doLogin() {
             getUserInfo(json.jwt).then(() => toggleUserFeatues());
             // remove login modal by enabling and clicking the cancel button after actual login.
             loginCancelButton.disabled = false;
-            //document.querySelector(".logincancel").click();
             loginCancelButton.click();
         } else {
             if (response.status === 400) {

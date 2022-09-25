@@ -1,17 +1,12 @@
-import { defaultAuthenticatedUserGroupName, storeUserEmail, storeUserIsAdmin, storeUserName } from "../variables.js";
+import { defaultAuthenticatedUserGroupName, storeUserEmail, storeUserIsAdmin, storeUserName, userprofileContainer } from "../variables.js";
 
 export default function displayUserInfo() {
-    const userprofileContainer = document.querySelector(".userprofilecontainer");
     const username = localStorage.getItem(storeUserName);
     const useremail = localStorage.getItem(storeUserEmail);
-    //const userrole = localStorage.getItem(storeUserIsAdmin);
-
-    //console.log(userrole);
     let userrole = defaultAuthenticatedUserGroupName;
     if (localStorage.getItem(storeUserIsAdmin)) {
         userrole = "Administrator";
     }
-
     userprofileContainer.innerHTML = `
     <table class="userprofile">
                 <tbody>

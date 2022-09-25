@@ -7,10 +7,9 @@ export default async function getMinifigs(id) {
     try {
         const data = await fetch(minifigsUrl);
         const result = await data.json();
-        // Make sure we handle 0-content here or at the function caller)
         return result;
     } catch (error) {
-        console.log("An error occured fetching minifigs:" + error);
         return [];
+        // caller is handling 0-results.
     }
 }

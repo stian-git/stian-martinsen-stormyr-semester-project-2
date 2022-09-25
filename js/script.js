@@ -23,7 +23,6 @@ searchButton.addEventListener("click", (e) => {
                 productListContainer.innerHTML = "No products matches your search string";
             }
             displayStatusMessage("Nothing matches your search. Please try again.", "error");
-            // if there are no results to display...indicate it without forwarding the user?
         }
     });
 });

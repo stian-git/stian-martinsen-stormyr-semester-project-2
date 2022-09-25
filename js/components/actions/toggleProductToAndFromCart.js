@@ -1,6 +1,5 @@
 import displayStatusMessage from "../ui/displayStatusMessage.js";
 import { carouselImageContainer, cartButton, priceContainer, productModel, productTitle, storeCartContent } from "../variables.js";
-//import createProductObject from "./createProductObject.js";
 import updateItemInCart from "./updateItemInCart.js";
 
 export default function toggleProductToAndFromCart(id) {
@@ -10,7 +9,6 @@ export default function toggleProductToAndFromCart(id) {
         // set an empty array to work with if the cart is empty.
         currentItemsInCart = [];
     }
-
     let filteredProducts = currentItemsInCart.filter((product) => {
         if (product.id !== id) {
             return true;
@@ -19,16 +17,12 @@ export default function toggleProductToAndFromCart(id) {
     const preCount = currentItemsInCart.length;
 
     if (preCount > filteredProducts.length) {
-        // we removed this item.
-        // update buttontext
-        // save filteredproducts to storage.
+        // If we removed the item in the filter.
         localStorage.setItem(storeCartContent, JSON.stringify(filteredProducts));
         cartButton.innerHTML = "Add to cart";
-
         displayStatusMessage("Item deleted from Cart", "success");
     } else {
         // add item to cart.
-        // update buttontext
         cartButton.innerHTML = "Remove from cart";
         const prodPrice = priceContainer.innerText.split(" ")[0];
         const prodModel = productModel.innerText.split(" ")[1];

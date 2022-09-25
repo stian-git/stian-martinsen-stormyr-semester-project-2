@@ -1,3 +1,4 @@
+import displayStatusMessage from "../ui/displayStatusMessage.js";
 import { baseUrl, imageEditContainerTable, storeUserToken } from "../variables.js";
 import updateProduct from "./updateProduct.js";
 
@@ -23,8 +24,10 @@ export default async function deleteImage(e) {
                 imageEditContainerTable.style.display = "none";
             }
             updateProduct();
+        } else {
+            displayStatusMessage("Deleting image failed. Please try again.", "error");
         }
     } catch (error) {
-        console.log("Error deleting this image..." + error);
+        displayStatusMessage("Deleting image failed. Please try again.", "error");
     }
 }

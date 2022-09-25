@@ -1,7 +1,7 @@
+import displayStatusMessage from "../ui/displayStatusMessage.js";
 import { baseUrl, storeUserIsAdmin, storeUserIsLoggedIn, storeUserIsBlocked, userAdminGroupId, storeUserToken, storeUserEmail, storeUserName } from "../variables.js";
 import doLogOut from "./doLogout.js";
 
-// export default async function isUserAdmin(token) {
 export default async function getUserInfo(token) {
     if (!token) {
         token = localStorage.getItem(storeUserToken);
@@ -18,34 +18,28 @@ export default async function getUserInfo(token) {
         };
         try {
             const response = await fetch(url, options);
-            const json = await response.json();
             if (response.ok) {
-                //console.log(json);
+                const json = await response.json();
                 localStorage.setItem(storeUserIsBlocked, json.blocked);
                 localStorage.setItem(storeUserIsLoggedIn, true);
                 localStorage.setItem(storeUserEmail, json.email);
                 localStorage.setItem(storeUserName, json.username);
-                //console.log(json.hasOwnProperty("role"));
                 if (json.hasOwnProperty("role")) {
-                    //console.log("Id exists");
-                    //const userRoleId = json.role.id;
                     if (json.role.id === userAdminGroupId) {
-                        //console.log("User is admin");
                         localStorage.setItem(storeUserIsAdmin, true);
                     }
                 }
                 return true;
             } else {
-                // Token is invalid. Logout user now.
-                // doLogOut();
-                // return false;
+                throw "Error getting userinfo";
             }
         } catch (error) {
-            //console.log("Error occured: " + error);
+            displayStatusMessage("Unable to get userinfo. Please try again.", "error");
             doLogOut();
             return false;
         }
     } else {
+        displayStatusMessage("Unable to get userinfo. Please try again.", "error");
         doLogOut();
         return false;
     }

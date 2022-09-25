@@ -7,7 +7,7 @@ import sortEditableProducts from "./sortEditableProducts.js";
 export default function filterEditableProducts() {
     let filteredProducts = getAllProductsFromStorage();
     if (searchFilterField.value !== "") {
-        // filter products when there is a value  in the search field.
+        // filter products only when there is a value in the search field.
         filteredProducts = filteredProducts.filter((product) => {
             const searchTitle = product.attributes.title.toLowerCase().includes(searchFilterField.value.toLowerCase());
             const searchDescription = product.attributes.description.toLowerCase().includes(searchFilterField.value.toLowerCase());
@@ -21,8 +21,7 @@ export default function filterEditableProducts() {
     if (window.location.pathname === "/products.html") {
         displayProducts(filteredProducts);
     } else {
-        // edit.html:
-        // Sort the products before displaying them:
+        // Edit.html: Sort the products before displaying them:
         const sortedProducts = sortEditableProducts(filteredProducts);
         displaySearchEditResults(sortedProducts);
     }

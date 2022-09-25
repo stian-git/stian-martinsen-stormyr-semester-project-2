@@ -3,7 +3,7 @@
 export default function displayFeaturedProducts(arr) {
     //variables used to calculate number of rows.
     const moreColsOnOffsetWidth = 328;
-    //const moreColsOnOffsetWidth = 250;
+    //moreColsOnOffsetWidth
     const colWidth = 153;
     const carouselContainer = document.querySelector("#featuredproducts .carousel-inner");
     //empty current carousel:

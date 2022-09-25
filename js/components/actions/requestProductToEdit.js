@@ -1,6 +1,6 @@
 import getProducts from "../api/getProducts.js";
 import toggleSortingOfEditableProducts from "../ui/toggleSortingOfEditableProducts.js";
-import { deleteProductButton, modelFilter, priceFilter, saveProductButton, searchFilterField, titleFilter } from "../variables.js";
+import { deleteProductButton, mainProductForm, modelFilter, priceFilter, saveProductButton, searchFilterField, titleFilter } from "../variables.js";
 import displaySearchEditResults from "./displaySearchEditResults.js";
 import filterEditableProducts from "./filterEditableProducts.js";
 import saveAllProductsToStorage from "./saveAllProductsToStorage.js";
@@ -8,8 +8,8 @@ import sortEditableProducts from "./sortEditableProducts.js";
 
 export default function requestProductToEdit() {
     searchFilterField.addEventListener("keyup", filterEditableProducts);
-    // Remove the usual edit form.
-    document.querySelector("main .productform").remove();
+    // Remove the usual edit form and buttons.
+    mainProductForm.remove();
     saveProductButton.remove();
     deleteProductButton.remove();
 

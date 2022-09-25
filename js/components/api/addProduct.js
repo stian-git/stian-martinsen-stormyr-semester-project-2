@@ -1,8 +1,9 @@
-import { baseUrl, continueButton, deleteProductButton, header, imageFormContainer, prodIdField, saveProductButton } from "../variables.js";
+import displayStatusMessage from "../ui/displayStatusMessage.js";
+import { baseUrl, continueButton, deleteProductButton, header, imageFormContainer, prodIdField, saveProductButton, storeUserToken } from "../variables.js";
 
 export default async function addProduct(prodObj) {
     const addProductUrl = baseUrl + "api/products";
-    const apiToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyOTYyNjk5LCJleHAiOjE2NjU1NTQ2OTl9.imsBfAoVMhVEhBjsw2V3iBMMO7anweekVazf-CRzNyU";
+    const apiToken = localStorage.getItem(storeUserToken);
     const options = {
         method: "POST",
         body: JSON.stringify(prodObj),
@@ -14,20 +15,20 @@ export default async function addProduct(prodObj) {
 
     try {
         const data = await fetch(addProductUrl, options);
-        const json = await data.json();
-        //console.log(json);
-
-        prodIdField.value = json.data.id;
-        // inform user.
-
-        imageFormContainer.style.display = "block";
-        continueButton.style.display = "none";
-        //saveProductButton.style.display = "inline-block";
-        saveProductButton.hidden = false;
-        deleteProductButton.style.display = "inline-block";
-        header.innerHTML = "Add Product (2/2)";
+        if (data.ok) {
+            const json = await data.json();
+            prodIdField.value = json.data.id;
+            imageFormContainer.style.display = "block";
+            continueButton.style.display = "none";
+            saveProductButton.hidden = false;
+            deleteProductButton.style.display = "inline-block";
+            header.innerHTML = "Add Product (2/2)";
+            displayStatusMessage("Product created, ready to add images.", "success");
+        } else {
+            throw "Failed to add product.";
+        }
     } catch (error) {
-        console.log("Error occured adding product: " + error);
+        displayStatusMessage("Failed to create product. Please try again.", "error");
     } finally {
         continueButton.innerHTML = "Continue";
         continueButton.disabled = false;

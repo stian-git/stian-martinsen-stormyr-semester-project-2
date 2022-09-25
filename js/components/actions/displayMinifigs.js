@@ -11,7 +11,7 @@ export default function displayMiniFigs(figdata) {
             figureImage = figure.set_img_url;
         }
         const figureTitle = figure.set_name;
-        // gather the variables and display them.
+        // gather the variables and display the minifigs.
         minifigsContainer.innerHTML += `
             <div class="card minifig__card">
                 <img src="${figurethumbImage}" class="card-img-top minifig__card-img" aria-label="Image of ${figureTitle}" title="Image of ${figureTitle}" alt="Image of ${figureTitle}" />

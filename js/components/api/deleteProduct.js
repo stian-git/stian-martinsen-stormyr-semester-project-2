@@ -10,7 +10,6 @@ export default async function deleteProduct(id, deletebutton) {
     if (window.confirm("Are you sure you want to delete this product?")) {
         const apiToken = localStorage.getItem(storeUserToken);
         const url = baseUrl + "api/products/" + id;
-
         const options = {
             method: "DELETE",
             headers: {
@@ -44,13 +43,11 @@ export default async function deleteProduct(id, deletebutton) {
             displayStatusMessage("Deleting product failed. Please try again.", "error");
         }
 
-        // Remove from basket if it is there...
-        //updateItemInCart(id);
+        // Remove from basket if it is there and update the counter...
         const isInCart = isProductInCart(id);
         if (isInCart) {
             updateItemInCart(id, "delete");
             getNumberOfItemsInCart();
-            // Update basket counter.
         }
     }
 }
