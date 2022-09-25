@@ -73,3 +73,25 @@
         }
     }
 }
+
+@include media-breakpoint-down(md) {
+    .productcard {
+        &__box {
+            &:hover {
+                // box-shadow: none;
+                // border: 1px solid $main-border;
+                // color: $textlinkcolor;
+                .productcard__box-imagewrapper-banner {
+                    color: white;
+                }
+            }
+            &-imagewrapper {
+                &-banner {
+                    display: flex;
+                    align-self: end;
+                    right: 5px;
+                }
+            }
+        }
+    }
+}

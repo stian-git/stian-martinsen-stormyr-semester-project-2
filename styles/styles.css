@@ -9394,6 +9394,16 @@ header:first-of-type + * {
   color: black;
 }
 
+@media (max-width: 767.98px) {
+  .productcard__box:hover .productcard__box-imagewrapper-banner {
+    color: white;
+  }
+  .productcard__box-imagewrapper-banner {
+    display: flex;
+    align-self: end;
+    right: 5px;
+  }
+}
 .minifig {
   flex-flow: wrap-reverse;
   justify-content: center;
