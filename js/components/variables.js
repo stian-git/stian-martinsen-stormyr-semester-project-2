@@ -103,11 +103,10 @@ export const heroContainer = document.querySelector(".hero");
 export const heroTextContainer = document.querySelector(".hero-text");
 export const userprofileContainer = document.querySelector(".userprofilecontainer");
 export const mainProductForm = document.querySelector("main .productform");
-// Below is for displaySearchEditResults;
-// export const rowContainer = document.querySelector(".producttable tbody");
-// export const productTable = document.querySelector("table.producttable");
+export const rowContainer = document.querySelector(".producttable tbody");
+export const productTable = document.querySelector("table.producttable");
+export const featuredCarouselContainer = document.querySelector("#featuredproducts .carousel-inner");
 
 // Values below are used to calculate how many product cards should be loaded in each row. (featured products carousel)
-const moreColsOnOffsetWidth = 328;
-const colWidth = 153;
-const carouselContainer = document.querySelector("#featuredproducts .carousel-inner");
+export const moreColsOnOffsetWidth = 328;
+export const colWidth = 153;

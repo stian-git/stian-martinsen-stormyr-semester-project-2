@@ -1,7 +1,6 @@
-export default function displaySearchEditResults(arr) {
-    const rowContainer = document.querySelector(".producttable tbody");
-    const productTable = document.querySelector("table.producttable");
+import { rowContainer, productTable } from "../variables.js";
 
+export default function displaySearchEditResults(arr) {
     productTable.style.display = "table";
     rowContainer.innerHTML = "";
     arr.forEach((product) => {

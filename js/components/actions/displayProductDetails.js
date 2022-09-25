@@ -135,15 +135,14 @@ export default function displayProductDetails(arr) {
     // Handle toggling of product in and out of the cart.
     const currentId = getSearchParam("id");
     const isInCart = isProductInCart(currentId);
+    // Toggle CartButton-text:
     if (isInCart) {
-        // show "remove from cart";
         cartButton.innerHTML = "Remove from cart";
     } else {
-        // show "Add to cart";
         cartButton.innerHTML = "Add to cart";
     }
 
-    // Addeventlistener;
+    // Add eventlistener;
 
     cartButton.addEventListener("click", () => {
         toggleProductToAndFromCart(currentId);
