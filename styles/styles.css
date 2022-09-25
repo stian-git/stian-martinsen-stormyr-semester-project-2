@@ -9658,6 +9658,7 @@ header:first-of-type + * {
 .statuscontainer-message {
   font-family: "Orbitron", sans-serif;
   margin: 0;
+  padding: 1em;
 }
 .statuscontainer__status-active {
   animation: showStatusBar 5s 1 ease;
