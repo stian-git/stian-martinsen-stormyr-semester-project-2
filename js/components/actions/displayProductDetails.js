@@ -62,9 +62,8 @@ export default function displayProductDetails(arr) {
 
     // display images:
 
-    if (!arr.mage_url) {
-        console.log("There are no thumb!");
-    } else {
+    if (arr.mage_url) {
+        console.log("This should not run now...");
         carouselImageContainer.dataset.defaultimg = arr.image_url;
     }
     if (arr.image.data) {

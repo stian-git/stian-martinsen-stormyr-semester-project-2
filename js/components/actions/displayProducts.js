@@ -1,6 +1,6 @@
 import addListenersToProductsPage from "../ui/addListenersToProductsPage.js";
 import toggleUserFeatures from "../ui/toggleUserFeatures.js";
-import { currency, productlist } from "../variables.js";
+import { currency, placeHolderThumb, productlist } from "../variables.js";
 
 export default function displayProducts(arr) {
     //const productlist = document.querySelector("#productlist");
@@ -8,7 +8,10 @@ export default function displayProducts(arr) {
     arr.forEach((product) => {
         //console.log(product);
         // title, image_url, price, productnumber, stock
-
+        if (!product.attributes.image_url) {
+            console.log("Setting placeholderImage");
+            product.attributes.image_url = placeHolderThumb;
+        }
         productlist.innerHTML += `
         <div class="col productlist__product">
             <a href="productdetails.html?id=${product.id}" class="productcard">
