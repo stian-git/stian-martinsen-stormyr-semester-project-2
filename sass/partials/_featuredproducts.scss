@@ -6,6 +6,10 @@
             margin: 5px;
             justify-content: center;
             background-color: $featured-row-bg;
+            &-link {
+                color: $textlinkcolor;
+                text-decoration: none;
+            }
         }
     }
     &__wrapper {
@@ -17,6 +21,7 @@
             &:hover {
                 box-shadow: none;
                 border: 1px solid $main-border;
+                color: $textlinkcolor;
             }
             &-imgbox {
                 height: 190px;

@@ -9497,6 +9497,10 @@ header:first-of-type + * {
   justify-content: center;
   background-color: white;
 }
+.featured__containerrow-link {
+  color: black;
+  text-decoration: none;
+}
 .featured__wrapper {
   height: 340px;
 }
@@ -9508,6 +9512,7 @@ header:first-of-type + * {
 .featured__wrapper-card:hover {
   box-shadow: none;
   border: 1px solid black;
+  color: black;
 }
 .featured__wrapper-card-imgbox {
   height: 190px;

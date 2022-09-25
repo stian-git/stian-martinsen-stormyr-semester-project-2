@@ -30,6 +30,7 @@ export default function displayFeaturedProducts(arr) {
         // Use the rownumber to identify the row-element to put it into
         const carouselRowElement = document.querySelector("#featuredproducts .carousel-item-row" + rowToGoTo + " .row");
         carouselRowElement.innerHTML += `
+        <a href="/productdetails.html?id=${arr[i].id}" class="featured__containerrow-link" aria-label="Link to ${arr[i].attributes.title}" title="Link to ${arr[i].attributes.title}">
                 <div class="col featured__wrapper" data-id="${arr[i].id}">
                     <div class="card h-100 featured__wrapper-card">
                         <div class="card-img featured__wrapper-card-imgbox">
@@ -42,44 +43,12 @@ export default function displayFeaturedProducts(arr) {
                         <div class="card-footer">Model: ${arr[i].attributes.productnumber}</div>
                     </div>
                 </div>
+            </a>
         `;
     }
 
     // set first carousel-item as the active.
     document.querySelector("#featuredproducts .carousel-item").classList.add("active");
-
-    // add eventlisteners:
-
-    const allFeaturedProducts = document.querySelectorAll("#featuredproducts .col");
-    allFeaturedProducts.forEach((element) => {
-        element.addEventListener("click", (e) => {
-            // We catches the ID from any of the clickable elements:
-            let id;
-            switch (e.path.length) {
-                case 14:
-                    id = e.target.parentElement.parentElement.parentElement.dataset.id;
-                    break;
-                case 13:
-                    id = e.target.parentElement.parentElement.dataset.id;
-                    break;
-                case 12:
-                    id = e.target.parentElement.dataset.id;
-                    break;
-                case 11:
-                    id = e.target.dataset.id;
-                    break;
-                default:
-                    id = "";
-                    break;
-            }
-
-            // only forward the user to products page if id is found.
-            if (!isNaN(parseInt(id))) {
-                //console.log("ID is a number and we will forward: " + id);
-                window.location.href = "/productdetails.html?id=" + id;
-            }
-        });
-    });
 }
 
 // < 576 = 1 // offset =< 328                   0
