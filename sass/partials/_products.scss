@@ -3,6 +3,12 @@
         height: 300px;
     }
 }
+.productsfilter {
+    &-input {
+        margin-bottom: 1em;
+        width: 50%;
+    }
+}
 
 .productcard {
     text-decoration: none;

@@ -42,7 +42,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <form class="d-flex" role="search" id="searchform">
+                        <form class="d-flex header__searchform" role="search" id="searchform">
                             <input class="form-control me-2 searchform-field" type="search" placeholder="Find product" aria-label="Search" />
                             <button class="btn btn-outline-success searchform-button" type="submit" disabled>Search</button>
                         </form>
@@ -52,7 +52,10 @@
         </header>
         <div class="header__bottom_line"></div>
         <main>
-            <h1>Products</h1>
+            <h1 class="mainheader">Products</h1>
+            <form class="d-flex productsfilter" role="search" id="productsfilter">
+                <input class="form-control me-2 productsfilter-input textfilter" type="search" placeholder="Filter products" aria-label="Filter" />
+            </form>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-2 productlist" id="productlist">
                 <div class="spinner-border text-warning" role="status">
                     <span class="visually-hidden">Loading...</span>

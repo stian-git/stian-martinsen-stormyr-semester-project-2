@@ -1,4 +1,5 @@
 import { searchFilterField } from "../variables.js";
+import displayProducts from "./displayProducts.js";
 import displaySearchEditResults from "./displaySearchEditResults.js";
 import getAllProductsFromStorage from "./getAllProductsFromStorage.js";
 import sortEditableProducts from "./sortEditableProducts.js";
@@ -16,7 +17,13 @@ export default function filterEditableProducts() {
             }
         });
     }
-    // Sort the products before displaying them:
-    const sortedProducts = sortEditableProducts(filteredProducts);
-    displaySearchEditResults(sortedProducts);
+
+    if (window.location.pathname === "/products.html") {
+        displayProducts(filteredProducts);
+    } else {
+        // edit.html:
+        // Sort the products before displaying them:
+        const sortedProducts = sortEditableProducts(filteredProducts);
+        displaySearchEditResults(sortedProducts);
+    }
 }

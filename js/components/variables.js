@@ -97,3 +97,5 @@ export const prodNumberRequirementLabel = document.querySelector(".productnumber
 export const prodTitleRequirementLabel = document.querySelector(".producttitle-requirement");
 export const prodPriceRequirementLabel = document.querySelector(".productprice-requirement");
 export const prodStockRequirementLabel = document.querySelector(".productstock-requirement");
+export const productsFilterField = document.querySelector(".productsfilter-input");
+export const productsMainHeader = document.querySelector("h1.mainheader");

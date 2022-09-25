@@ -9279,6 +9279,9 @@ header:first-of-type + * {
   margin: 0;
   padding: 0;
 }
+.header__searchform * {
+  display: none;
+}
 
 @media (min-width: 992px) {
   .header {
@@ -9322,6 +9325,11 @@ header:first-of-type + * {
 }
 .productlist__product {
   height: 300px;
+}
+
+.productsfilter-input {
+  margin-bottom: 1em;
+  width: 50%;
 }
 
 .productcard {
