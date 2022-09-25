@@ -56,6 +56,7 @@ getUserInfo().then((isLoggedIn) => {
                 });
                 imageFormContainer.style.display = "block";
                 deleteProductButton.style.display = "inline-block";
+                saveProductButton.hidden = false;
             } else {
                 // id is not provided. We will request the user to select.
                 requestProductToEdit();
@@ -64,7 +65,7 @@ getUserInfo().then((isLoggedIn) => {
             continueButton.style.display = "none";
         } else {
             // We will add a new product.
-            saveProductButton.style.display = "none";
+            //saveProductButton.style.display = "none";
             continueButton.addEventListener("click", (e) => {
                 e.preventDefault();
                 continueButton.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -72,6 +73,7 @@ getUserInfo().then((isLoggedIn) => {
                 continueButton.disabled = true;
                 let prodObj = createProductObject();
                 addProduct(prodObj);
+                saveProductButton.hidden = false;
             });
             continueButton.disabled = true;
         }

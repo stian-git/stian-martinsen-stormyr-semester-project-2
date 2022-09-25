@@ -22,7 +22,8 @@ export default async function addProduct(prodObj) {
 
         imageFormContainer.style.display = "block";
         continueButton.style.display = "none";
-        saveProductButton.style.display = "inline-block";
+        //saveProductButton.style.display = "inline-block";
+        saveProductButton.hidden = false;
         deleteProductButton.style.display = "inline-block";
         header.innerHTML = "Add Product (2/2)";
     } catch (error) {
