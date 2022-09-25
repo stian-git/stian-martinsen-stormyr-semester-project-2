@@ -1,5 +1,9 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Antonio&family=Orbitron:wght@400;700&family=Poppins:wght@400;700&family=Roboto+Slab&family=Sanchez&family=Source+Code+Pro:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Antonio&family=Orbitron:wght@400;700&family=Roboto+Slab&display=swap");
+@font-face {
+  font-family: "Legothick";
+  src: url("../../styles/fonts/ClickyBricks2Regular-nRGD4.ttf");
+}
 :root {
   --body-bg: url("../../images/stud.svg");
   --arrow-previous: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
@@ -10759,28 +10763,25 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-@font-face {
-  font-family: "Legothick";
-  src: url("../../styles/fonts/ClickyBricks2Regular-nRGD4.ttf");
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-family: "Orbitron", sans-serif;
 }
+
 h1, .h1 {
-  font-family: "Orbitron";
   font-weight: bolder;
   margin-bottom: 1em;
 }
 
 h1::first-letter, .h1::first-letter {
-  font-family: "Legothick";
+  font-family: "Legothick", "Orbitron", sans-serif;
 }
 
 p {
-  font-family: "Roboto Slab";
-}
-
-h2, .h2,
-h3,
-.h3 {
-  font-family: "Orbitron";
+  font-family: "Roboto Slab", serif;
 }
 
 h2, .h2 {
@@ -10811,12 +10812,12 @@ body {
 
 main {
   flex-grow: 1;
-  background-color: #fff;
+  background-color: white;
   width: 80vw;
   margin: auto;
   padding: 1em 4em 4em 4em;
-  border-left: 2px solid #000;
-  border-right: 2px solid #000;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
 
 header:first-of-type + * {
@@ -10842,7 +10843,7 @@ header:first-of-type + * {
   }
 }
 .header {
-  box-shadow: 1px 0px 10px #000;
+  box-shadow: 1px 0px 10px black;
 }
 .header__logo {
   max-width: 20%;
@@ -10886,7 +10887,7 @@ header:first-of-type + * {
   font-size: 0.8em;
 }
 .footer__section-info-link {
-  color: #000;
+  color: black;
 }
 .footer__section-info-link:hover {
   color: #8e2579;
@@ -10909,12 +10910,12 @@ header:first-of-type + * {
   color: #8e2579;
 }
 .productcard__box {
-  box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px black;
 }
 .productcard__box:hover {
   box-shadow: none;
-  border: 1px solid #000;
-  color: #000;
+  border: 1px solid black;
+  color: black;
 }
 .productcard__box:hover .productcard__box-imagewrapper-banner {
   display: flex;
@@ -10971,7 +10972,7 @@ header:first-of-type + * {
 }
 .productcard__box-details-stock {
   font-size: 0.7em;
-  color: #000;
+  color: black;
 }
 
 .minifig {
@@ -10983,9 +10984,9 @@ header:first-of-type + * {
   max-width: 300px;
   padding: 5px;
   margin: 10px;
-  border: 1px solid #000;
+  border: 1px solid black;
   border-radius: 0px;
-  box-shadow: 1px 1px 6px #000;
+  box-shadow: 1px 1px 6px black;
 }
 .minifig__card-title {
   font-size: 0.8em;
@@ -11081,13 +11082,13 @@ header:first-of-type + * {
   height: 340px;
 }
 .featured__wrapper-card {
-  box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px black;
   cursor: pointer;
-  border: 1px solid #000;
+  border: 1px solid black;
 }
 .featured__wrapper-card:hover {
   box-shadow: none;
-  border: 1px solid #000;
+  border: 1px solid black;
 }
 .featured__wrapper-card-imgbox {
   height: 190px;
@@ -11108,7 +11109,7 @@ header:first-of-type + * {
   height: 40px;
 }
 .cart__row-productlink {
-  color: #000;
+  color: black;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -11171,7 +11172,7 @@ header:first-of-type + * {
 }
 .editimages__table-thumb {
   height: 60px;
-  box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px black;
   cursor: pointer;
 }
 .editimages__table-radiobutton {
@@ -11213,12 +11214,12 @@ header:first-of-type + * {
   position: fixed;
   width: 100%;
   opacity: 90%;
-  color: #fff;
+  color: white;
   z-index: 2000;
   top: -5em;
   font-weight: bold;
   font-size: 1.5em;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid black;
 }
 .statuscontainer-message {
   font-family: "Orbitron", sans-serif;
@@ -11229,7 +11230,7 @@ header:first-of-type + * {
 }
 .statuscontainer__status-error {
   background-color: #ff5050;
-  color: #000;
+  color: black;
 }
 .statuscontainer__status-success {
   background-color: green;
@@ -11272,7 +11273,7 @@ header:first-of-type + * {
   width: 100%;
   background-size: cover;
   background-position: center;
-  border-top: 1px solid #000;
+  border-top: 1px solid black;
   position: relative;
   display: flex;
   align-items: center;
@@ -11282,7 +11283,7 @@ header:first-of-type + * {
   padding: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  border: 1px solid #000;
+  border: 1px solid black;
   border-left: none;
   position: absolute;
   left: 0px;
