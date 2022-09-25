@@ -63,7 +63,6 @@ export default function displayProductDetails(arr) {
     // display images:
 
     if (arr.image_url) {
-        console.log("This should not run now...");
         carouselImageContainer.dataset.defaultimg = arr.image_url;
     }
     if (arr.image.data) {
@@ -131,7 +130,6 @@ export default function displayProductDetails(arr) {
         });
     } else {
         document.querySelector("#imagecarousel").innerHTML = `<img src="${placeHolderThumb}">`;
-        //carouselImageContainer.innerHTML = `<img src="${placeHolderThumb}">`;
     }
 
     // Handle toggling of product in and out of the cart.

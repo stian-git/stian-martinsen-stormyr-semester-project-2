@@ -30,7 +30,7 @@ export default async function doLogin() {
             loginCancelButton.click();
         } else {
             if (response.status === 400) {
-                console.log("Login failed.");
+                throw "Login failed";
             }
             loginStatusMessage.style.display = "block";
             doLogOut();
