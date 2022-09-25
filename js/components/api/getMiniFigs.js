@@ -10,6 +10,6 @@ export default async function getMinifigs(id) {
         return result;
     } catch (error) {
         return [];
-        // caller is handling 0-results.
+        // caller is handling 0-results and errors.
     }
 }
