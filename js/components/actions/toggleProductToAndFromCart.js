@@ -1,3 +1,4 @@
+import displayStatusMessage from "../ui/displayStatusMessage.js";
 import { carouselImageContainer, cartButton, priceContainer, productModel, productTitle, storeCartContent } from "../variables.js";
 import createProductObject from "./createProductObject.js";
 import updateItemInCart from "./updateItemInCart.js";
@@ -21,28 +22,15 @@ export default function toggleProductToAndFromCart(id) {
         // save filteredproducts to storage.
         localStorage.setItem(storeCartContent, JSON.stringify(filteredProducts));
         cartButton.innerHTML = "Add to cart";
+
+        displayStatusMessage("Item deleted from Cart", "success");
     } else {
         // add item to cart.
         // update buttontext
         cartButton.innerHTML = "Remove from cart";
-        //const prodObj = createProductObject();
-        //console.log(prodObj);
-        // const productObj = {
-        //     id: button.dataset.id,
-        //     qty: 1,
-        //     model: button.dataset.model,
-        //     title: button.dataset.title,
-        //     price: button.dataset.price,
-        //     img: button.dataset.img,
-        // };
-        //console.log(priceContainer.innerText.split(" ")[0]);
-        //console.log(productTitle.innerHTML);
         const prodPrice = priceContainer.innerText.split(" ")[0];
         const prodModel = productModel.innerText.split(" ")[1];
-        //carouselImageContainer.dataset.defaultimg
 
-        //carousel
-        //console.log(prodModel);
         const productObj = {
             id: id,
             qty: 1,
@@ -51,7 +39,6 @@ export default function toggleProductToAndFromCart(id) {
             price: prodPrice,
             img: carouselImageContainer.dataset.defaultimg,
         };
-        //console.log(productObj);
         updateItemInCart(id, 1, productObj);
     }
 }

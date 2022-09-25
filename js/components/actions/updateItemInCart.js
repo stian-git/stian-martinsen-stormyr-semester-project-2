@@ -1,3 +1,4 @@
+import displayStatusMessage from "../ui/displayStatusMessage.js";
 import getNumberOfItemsInCart from "../ui/getNumberOfItemsInCart.js";
 import { storeCartContent } from "../variables.js";
 
@@ -17,7 +18,6 @@ export default function updateItemInCart(id, action, productObj = "") {
     if (currentItemsInCart) {
         // If there are items in the cart, check for duplicates:
         for (let i = 0; i < currentItemsInCart.length; i++) {
-            // if (currentItemsInCart[i].id === productObj.id || currentItemsInCart[i].id === id) {
             if (currentItemsInCart[i].id === id) {
                 // Item already in cart. We will update qty.
                 if (typeof action === "number") {
@@ -30,13 +30,16 @@ export default function updateItemInCart(id, action, productObj = "") {
                     //     Item value is either above 0 and will be updated in the Cart or already deleted.
                     localStorage.setItem(storeCartContent, JSON.stringify(currentItemsInCart));
                     getNumberOfItemsInCart();
+                    displayStatusMessage("Cart updated", "success");
                     return;
                 } else {
                     //console.log("We will delete this item because the action is not a number...");
                     currentItemsInCart.splice(i, 1);
                     localStorage.setItem(storeCartContent, JSON.stringify(currentItemsInCart));
+                    displayStatusMessage("Item deleted from Cart", "success");
                 }
                 getNumberOfItemsInCart();
+                //console.log("running now?");
                 return;
             }
         }
@@ -44,6 +47,7 @@ export default function updateItemInCart(id, action, productObj = "") {
         //console.log("The item was not in the cart and can be added...");
         currentItemsInCart.push(productObj);
         localStorage.setItem(storeCartContent, JSON.stringify(currentItemsInCart));
+        displayStatusMessage("Item added to Cart", "success");
     } else {
         // Cart is empty, and we will add the product.
         //console.log("Cart is empty...adding a new item now...");
@@ -51,6 +55,7 @@ export default function updateItemInCart(id, action, productObj = "") {
         newCartList.push(productObj);
         //console.log(newCartList);
         localStorage.setItem(storeCartContent, JSON.stringify(newCartList));
+        displayStatusMessage("Item added to Cart", "success");
     }
 
     getNumberOfItemsInCart();

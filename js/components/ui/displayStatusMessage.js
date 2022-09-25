@@ -1,6 +1,7 @@
 import { statusContainer, statusMessage } from "../variables.js";
 
 export default function displayStatusMessage(message, statusClass = "error") {
+    console.log("Running statusmessage");
     let statusBemClass = "statuscontainer__status-error";
     if (statusClass === "success") {
         statusBemClass = "statuscontainer__status-success";

@@ -62,7 +62,7 @@ export default function displayProductDetails(arr) {
 
     // display images:
 
-    if (arr.mage_url) {
+    if (arr.image_url) {
         console.log("This should not run now...");
         carouselImageContainer.dataset.defaultimg = arr.image_url;
     }
