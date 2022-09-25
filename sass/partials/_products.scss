@@ -78,11 +78,8 @@
     .productcard {
         &__box {
             &:hover {
-                // box-shadow: none;
-                // border: 1px solid $main-border;
-                // color: $textlinkcolor;
                 .productcard__box-imagewrapper-banner {
-                    color: white;
+                    color: $white;
                 }
             }
             &-imagewrapper {

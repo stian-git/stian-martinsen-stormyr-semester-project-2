@@ -9396,7 +9396,7 @@ header:first-of-type + * {
 
 @media (max-width: 767.98px) {
   .productcard__box:hover .productcard__box-imagewrapper-banner {
-    color: white;
+    color: #fff;
   }
   .productcard__box-imagewrapper-banner {
     display: flex;
