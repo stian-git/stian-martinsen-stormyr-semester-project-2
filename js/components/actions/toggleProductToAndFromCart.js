@@ -1,21 +1,23 @@
 import displayStatusMessage from "../ui/displayStatusMessage.js";
 import { carouselImageContainer, cartButton, priceContainer, productModel, productTitle, storeCartContent } from "../variables.js";
-import createProductObject from "./createProductObject.js";
+//import createProductObject from "./createProductObject.js";
 import updateItemInCart from "./updateItemInCart.js";
 
 export default function toggleProductToAndFromCart(id) {
-    //console.log("Checking id: " + id);
     let currentItemsInCart = JSON.parse(localStorage.getItem(storeCartContent));
-    const preCount = currentItemsInCart.length;
-    //console.log(currentItemsInCart);
-    //console.log(preCount);
+    // Check if there are any items at all in the Cart:
+    if (!currentItemsInCart) {
+        // set an empty array to work with if the cart is empty.
+        currentItemsInCart = [];
+    }
+
     let filteredProducts = currentItemsInCart.filter((product) => {
         if (product.id !== id) {
             return true;
         }
     });
-    //console.log(filteredProducts);
-    //console.log(filteredProducts.length);
+    const preCount = currentItemsInCart.length;
+
     if (preCount > filteredProducts.length) {
         // we removed this item.
         // update buttontext
