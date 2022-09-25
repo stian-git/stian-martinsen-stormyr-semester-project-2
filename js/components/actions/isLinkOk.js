@@ -70,7 +70,7 @@ export default async function isLinkOk(url) {
             return true;
         }
         if (!data.ok && data.status === 404) {
-            // In rare occasions the dynamicly created urls do not work and will result in a 404-error in the console.log,
+            // In rare occasions the dynamicly created urls will result in a URL that don`t exist and will result in a 404-error in the console.log,
             // this are hidden from the user as I`m unable to intercept with the logging of this error.
             console.clear();
             return false;

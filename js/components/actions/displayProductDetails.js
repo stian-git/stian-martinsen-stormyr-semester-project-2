@@ -11,8 +11,10 @@ import {
     editProductButtonLink,
     legoProductBaseUrl,
     linkTab,
+    minifigsContainer,
     modalCarouselImageContainer,
     modalCarouselIndicatorContainer,
+    placeHolderThumb,
     priceContainer,
     productModel,
     productTitle,
@@ -53,12 +55,18 @@ export default function displayProductDetails(arr) {
     getMinifigs(arr.productnumber).then((arr) => {
         if (arr.count > 0) {
             displayMiniFigs(arr);
+        } else {
+            minifigsContainer.innerHTML = "No minifigures could be found for this set.";
         }
     });
 
     // display images:
 
-    carouselImageContainer.dataset.defaultimg = arr.image_url;
+    if (!arr.mage_url) {
+        console.log("There are no thumb!");
+    } else {
+        carouselImageContainer.dataset.defaultimg = arr.image_url;
+    }
     if (arr.image.data) {
         carouselImageContainer.innerHTML = "";
         arr.image.data.forEach((img, index) => {
@@ -122,6 +130,9 @@ export default function displayProductDetails(arr) {
                 document.querySelector(`button[data-bs-target="#imageModal"]`).click();
             }
         });
+    } else {
+        document.querySelector("#imagecarousel").innerHTML = `<img src="${placeHolderThumb}">`;
+        //carouselImageContainer.innerHTML = `<img src="${placeHolderThumb}">`;
     }
 
     // Handle toggling of product in and out of the cart.
