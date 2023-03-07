@@ -1,5 +1,6 @@
 // Strapi Base URL:
-export const baseUrl = "https://semester-project-2-2022.herokuapp.com/";
+//export const baseUrl = "https://semester-project-2-2022.herokuapp.com/";
+export const baseUrl = "https://lego-strapi-production.up.railway.app/";
 
 // Rebrickable:
 export const rebrickableApiKey = "ca2870058d849c35e623b673de5478db";
