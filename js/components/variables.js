@@ -9,7 +9,8 @@ export const rebrickableSetUrl = "https://rebrickable.com/sets/";
 
 // Editable variables:
 export const userAdminGroupId = 3;
-export const noCorsUrl = "https://noroffcors.herokuapp.com/";
+//export const noCorsUrl = "https://noroffcors.herokuapp.com/";
+export const noCorsUrl = "https://cors.noroff.dev/";
 export const placeHolderImage = "https://res.cloudinary.com/devokuww7/image/upload/v1664034347/brickastle_placeholder_image_7c8fd39a31.png";
 export const placeHolderThumb = "https://res.cloudinary.com/devokuww7/image/upload/v1664034347/thumbnail_brickastle_placeholder_image_7c8fd39a31.png";
 export const currency = "EUR";
