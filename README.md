@@ -15,7 +15,7 @@
 
 Brickastle is a webshop specialized for Lego castles and offers both new and vintage models.
 
-It was originally built with Strapi as backend, but the database was removed when Heroku discontinued the free tier in December 2022. So the live site is currently unavailable.
+It is built with Strapi as backend, but the database was removed when Heroku discontinued the free tier in December 2022. So the backend has been re-deployed to Railway in March 2023.
 
 Administrators can login to the website to add, edit or delete products available.
 
@@ -39,14 +39,17 @@ This project is made using these components:
 ## Getting Started
 
 ### Installing
+1. Install the backend (Repo: [https://github.com/stian-git/lego-strapi](https://github.com/stian-git/lego-strapi))
 
-1. Clone the repo:
+2. Clone this repo:
 
 ```bash
 git clone stian-git/stian-martinsen-stormyr-semester-project-2
 ```
 
-2. Use Live Server in Visual Studio or upload the files to a browser and just open it to start the front-end interface.
+3. Use Live Server in Visual Studio or upload the files to a browser and just open it to start the front-end interface.
+
+4. Create users in the backend.
 
 ### Running
 
