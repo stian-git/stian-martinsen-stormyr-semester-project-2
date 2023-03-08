@@ -38,6 +38,9 @@ This project is made using these components:
 
 ## Getting Started
 
+This site is currently hosted on the following url for testing purposes:
+[https://kaleidoscopic-dasik-e1a09b.netlify.app/](https://kaleidoscopic-dasik-e1a09b.netlify.app/)
+
 ### Installing
 1. Install the backend (Repo: [https://github.com/stian-git/lego-strapi](https://github.com/stian-git/lego-strapi))
 
